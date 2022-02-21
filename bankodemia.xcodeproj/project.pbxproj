@@ -16,11 +16,11 @@
 		225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8F27C3E2B9003E6180 /* ViewController.swift */; };
 		225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9327C3E441003E6180 /* UIColor++.swift */; };
 		225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9527C3EDBB003E6180 /* UILabel++.swift */; };
-		225B4D9927C3F147003E6180 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 225B4D9827C3F147003E6180 /* Poppins-Regular.ttf */; };
-		225B4D9B27C3F324003E6180 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 225B4D9A27C3F324003E6180 /* Poppins-Medium.ttf */; };
-		225B4D9D27C3F3D7003E6180 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 225B4D9C27C3F3D7003E6180 /* Poppins-SemiBold.ttf */; };
 		225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9E27C3F9B9003E6180 /* UIView++.swift */; };
 		225B4DA327C3FABE003E6180 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4DA227C3FABE003E6180 /* Constants.swift */; };
+		22F2E2CC27C41ED00054870B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22F2E2CB27C41ED00054870B /* Poppins-Medium.ttf */; };
+		22F2E2CE27C41EDE0054870B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22F2E2CD27C41EDE0054870B /* Poppins-Regular.ttf */; };
+		22F2E2D027C41EFC0054870B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22F2E2CF27C41EFC0054870B /* Poppins-SemiBold.ttf */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
@@ -38,11 +38,11 @@
 		225B4D8F27C3E2B9003E6180 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		225B4D9327C3E441003E6180 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
 		225B4D9527C3EDBB003E6180 /* UILabel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
-		225B4D9827C3F147003E6180 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		225B4D9A27C3F324003E6180 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../Downloads/Poppins/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		225B4D9C27C3F3D7003E6180 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "../../../../Downloads/Poppins/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		225B4D9E27C3F9B9003E6180 /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		225B4DA227C3FABE003E6180 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		22F2E2CB27C41ED00054870B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../Downloads/Poppins/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		22F2E2CD27C41EDE0054870B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		22F2E2CF27C41EFC0054870B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "../../../../Downloads/Poppins/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E78A027BDB81700FE708D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,9 +173,9 @@
 		225B4D9727C3F10E003E6180 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				225B4D9827C3F147003E6180 /* Poppins-Regular.ttf */,
-				225B4D9A27C3F324003E6180 /* Poppins-Medium.ttf */,
-				225B4D9C27C3F3D7003E6180 /* Poppins-SemiBold.ttf */,
+				22F2E2CB27C41ED00054870B /* Poppins-Medium.ttf */,
+				22F2E2CD27C41EDE0054870B /* Poppins-Regular.ttf */,
+				22F2E2CF27C41EFC0054870B /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -309,11 +309,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */,
+				22F2E2CC27C41ED00054870B /* Poppins-Medium.ttf in Resources */,
 				565E78A827BDB81900FE708D /* Assets.xcassets in Resources */,
+				22F2E2D027C41EFC0054870B /* Poppins-SemiBold.ttf in Resources */,
 				565E78A627BDB81700FE708D /* Main.storyboard in Resources */,
-				225B4D9D27C3F3D7003E6180 /* Poppins-SemiBold.ttf in Resources */,
-				225B4D9927C3F147003E6180 /* Poppins-Regular.ttf in Resources */,
-				225B4D9B27C3F324003E6180 /* Poppins-Medium.ttf in Resources */,
+				22F2E2CE27C41EDE0054870B /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
