@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */; };
+		225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */; };
+		225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */; };
+		225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8727C3E019003E6180 /* LoginViewModel.swift */; };
+		225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8927C3E041003E6180 /* SingUpViewController.swift */; };
+		225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8B27C3E06D003E6180 /* LoginViewController.swift */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
 		565E78A327BDB81700FE708D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A227BDB81700FE708D /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		225B4D8727C3E019003E6180 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		225B4D8927C3E041003E6180 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		225B4D8B27C3E06D003E6180 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E78A027BDB81700FE708D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +49,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225B4D7627C3DD2D003E6180 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D7A27C3DD79003E6180 /* Welcome */,
+				225B4D7827C3DD5B003E6180 /* SignUp */,
+				225B4D7727C3DD53003E6180 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		225B4D7727C3DD53003E6180 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8027C3DE00003E6180 /* ViewModel */,
+				225B4D7F27C3DDF8003E6180 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		225B4D7827C3DD5B003E6180 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D7E27C3DDF0003E6180 /* ViewModel */,
+				225B4D7D27C3DDE7003E6180 /* Controller */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		225B4D7A27C3DD79003E6180 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D7C27C3DDD7003E6180 /* ViewModel */,
+				225B4D7B27C3DDCD003E6180 /* Controller */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		225B4D7B27C3DDCD003E6180 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		225B4D7C27C3DDD7003E6180 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		225B4D7D27C3DDE7003E6180 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8927C3E041003E6180 /* SingUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		225B4D7E27C3DDF0003E6180 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		225B4D7F27C3DDF8003E6180 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8B27C3E06D003E6180 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		225B4D8027C3DE00003E6180 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				225B4D8727C3E019003E6180 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		565E789227BDB81700FE708D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +153,7 @@
 		565E789D27BDB81700FE708D /* bankodemia */ = {
 			isa = PBXGroup;
 			children = (
+				225B4D7627C3DD2D003E6180 /* Modules */,
 				565E789E27BDB81700FE708D /* AppDelegate.swift */,
 				565E78A027BDB81700FE708D /* SceneDelegate.swift */,
 				565E78A227BDB81700FE708D /* ViewController.swift */,
@@ -138,9 +236,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				565E78A327BDB81700FE708D /* ViewController.swift in Sources */,
+				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
+				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
+				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
