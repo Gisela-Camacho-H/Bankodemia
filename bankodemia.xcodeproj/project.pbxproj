@@ -20,6 +20,7 @@
 		225B4D9B27C3F324003E6180 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 225B4D9A27C3F324003E6180 /* Poppins-Medium.ttf */; };
 		225B4D9D27C3F3D7003E6180 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 225B4D9C27C3F3D7003E6180 /* Poppins-SemiBold.ttf */; };
 		225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9E27C3F9B9003E6180 /* UIView++.swift */; };
+		225B4DA327C3FABE003E6180 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4DA227C3FABE003E6180 /* Constants.swift */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		225B4D9A27C3F324003E6180 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../Downloads/Poppins/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		225B4D9C27C3F3D7003E6180 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "../../../../Downloads/Poppins/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		225B4D9E27C3F9B9003E6180 /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
+		225B4DA227C3FABE003E6180 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E78A027BDB81700FE708D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,10 @@
 		225B4D9127C3E3D9003E6180 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				225B4DA527C3FB37003E6180 /* Networking */,
+				225B4DA427C3FB2F003E6180 /* Responses */,
+				225B4DA127C3FAAB003E6180 /* Constants */,
+				225B4DA027C3FA9E003E6180 /* Protocols */,
 				225B4D9227C3E3FD003E6180 /* Extensions */,
 			);
 			path = Model;
@@ -174,6 +180,42 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		225B4DA027C3FA9E003E6180 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		225B4DA127C3FAAB003E6180 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				225B4DA227C3FABE003E6180 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		225B4DA427C3FB2F003E6180 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		225B4DA527C3FB37003E6180 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		225B4DA627C3FB58003E6180 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		565E789227BDB81700FE708D = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +238,7 @@
 				225B4D9727C3F10E003E6180 /* Fonts */,
 				225B4D7627C3DD2D003E6180 /* Modules */,
 				225B4D9127C3E3D9003E6180 /* Model */,
+				225B4DA627C3FB58003E6180 /* View */,
 				565E789E27BDB81700FE708D /* AppDelegate.swift */,
 				565E78A027BDB81700FE708D /* SceneDelegate.swift */,
 				225B4D8F27C3E2B9003E6180 /* ViewController.swift */,
@@ -288,6 +331,7 @@
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
+				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
