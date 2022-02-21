@@ -9,7 +9,7 @@ extension UIView{
     }
     
     func applyBlackBackgroundColor(){
-        self.backgroundColor = .kodemiaBlack
+        self.backgroundColor = .bankodemiaBlack
     }
     
 }
