@@ -212,6 +212,7 @@
 		225B4DA627C3FB58003E6180 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				565E78A427BDB81700FE708D /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,7 +243,6 @@
 				565E789E27BDB81700FE708D /* AppDelegate.swift */,
 				565E78A027BDB81700FE708D /* SceneDelegate.swift */,
 				225B4D8F27C3E2B9003E6180 /* ViewController.swift */,
-				565E78A427BDB81700FE708D /* Main.storyboard */,
 				565E78A727BDB81900FE708D /* Assets.xcassets */,
 				565E78A927BDB81900FE708D /* LaunchScreen.storyboard */,
 				565E78AC27BDB81900FE708D /* Info.plist */,
