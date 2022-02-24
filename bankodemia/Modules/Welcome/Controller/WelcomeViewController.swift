@@ -5,6 +5,9 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     private lazy var buttonStackView: UIStackView = UIStackView()
+    private lazy var welcomeStackView: UIStackView = UIStackView()
+    private lazy var labelStackView: UIStackView = UIStackView()
+    private lazy var fraseStackView: UIStackView = UIStackView()
     // Buttons
     private lazy var crearCuentaButton: UIButton = UIButton()
     private lazy var iniciarSesionButton: UIButton = UIButton()
@@ -14,6 +17,8 @@ class WelcomeViewController: UIViewController {
     // Labels
     private lazy var adiosLabel: UILabel = UILabel()
     private lazy var usaLabel: UILabel = UILabel()
+    private lazy var tuLabel: UILabel = UILabel()
+    private lazy var maneraLabel: UILabel = UILabel()
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
@@ -29,45 +34,75 @@ class WelcomeViewController: UIViewController {
         self.view.addSubview(bankodemiaImage)
         bankodemiaImage.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaImage.image = UIImage(named: "whiteLogo")
-        NSLayoutConstraint.activate([bankodemiaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-        bankodemiaImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bankodemiaImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-        bankodemiaImage.heightAnchor.constraint(equalToConstant: 80),
-        ])
+        NSLayoutConstraint.activate([bankodemiaImage.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+                bankodemiaImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                     bankodemiaImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion),
+                bankodemiaImage.heightAnchor.constraint(equalToConstant: Constants.height / 10),
+                ])
+        
+    
+
 //MARK: - Labels
         self.view.addSubview(adiosLabel)
-        adiosLabel.translatesAutoresizingMaskIntoConstraints = false
         adiosLabel.text = "¡Adiós a las complicaciones!"
-        adiosLabel.font = .boldSystemFont(ofSize: 22)
+        adiosLabel.applyTitleFont()
         adiosLabel.textColor = UIColor.white
         adiosLabel.textAlignment = .center
-        NSLayoutConstraint.activate([adiosLabel.topAnchor.constraint(equalTo: bankodemiaImage.topAnchor, constant: 100),
+        adiosLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([adiosLabel.topAnchor.constraint(equalTo: bankodemiaImage.topAnchor, constant: Constants.height / 6),
         adiosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     adiosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion),
-        adiosLabel.heightAnchor.constraint(equalToConstant: 50),
+        adiosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
         ])
         
         self.view.addSubview(usaLabel)
         usaLabel.translatesAutoresizingMaskIntoConstraints = false
-        usaLabel.text = "Usa el dinero a TU manera"
-        usaLabel.font = .boldSystemFont(ofSize: 20)
+        usaLabel.text = "Usa el dinero a "
         usaLabel.textColor = UIColor.white
-        usaLabel.textAlignment = .center
-        NSLayoutConstraint.activate([usaLabel.topAnchor.constraint(equalTo: adiosLabel.topAnchor, constant: 30),
-        usaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        usaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion),
-        usaLabel.heightAnchor.constraint(equalToConstant: 50),
+        
+        self.view.addSubview(tuLabel)
+        tuLabel.translatesAutoresizingMaskIntoConstraints = false
+        tuLabel.text = " TU "
+        tuLabel.textColor = UIColor.bankodemiaCyan
+        
+        self.view.addSubview(maneraLabel)
+        maneraLabel.translatesAutoresizingMaskIntoConstraints = false
+        maneraLabel.text = " manera"
+        maneraLabel.textColor = UIColor.white
+        
+        let fraseArray = [usaLabel, tuLabel, maneraLabel]
+        
+        fraseStackView.axis = .horizontal
+        fraseStackView.alignment = .fill
+        buttonStackView.spacing = 1
+        fraseStackView.distribution = .equalSpacing
+        fraseArray.forEach {label in
+            fraseStackView.addArrangedSubview(label)
+        }
+        view.addSubview(fraseStackView)
+        
+        fraseArray.forEach {frase in
+            frase.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            frase.textAlignment = .center
+            frase.applyTitleFont()
+        }
+        fraseStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([fraseStackView.bottomAnchor.constraint(equalTo: adiosLabel.bottomAnchor, constant: 30),
+        fraseStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+
 //MARK: - Welcome Image
         self.view.addSubview(welcomeImage)
         welcomeImage.translatesAutoresizingMaskIntoConstraints = false
         welcomeImage.image = UIImage(named: "welcomeImage")
-        NSLayoutConstraint.activate([welcomeImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -width/2 - 10),
-        welcomeImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        welcomeImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-        welcomeImage.heightAnchor.constraint(equalToConstant: 250),
-        ])
-        
+        NSLayoutConstraint.activate([welcomeImage.topAnchor.constraint(equalTo:
+                fraseStackView.bottomAnchor, constant: Constants.height / 14),
+                welcomeImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                welcomeImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                                             welcomeImage.heightAnchor.constraint(equalToConstant: Constants.height / 3),
+                ])
         
 //MARK: - Button Stack
         let buttonArray: [UIButton] = [crearCuentaButton, iniciarSesionButton]
@@ -82,7 +117,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(buttonStackView)
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+        NSLayoutConstraint.activate([buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -Constants.height / 15),
         buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         buttonStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
