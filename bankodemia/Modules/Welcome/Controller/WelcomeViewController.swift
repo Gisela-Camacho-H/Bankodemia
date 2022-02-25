@@ -124,6 +124,7 @@ class WelcomeViewController: UIViewController {
         buttonArray.forEach {button in
             button.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
             button.layer.cornerRadius = Constants.cornerRadius
+            button.titleLabel?.applySubtitleFont()
         }
         
 //MARK: - Crear Cuenta
