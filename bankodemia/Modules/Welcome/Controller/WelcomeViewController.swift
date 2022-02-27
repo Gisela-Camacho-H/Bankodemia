@@ -5,8 +5,6 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     private lazy var buttonStackView: UIStackView = UIStackView()
-    private lazy var welcomeStackView: UIStackView = UIStackView()
-    private lazy var labelStackView: UIStackView = UIStackView()
     private lazy var fraseStackView: UIStackView = UIStackView()
     // Buttons
     private lazy var crearCuentaButton: UIButton = UIButton()
