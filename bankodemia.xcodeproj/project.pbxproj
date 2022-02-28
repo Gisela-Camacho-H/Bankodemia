@@ -26,6 +26,10 @@
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
 		565E78A827BDB81900FE708D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A727BDB81900FE708D /* Assets.xcassets */; };
 		565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A927BDB81900FE708D /* LaunchScreen.storyboard */; };
+		56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */; };
+		56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EE27CB303600C708ED /* TabBarViewController.swift */; };
+		56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96F327CB313200C708ED /* TarjetaViewController.swift */; };
+		56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96F827CB318A00C708ED /* ServiciosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		565E78A727BDB81900FE708D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565E78AA27BDB81900FE708D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565E78AC27BDB81900FE708D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
+		56FD96EE27CB303600C708ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		56FD96F327CB313200C708ED /* TarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaViewController.swift; sourceTree = "<group>"; };
+		56FD96F827CB318A00C708ED /* ServiciosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiciosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 		225B4D7627C3DD2D003E6180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56FD96F527CB316D00C708ED /* Servicios */,
+				56FD96F027CB311400C708ED /* Tarjeta */,
+				56910DE027CB289100F27013 /* TabBar */,
+				56910DDF27CB288200F27013 /* Inicio */,
 				225B4D7A27C3DD79003E6180 /* Welcome */,
 				225B4D7827C3DD5B003E6180 /* SignUp */,
 				225B4D7727C3DD53003E6180 /* Login */,
@@ -250,6 +262,102 @@
 			path = bankodemia;
 			sourceTree = "<group>";
 		};
+		56910DDF27CB288200F27013 /* Inicio */ = {
+			isa = PBXGroup;
+			children = (
+				56910DE427CB2B1F00F27013 /* ViewModel */,
+				56910DE327CB2B1900F27013 /* Controller */,
+			);
+			path = Inicio;
+			sourceTree = "<group>";
+		};
+		56910DE027CB289100F27013 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				56910DE227CB2A9700F27013 /* ViewModel */,
+				56910DE127CB2A9000F27013 /* Controller */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		56910DE127CB2A9000F27013 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96EE27CB303600C708ED /* TabBarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56910DE227CB2A9700F27013 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56910DE327CB2B1900F27013 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56910DE427CB2B1F00F27013 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56FD96F027CB311400C708ED /* Tarjeta */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96F227CB312100C708ED /* ViewModel */,
+				56FD96F127CB311A00C708ED /* Controller */,
+			);
+			path = Tarjeta;
+			sourceTree = "<group>";
+		};
+		56FD96F127CB311A00C708ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96F327CB313200C708ED /* TarjetaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56FD96F227CB312100C708ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56FD96F527CB316D00C708ED /* Servicios */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96F727CB317A00C708ED /* ViewModel */,
+				56FD96F627CB317400C708ED /* Controller */,
+			);
+			path = Servicios;
+			sourceTree = "<group>";
+		};
+		56FD96F627CB317400C708ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56FD96F827CB318A00C708ED /* ServiciosViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56FD96F727CB317A00C708ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,18 +432,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
+				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
+				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
+				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

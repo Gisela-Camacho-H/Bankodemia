@@ -1,10 +1,6 @@
 
 import UIKit
 
-var width = UIScreen.main.bounds.width
-var height = UIScreen.main.bounds.height
-
-
 class LoginViewController: UIViewController {
     
     private lazy var iconImage: UIImageView = UIImageView()
@@ -18,6 +14,8 @@ class LoginViewController: UIViewController {
     private lazy var finalLabel: UILabel = UILabel()
     private lazy var contactButton: UIButton = UIButton()
     private lazy var loginButton: UIButton = UIButton()
+    private lazy var iniciarSesionButton: UIButton = UIButton()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,13 +103,7 @@ class LoginViewController: UIViewController {
 //                                     view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 //                                     view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
 //                                    ])
-        
-        
-        
-        
-        
-        
-        
+       
         
         //MARK: Text Fields
         
@@ -124,18 +116,26 @@ class LoginViewController: UIViewController {
 //                                     view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
 //                                    ])
         
+        view.addSubview(iniciarSesionButton)
+        iniciarSesionButton.setTitle("Iniciar Sesión", for: .normal)
+        iniciarSesionButton.backgroundColor = UIColor.bankodemiaCyan
+        iniciarSesionButton.setTitleColor(.white, for: .normal)
+        iniciarSesionButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        iniciarSesionButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([iniciarSesionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -100),
+        iniciarSesionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        iniciarSesionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
     }
 
-
+    @objc func onSignUpButtonTap(){
+        goToSignUp()
+    }
+    
+    func goToSignUp() {
+        let loginViewController: TabBarViewController = TabBarViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+    }
 }
