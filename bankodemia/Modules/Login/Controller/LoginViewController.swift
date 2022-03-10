@@ -49,13 +49,10 @@ class LoginViewController: UIViewController {
         //MARK: Buttons
         
         self.view.addSubview(backButton)
-  // Falta ponerle la flecha (busca poner un icono
         backButton.backgroundColor = .clear
-//        backButton.setTitle("arrow.backward", for: .normal)
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: Constants.height / 7),
-     //
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
         ])
         
