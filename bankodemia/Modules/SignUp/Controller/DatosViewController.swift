@@ -27,12 +27,21 @@ class DatosViewController: UIViewController {
     // Stacks
     lazy var textFieldStackView : UIStackView = UIStackView()
     lazy var labelStackView : UIStackView = UIStackView()
+    
+    lazy var dateTextField: UITextField = UITextField()
+    //lazy var datePicker: UIPickerView = UIPickerView()
+    
+    var startDate: Date!
+    var endDate: Date!
+    var formatter = DateFormatter()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
+        //create the UITextfield to present the Date Picker
+        createUITextField()
 
     }
     func initUI(){
@@ -58,7 +67,6 @@ class DatosViewController: UIViewController {
         escribelosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         escribelosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
-        
        
         // label stack
         self.view.addSubview(nombreLabel)
@@ -120,7 +128,6 @@ class DatosViewController: UIViewController {
         ])
         textFieldArray.forEach {textFieldElement in
             textFieldElement.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            textFieldElement.layer.cornerRadius = 15
             textFieldElement.layer.cornerRadius = 7
             textFieldElement.layer.borderWidth = 2
             textFieldElement.backgroundColor = .clear
@@ -128,9 +135,52 @@ class DatosViewController: UIViewController {
             textFieldElement.keyboardType = UIKeyboardType.default
             textFieldElement.autocorrectionType = UITextAutocorrectionType.no
             textFieldElement.clearButtonMode = UITextField.ViewMode.whileEditing
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textFieldElement.frame.height))
+            textFieldElement.leftView = paddingView
+            textFieldElement.leftViewMode = UITextField.ViewMode.always
         }
         
     }
+    
+    func createUITextField(){
+           
+        dateTextField = UITextField()
+        dateTextField.text = "Select a date ..."
+        dateTextField.font = UIFont.systemFont(ofSize: 20.0)
+        dateTextField.layer.borderWidth = 2
+        dateTextField.layer.cornerRadius = 7
+        dateTextField.translatesAutoresizingMaskIntoConstraints = false
+        dateTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        dateTextField.textAlignment = NSTextAlignment.left
+        dateTextField.keyboardType = UIKeyboardType.default
+        dateTextField.autocorrectionType = UITextAutocorrectionType.no
+        dateTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.dateTextField.frame.height))
+        dateTextField.leftView = paddingView
+        dateTextField.leftViewMode = UITextField.ViewMode.always
+        
+        
+        
+           self.view.addSubview(dateTextField)
+        
+        let datePicker = MonthYearPickerView()
+        datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
+            let string = String(format: "%d / %d / %d", day + 1 , month, year)
+            self.dateTextField.text = string
+            //self.dateTextField.resignFirstResponder()
+            //self.view.endEditing(true)
+        }
+        dateTextField.inputView = datePicker
+    
+        //datePicker.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([dateTextField.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: Constants.padding + 30),
+            dateTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dateTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        ])
+        
+           
+       }
 
     @objc func tapToGoBack(){
         goBack()
@@ -139,4 +189,122 @@ class DatosViewController: UIViewController {
     func goBack() {
         dismiss(animated: true)
     }
+}
+
+class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var months = [String]()
+    var years = [Int]()
+    var days = [Int]()
+    
+    var month = Calendar.current.component(.month, from: Date()) {
+        didSet {
+            selectRow(month - 1, inComponent: 1, animated: false)
+        }
+    }
+    
+    var day = Calendar.current.component(.day, from: Date()) {
+        didSet {
+            selectRow(day , inComponent: 0, animated: false)
+        }
+    }
+    
+    var year = Calendar.current.component(.year, from: Date()) {
+        didSet {
+                selectRow(year, inComponent: 2, animated: true)
+        }
+    }
+    
+    var onDateSelected: ((_ day: Int, _ month: Int, _ year: Int) -> Void)?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonSetup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonSetup()
+    }
+    
+    func commonSetup() {
+        // population years
+        var years: [Int] = []
+        if years.count == 0 {
+            var year = 1922
+            //Calendar(identifier: .gregorian).component(.year, from: Date())
+            for _ in 1...101 {
+                years.append(year)
+                year += 1
+            }
+        }
+        self.years = years
+        
+        // population months with localized names
+        var months: [String] = []
+        var month = 0
+        for _ in 1...12 {
+            months.append(DateFormatter().monthSymbols[month].capitalized)
+            month += 1
+        }
+        self.months = months
+        
+        // population years
+        var days: [Int] = []
+        if days.count == 0 {
+            var day = 1
+            for _ in 1...31 {
+                days.append(day)
+                day += 1
+            }
+        }
+        self.days = days
+        
+        delegate = self
+        dataSource = self
+    }
+    
+    // Mark: UIPicker Delegate / Data Source
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return "\(days[row])"
+        case 1:
+            return months[row]
+        case 2:
+            return "\(years[row])"
+        default:
+            return nil
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch component {
+        case 0:
+            return days.count
+        case 1:
+            return months.count
+        case 2:
+            return years.count
+        default:
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let day = selectedRow(inComponent: 0)
+        let month = selectedRow(inComponent: 1) + 1
+        let year = years[selectedRow(inComponent: 2)]
+        if let block = onDateSelected {
+            block(day, month, year)
+        }
+        self.day = day
+        self.month = month
+        self.year = year
+    }
+    
 }
