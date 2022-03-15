@@ -8,6 +8,8 @@ class SingUpViewController: UIViewController {
     
     private lazy var backButton: UIButton = UIButton()
     lazy var continuarButton: UIButton = UIButton()
+    
+    lazy var correoTextField: UITextField = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +54,30 @@ class SingUpViewController: UIViewController {
                                      escribelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
         
+        self.view.addSubview(correoTextField)
+        correoTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
+        correoTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        correoTextField.layer.cornerRadius = 7
+        correoTextField.layer.borderWidth = 1
+        correoTextField.backgroundColor = .clear
+        correoTextField.placeholder = "mels@gmail.com"
+        correoTextField.textAlignment = NSTextAlignment.left
+        correoTextField.keyboardType = UIKeyboardType.default
+        correoTextField.autocorrectionType = UITextAutocorrectionType.no
+        correoTextField.clearButtonMode = UITextField.ViewMode.whileEditing
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: correoTextField.frame.height))
+        correoTextField.leftView = paddingView
+        correoTextField.leftViewMode = UITextField.ViewMode.always
+        correoTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: escribelabel.topAnchor, constant: Constants.padding + 10),
+            correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        ])
+        
         
         view.addSubview(continuarButton)
-        continuarButton.setTitle("Iniciar Sesión", for: .normal)
+        continuarButton.setTitle("Continuar", for: .normal)
         continuarButton.backgroundColor = UIColor.bankodemiaCyan
         continuarButton.setTitleColor(.white, for: .normal)
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)

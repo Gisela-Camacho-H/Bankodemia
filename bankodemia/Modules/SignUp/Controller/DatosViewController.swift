@@ -10,6 +10,7 @@ import UIKit
 class DatosViewController: UIViewController {
     
     private lazy var backButton: UIButton = UIButton()
+    private lazy var continuarButton: UIButton = UIButton()
     
     // labels
     lazy var escribelosLabel: UILabel = UILabel()
@@ -17,7 +18,7 @@ class DatosViewController: UIViewController {
     lazy var apellidosLabel: UILabel = UILabel()
     lazy var ocupacionLabel: UILabel = UILabel()
     lazy var fechaLabel: UILabel = UILabel()
-    
+    lazy var estaLabel: UILabel = UILabel()
     
     // Text Fields
     lazy var nombreTextField : UITextField = UITextField()
@@ -29,7 +30,6 @@ class DatosViewController: UIViewController {
     lazy var labelStackView : UIStackView = UIStackView()
     
     lazy var dateTextField: UITextField = UITextField()
-    //lazy var datePicker: UIPickerView = UIPickerView()
     
     var startDate: Date!
     var endDate: Date!
@@ -42,8 +42,11 @@ class DatosViewController: UIViewController {
         initUI()
         //create the UITextfield to present the Date Picker
         createUITextField()
+        initializeHideKeyboard()
 
     }
+    
+    
     func initUI(){
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
@@ -56,7 +59,7 @@ class DatosViewController: UIViewController {
         ])
         
         self.view.addSubview(escribelosLabel)
-        escribelosLabel.text = "Escribelos tal como aparecen en tu identificación oficial sin abreviaturas"
+        escribelosLabel.text = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
         self.escribelosLabel.adjustsFontSizeToFitWidth = true
         escribelosLabel.apply16Font()
         escribelosLabel.numberOfLines = 0
@@ -105,6 +108,7 @@ class DatosViewController: UIViewController {
         // TextField stack
         self.view.addSubview(nombreTextField)
         nombreTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
+        nombreTextField.placeholder = "Olga Melissa"
         self.view.addSubview(apellidosTextField)
         apellidosTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
         self.view.addSubview(ocupacionTextField)
@@ -129,7 +133,7 @@ class DatosViewController: UIViewController {
         textFieldArray.forEach {textFieldElement in
             textFieldElement.heightAnchor.constraint(equalToConstant: 40).isActive = true
             textFieldElement.layer.cornerRadius = 7
-            textFieldElement.layer.borderWidth = 2
+            textFieldElement.layer.borderWidth = 1
             textFieldElement.backgroundColor = .clear
             textFieldElement.textAlignment = NSTextAlignment.left
             textFieldElement.keyboardType = UIKeyboardType.default
@@ -138,15 +142,66 @@ class DatosViewController: UIViewController {
             let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textFieldElement.frame.height))
             textFieldElement.leftView = paddingView
             textFieldElement.leftViewMode = UITextField.ViewMode.always
+            
         }
         
+        view.addSubview(continuarButton)
+        continuarButton.setTitle("Continuar", for: .normal)
+        continuarButton.backgroundColor = UIColor.bankodemiaCyan
+        continuarButton.setTitleColor(.white, for: .normal)
+        continuarButton.layer.cornerRadius = Constants.cornerRadius
+        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
+        continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
+        
+        continuarButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([continuarButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
+        continuarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
+        self.view.addSubview(estaLabel)
+        estaLabel.translatesAutoresizingMaskIntoConstraints = false
+        estaLabel.text = "Esta información es necesaria para verificar tu identidad. Nunca la usaremos sin tu consentimiento"
+        estaLabel.numberOfLines = 0
+        estaLabel.textAlignment = .center
+        estaLabel.textColor = UIColor.bankodemiaBlack
+        
+        NSLayoutConstraint.activate([estaLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
+                                     estaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), estaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        ])
+        
     }
+    
+    @objc func onSignUpButtonTap(){
+        goToSignUp()
+    }
+    
+    func goToSignUp() {
+        let loginViewController = TelefonoViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+    }
+    
+    
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+
+        view.endEditing(true)
+    }
+
     
     func createUITextField(){
            
         dateTextField = UITextField()
-        dateTextField.text = "Select a date ..."
-        dateTextField.font = UIFont.systemFont(ofSize: 20.0)
+        dateTextField.placeholder = "Ingresa tu fecha de nacimiento"
+        dateTextField.font = UIFont.systemFont(ofSize: 14.0)
         dateTextField.layer.borderWidth = 2
         dateTextField.layer.cornerRadius = 7
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -165,7 +220,7 @@ class DatosViewController: UIViewController {
         
         let datePicker = MonthYearPickerView()
         datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
-            let string = String(format: "%d / %d / %d", day + 1 , month, year)
+            let string = String(format: "%02d / %02d / %d", day + 1 , month, year)
             self.dateTextField.text = string
             //self.dateTextField.resignFirstResponder()
             //self.view.endEditing(true)
@@ -308,3 +363,4 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     }
     
 }
+    

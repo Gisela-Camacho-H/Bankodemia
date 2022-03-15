@@ -21,6 +21,7 @@
 		22C877A427C4800100521C71 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A127C4800100521C71 /* Poppins-SemiBold.ttf */; };
 		22C877A527C4800100521C71 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A227C4800100521C71 /* Poppins-Medium.ttf */; };
 		22C877A627C4800100521C71 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A327C4800100521C71 /* Poppins-Regular.ttf */; };
+		56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56341CD727E012C300123524 /* TelefonoViewController.swift */; };
 		563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD5CA27DA9F12000A7420 /* DatosViewController.swift */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		22C877A127C4800100521C71 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		22C877A227C4800100521C71 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		22C877A327C4800100521C71 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		56341CD727E012C300123524 /* TelefonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		563FD5CA27DA9F12000A7420 /* DatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewController.swift; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				225B4D8927C3E041003E6180 /* SingUpViewController.swift */,
 				563FD5CA27DA9F12000A7420 /* DatosViewController.swift */,
+				56341CD727E012C300123524 /* TelefonoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
+				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
