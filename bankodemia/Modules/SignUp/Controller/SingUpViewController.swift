@@ -80,6 +80,7 @@ class SingUpViewController: UIViewController {
         continuarButton.setTitle("Continuar", for: .normal)
         continuarButton.backgroundColor = UIColor.bankodemiaCyan
         continuarButton.setTitleColor(.white, for: .normal)
+        continuarButton.layer.cornerRadius = Constants.cornerRadius
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false

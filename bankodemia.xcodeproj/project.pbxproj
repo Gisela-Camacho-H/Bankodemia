@@ -23,6 +23,11 @@
 		22C877A627C4800100521C71 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A327C4800100521C71 /* Poppins-Regular.ttf */; };
 		56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56341CD727E012C300123524 /* TelefonoViewController.swift */; };
 		563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD5CA27DA9F12000A7420 /* DatosViewController.swift */; };
+		56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CAC27E271290027BBA7 /* VerificarViewController.swift */; };
+		56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CAE27E2727A0027BBA7 /* VerificarTableViewController.swift */; };
+		56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */; };
+		56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */; };
+		56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
@@ -51,6 +56,11 @@
 		22C877A327C4800100521C71 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		56341CD727E012C300123524 /* TelefonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		563FD5CA27DA9F12000A7420 /* DatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewController.swift; sourceTree = "<group>"; };
+		56412CAC27E271290027BBA7 /* VerificarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificarViewController.swift; sourceTree = "<group>"; };
+		56412CAE27E2727A0027BBA7 /* VerificarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificarTableViewController.swift; sourceTree = "<group>"; };
+		56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
+		56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDocumentViewController.swift; sourceTree = "<group>"; };
+		56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrasenaViewController.swift; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E78A027BDB81700FE708D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +148,10 @@
 				225B4D8927C3E041003E6180 /* SingUpViewController.swift */,
 				563FD5CA27DA9F12000A7420 /* DatosViewController.swift */,
 				56341CD727E012C300123524 /* TelefonoViewController.swift */,
+				56412CAC27E271290027BBA7 /* VerificarViewController.swift */,
+				56412CAE27E2727A0027BBA7 /* VerificarTableViewController.swift */,
+				56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */,
+				56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */,
+				56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -440,16 +455,21 @@
 			files = (
 				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
+				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
+				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
+				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
+				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
+				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
