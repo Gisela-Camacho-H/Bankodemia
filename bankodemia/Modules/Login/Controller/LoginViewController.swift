@@ -31,30 +31,53 @@ class LoginViewController: UIViewController {
         
         
         iconImage.frame = CGRect(x: 0, y: 0, width: 70, height: 40)
-        
-        
-        
-        self.view.addSubview(iconImage)
-        iconImage.image = UIImage(named: "smallLogo")
-        // Use el asset "big logo" por que siento que con "small logo" la imagen se ve poco nitida
-       iconImage.translatesAutoresizingMaskIntoConstraints = false
-       NSLayoutConstraint.activate([iconImage.topAnchor.constraint(equalTo:
-                view.topAnchor, constant: Constants.height / 24),
-                iconImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     iconImage.widthAnchor.constraint(equalToConstant: Constants.width / 4),
-                iconImage.heightAnchor.constraint(equalToConstant: Constants.height / 8)
+        iconImage.image = UIImage(named: "bigLogo")
+
+        view.addSubview(iconImage)
+        iconImage.translatesAutoresizingMaskIntoConstraints = false
+        iconImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        iconImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        iconImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
+        iconImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
                                      
-        ])
+        
+        
+        
         
         //MARK: Buttons
         
+        
+    // Cambia de color la flecha
         self.view.addSubview(backButton)
+
+
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: Constants.height / 7),
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
-        ])
+        backButton.frame = CGRect(x: 0, y: 0, width: 13, height: 10)
+        
+        
+        
+        
+        
+  //      backButton.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+
+
+        view.addSubview(backButton)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 21).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 85).isActive = true
+        
+        
+        
+        
+        
+    //    NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: Constants.height / 7),
+     //
+    //    backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
+    //    ])
         
       
         
@@ -69,14 +92,23 @@ class LoginViewController: UIViewController {
         
         
         self.view.addSubview(iniciarLabel)
-        iniciarLabel.text = "Iniciar Sesión"
-        iniciarLabel.textColor = .black
-        iniciarLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([iniciarLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.height / 98),
-            iniciarLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-                                     // Checa el espacio que debe ir a la izquierda
-                                    ])
+        iniciarLabel.textColor = UIColor(red: 0.384, green: 0.384, blue: 0.384, alpha: 1)
+        iniciarLabel.font = UIFont(name: "Poppins-Medium", size: 14)
+        iniciarLabel.textAlignment = .center
+        iniciarLabel.attributedText = NSMutableAttributedString(string: "Iniciar Sesión", attributes: [NSAttributedString.Key.kern: 0.7])
         
+        view.addSubview(iniciarLabel)
+        iniciarLabel.translatesAutoresizingMaskIntoConstraints = false
+        iniciarLabel.widthAnchor.constraint(equalToConstant: 107).isActive = true
+        iniciarLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
+        iniciarLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56).isActive = true
+        iniciarLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 85).isActive = true
+
+       
+        
+        
+        
+           
         
         
         self.view.addSubview(escribeLabel)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */; };
 		225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */; };
 		225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */; };
 		225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarViewController.swift; sourceTree = "<group>"; };
 		225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -89,9 +91,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19BCFA8227E42996007FD12D /* Enviar */ = {
+			isa = PBXGroup;
+			children = (
+				19BCFA8427E429B8007FD12D /* Controller */,
+				19BCFA8327E429AA007FD12D /* ViewModel */,
+			);
+			path = Enviar;
+			sourceTree = "<group>";
+		};
+		19BCFA8327E429AA007FD12D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		19BCFA8427E429B8007FD12D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		225B4D7627C3DD2D003E6180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				19BCFA8227E42996007FD12D /* Enviar */,
 				56FD96F527CB316D00C708ED /* Servicios */,
 				56FD96F027CB311400C708ED /* Tarjeta */,
 				56910DE027CB289100F27013 /* TabBar */,
@@ -469,6 +496,7 @@
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
+				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,

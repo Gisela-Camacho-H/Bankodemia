@@ -18,6 +18,7 @@ class InicioViewController: UIViewController {
     var fondoLabel: UILabel = UILabel()
     var horaLabel: UILabel = UILabel()
     var movimiento1Label: UILabel = UILabel()
+    var bankodemiaImage: UIImageView = UIImageView()
     
     
     
@@ -76,6 +77,33 @@ class InicioViewController: UIViewController {
         
         
         //MARK: Botones
+        
+        view.addSubview(enviarButton)
+        enviarButton.frame = CGRect(x: 20, y: 220, width: 148, height: 33)
+        enviarButton.setTitle("Enviar", for: .normal)
+        enviarButton.setTitleColor(UIColor.bankodemiaCyan, for: .normal)
+        enviarButton.layer.cornerRadius = 6
+        enviarButton.backgroundColor = UIColor.white
+        enviarButton.layer.borderColor = .init(red: 25, green: 203, blue: 203, alpha: 0)
+   //     enviarButton.addTarget(self, action: #selector(onSendButtonTap), for: .touchUpInside)
+        
+        
+        
+        
+        view.addSubview(recibirButton)
+        recibirButton.frame = CGRect(x: 210, y: 220, width: 148, height: 33)
+        recibirButton.setTitle("Recibir", for: .normal)
+        recibirButton.setTitleColor(UIColor.white, for: .normal)
+        recibirButton.layer.cornerRadius = 6
+        recibirButton.backgroundColor = UIColor.bankodemiaCyan
+        recibirButton.layer.borderColor = .init(red: 25, green: 203, blue: 203, alpha: 0)
+      //  enviarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
+        
+
+       
+
+
+        
         
         
         
@@ -161,6 +189,22 @@ class InicioViewController: UIViewController {
         movimiento1Label.heightAnchor.constraint(equalToConstant: 21).isActive = true
         movimiento1Label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 274).isActive = true
         movimiento1Label.topAnchor.constraint(equalTo: view.topAnchor, constant: 310).isActive = true
+        
+        
+        
+        bankodemiaImage.frame = CGRect(x: 0, y: 0, width: 70, height: 40)
+        bankodemiaImage.image = UIImage(named: "bigLogo")
+
+        view.addSubview(bankodemiaImage)
+        bankodemiaImage.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        bankodemiaImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        bankodemiaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
+        bankodemiaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        
+
+        
+        // MARK: Funcionalidades Botones
         
         
         
