@@ -9,27 +9,29 @@ import UIKit
 
 class DatosViewController: UIViewController {
     
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var continuarButton: UIButton = UIButton()
-    
     // labels
-    lazy var escribelosLabel: UILabel = UILabel()
+    lazy var mainLabel: UILabel = UILabel()
     lazy var nombreLabel: UILabel = UILabel()
     lazy var apellidosLabel: UILabel = UILabel()
     lazy var ocupacionLabel: UILabel = UILabel()
     lazy var fechaLabel: UILabel = UILabel()
-    lazy var estaLabel: UILabel = UILabel()
+    lazy var bottomLabel: UILabel = UILabel()
+    
+    // buttons
+    private lazy var backButton: UIButton = UIButton()
+    private lazy var continuarButton: UIButton = UIButton()
     
     // Text Fields
     lazy var nombreTextField : UITextField = UITextField()
     lazy var apellidosTextField : UITextField = UITextField()
     lazy var ocupacionTextField : UITextField = UITextField()
+    lazy var dateTextField: UITextField = UITextField()
     
     // Stacks
     lazy var textFieldStackView : UIStackView = UIStackView()
     lazy var labelStackView : UIStackView = UIStackView()
     
-    lazy var dateTextField: UITextField = UITextField()
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     var startDate: Date!
     var endDate: Date!
@@ -40,7 +42,6 @@ class DatosViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
-        //create the UITextfield to present the Date Picker
         createUITextField()
         initializeHideKeyboard()
 
@@ -48,27 +49,38 @@ class DatosViewController: UIViewController {
     
     
     func initUI(){
+        
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
+        
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height / 6),
-                                     backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.buttonSize + 20),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
-        self.view.addSubview(escribelosLabel)
-        escribelosLabel.text = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
-        self.escribelosLabel.adjustsFontSizeToFitWidth = true
-        escribelosLabel.apply16Font()
-        escribelosLabel.numberOfLines = 0
-        escribelosLabel.textAlignment = .left
-        escribelosLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
+        self.mainLabel.adjustsFontSizeToFitWidth = true
+        mainLabel.apply16Font()
+        mainLabel.numberOfLines = 0
+        mainLabel.textAlignment = .left
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([escribelosLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
-        escribelosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        escribelosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
        
         // label stack
@@ -84,7 +96,7 @@ class DatosViewController: UIViewController {
         let labelArray: [UILabel] = [nombreLabel, apellidosLabel, ocupacionLabel, fechaLabel]
         
         labelStackView.axis = .vertical
-        labelStackView.spacing = 65
+        labelStackView.spacing = Constants.height/13
         labelStackView.alignment = .fill
         labelStackView.distribution = .fillEqually
         labelArray.forEach {label in
@@ -93,7 +105,7 @@ class DatosViewController: UIViewController {
         view.addSubview(labelStackView)
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: escribelosLabel.bottomAnchor, constant: Constants.padding),
+        NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
         labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
@@ -113,11 +125,13 @@ class DatosViewController: UIViewController {
         apellidosTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
         self.view.addSubview(ocupacionTextField)
         ocupacionTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
+        self.view.addSubview(dateTextField)
+        dateTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
         
-        let textFieldArray: [UITextField] = [nombreTextField, apellidosTextField, ocupacionTextField]
+        let textFieldArray: [UITextField] = [nombreTextField, apellidosTextField, ocupacionTextField, dateTextField]
         
         textFieldStackView.axis = .vertical
-        textFieldStackView.spacing = 46
+        textFieldStackView.spacing = Constants.height/20
         textFieldStackView.alignment = .fill
         textFieldStackView.distribution = .fillEqually
         textFieldArray.forEach {textFieldElement in
@@ -126,12 +140,12 @@ class DatosViewController: UIViewController {
         view.addSubview(textFieldStackView)
         textFieldStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: labelStackView.topAnchor, constant: Constants.padding + 3),
+        NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: nombreLabel.bottomAnchor, constant: 5),
             textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
         textFieldArray.forEach {textFieldElement in
-            textFieldElement.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            textFieldElement.heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
             textFieldElement.layer.cornerRadius = 7
             textFieldElement.layer.borderWidth = 1
             textFieldElement.backgroundColor = .clear
@@ -144,6 +158,16 @@ class DatosViewController: UIViewController {
             textFieldElement.leftViewMode = UITextField.ViewMode.always
             
         }
+
+        let datePicker = MonthYearPickerView()
+        datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
+            let string = String(format: "%02d / %02d / %d", day + 1 , month, year)
+            self.dateTextField.text = string
+            //self.dateTextField.resignFirstResponder()
+            //self.view.endEditing(true)
+        }
+        dateTextField.inputView = datePicker
+        
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Continuar", for: .normal)
@@ -159,15 +183,16 @@ class DatosViewController: UIViewController {
         continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
-        self.view.addSubview(estaLabel)
-        estaLabel.translatesAutoresizingMaskIntoConstraints = false
-        estaLabel.text = "Esta información es necesaria para verificar tu identidad. Nunca la usaremos sin tu consentimiento"
-        estaLabel.numberOfLines = 0
-        estaLabel.textAlignment = .center
-        estaLabel.textColor = UIColor.bankodemiaBlack
+        self.view.addSubview(bottomLabel)
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "Esta información es necesaria para verificar tu identidad. Nunca la usaremos sin tu consentimiento"
+        bottomLabel.numberOfLines = 0
+        bottomLabel.textAlignment = .center
+        bottomLabel.textColor = UIColor.bankodemiaBlack
         
-        NSLayoutConstraint.activate([estaLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
-                                     estaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), estaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
+        bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
     }
@@ -213,26 +238,6 @@ class DatosViewController: UIViewController {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.dateTextField.frame.height))
         dateTextField.leftView = paddingView
         dateTextField.leftViewMode = UITextField.ViewMode.always
-        
-        
-        
-           self.view.addSubview(dateTextField)
-        
-        let datePicker = MonthYearPickerView()
-        datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
-            let string = String(format: "%02d / %02d / %d", day + 1 , month, year)
-            self.dateTextField.text = string
-            //self.dateTextField.resignFirstResponder()
-            //self.view.endEditing(true)
-        }
-        dateTextField.inputView = datePicker
-    
-        //datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([dateTextField.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: Constants.padding + 30),
-            dateTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dateTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
-        ])
         
            
        }

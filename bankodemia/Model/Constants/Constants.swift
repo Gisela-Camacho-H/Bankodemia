@@ -2,7 +2,7 @@
 import UIKit
 
 struct Constants{
-    static let padding: CGFloat = 20
+    static let padding: CGFloat = 30
     static let widthProportion: CGFloat = 0.8
     
     

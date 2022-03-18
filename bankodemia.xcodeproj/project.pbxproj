@@ -33,6 +33,8 @@
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
 		565E78A827BDB81900FE708D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A727BDB81900FE708D /* Assets.xcassets */; };
 		565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A927BDB81900FE708D /* LaunchScreen.storyboard */; };
+		56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */; };
+		56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */; };
 		56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */; };
 		56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EE27CB303600C708ED /* TabBarViewController.swift */; };
 		56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96F327CB313200C708ED /* TarjetaViewController.swift */; };
@@ -68,6 +70,8 @@
 		565E78A727BDB81900FE708D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565E78AA27BDB81900FE708D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565E78AC27BDB81900FE708D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviandoDatosViewController.swift; sourceTree = "<group>"; };
+		56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacionViewController.swift; sourceTree = "<group>"; };
 		56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		56FD96EE27CB303600C708ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		56FD96F327CB313200C708ED /* TarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				56412CAE27E2727A0027BBA7 /* VerificarTableViewController.swift */,
 				56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */,
 				56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */,
+				56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */,
+				56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
 				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
+				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
+				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,

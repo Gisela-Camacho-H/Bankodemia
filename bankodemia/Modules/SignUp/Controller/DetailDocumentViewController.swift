@@ -9,13 +9,15 @@ import UIKit
 
 class DetailDocumentViewController: UIViewController {
     
+    // labels
+    lazy var mainLabel: UILabel = UILabel()
+    lazy var documentoImageText: UILabel = UILabel()
+    
+    // buttons
     lazy var backButton: UIButton = UIButton()
     lazy var continuarButton: UIButton = UIButton()
     
-    lazy var mainLabel: UILabel = UILabel()
-    
     lazy var documentoImage: UIImageView = UIImageView()
-    lazy var documentoImageText: UILabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

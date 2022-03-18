@@ -9,14 +9,14 @@ import UIKit
 
 class VerificarViewController: UIViewController {
 
+    // labels
+    lazy var mainLabel: UILabel = UILabel()
+    lazy var subtitleLabel: UILabel = UILabel()
+
+    // buttons
     private lazy var backButton: UIButton = UIButton()
     private lazy var continuarButton: UIButton = UIButton()
     
-    // labels
-    lazy var escribelosLabel: UILabel = UILabel()
-    lazy var celularLabel: UILabel = UILabel()
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -36,31 +36,31 @@ class VerificarViewController: UIViewController {
                                      backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
         ])
         
-        self.view.addSubview(escribelosLabel)
-        escribelosLabel.text = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
-        self.escribelosLabel.adjustsFontSizeToFitWidth = true
-        escribelosLabel.apply16Font()
-        escribelosLabel.numberOfLines = 0
-        escribelosLabel.textAlignment = .left
-        escribelosLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
+        self.mainLabel.adjustsFontSizeToFitWidth = true
+        mainLabel.apply16Font()
+        mainLabel.numberOfLines = 0
+        mainLabel.textAlignment = .left
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([escribelosLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
-        escribelosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        escribelosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
        
-        self.view.addSubview(celularLabel)
-        celularLabel.text = "Deberás subir una fotografía de tu INE o pasaporte vigente y tormarte una selfie. Si eres extranjero necesitarás una fotografía de tu documentos migratorio (FM3)"
-        self.celularLabel.adjustsFontSizeToFitWidth = true
-        celularLabel.apply14Font()
-        celularLabel.numberOfLines = 0
-        celularLabel.textAlignment = .left
+        self.view.addSubview(subtitleLabel)
+        subtitleLabel.text = "Deberás subir una fotografía de tu INE o pasaporte vigente y tormarte una selfie. Si eres extranjero necesitarás una fotografía de tu documentos migratorio (FM3)"
+        self.subtitleLabel.adjustsFontSizeToFitWidth = true
+        subtitleLabel.apply14Font()
+        subtitleLabel.numberOfLines = 0
+        subtitleLabel.textAlignment = .left
     
-        celularLabel.translatesAutoresizingMaskIntoConstraints = false
-        celularLabel.textColor = UIColor.labelDarkGray
-        NSLayoutConstraint.activate([celularLabel.topAnchor.constraint(equalTo: escribelosLabel.topAnchor, constant: Constants.buttonSize + 30),
-       celularLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        celularLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.textColor = UIColor.labelDarkGray
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize + 30),
+        subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
         
         

@@ -3,13 +3,18 @@ import UIKit
 
 class SingUpViewController: UIViewController {
     
-    lazy var aquiLabel: UILabel = UILabel()
-    lazy var escribelabel: UILabel = UILabel()
+    // labels
+    lazy var mainLabel: UILabel = UILabel()
+    lazy var subtitlelabel: UILabel = UILabel()
+    lazy var bottomLabel: UILabel = UILabel()
+    lazy var linkLabel: UILabel = UILabel()
     
+    // buttons
     private lazy var backButton: UIButton = UIButton()
     lazy var continuarButton: UIButton = UIButton()
     
     lazy var correoTextField: UITextField = UITextField()
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,39 +24,49 @@ class SingUpViewController: UIViewController {
     
     func initUI(){
         
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
+        
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height / 6),
-                                     backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.buttonSize + 20),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
-        self.view.addSubview(aquiLabel)
-        aquiLabel.text = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
-        self.aquiLabel.adjustsFontSizeToFitWidth = true
-        aquiLabel.apply16Font()
-        aquiLabel.numberOfLines = 0
-        aquiLabel.textAlignment = .left
-        aquiLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
+        self.mainLabel.adjustsFontSizeToFitWidth = true
+        mainLabel.apply16Font()
+        mainLabel.numberOfLines = 0
+        mainLabel.textAlignment = .left
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([aquiLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
-                                     aquiLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     aquiLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
-        self.view.addSubview(escribelabel)
-        escribelabel.text = "Escribe tu correo"
-        escribelabel.apply14Font()
-        escribelabel.applyDrakGrayColor()
-        escribelabel.textAlignment = .left
-        escribelabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(subtitlelabel)
+        subtitlelabel.text = "Escribe tu correo"
+        subtitlelabel.apply14Font()
+        subtitlelabel.applyDrakGrayColor()
+        subtitlelabel.textAlignment = .left
+        subtitlelabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([escribelabel.topAnchor.constraint(equalTo: aquiLabel.bottomAnchor, constant: Constants.buttonSize),
-                                     escribelabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     escribelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([subtitlelabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
+        subtitlelabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        subtitlelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         self.view.addSubview(correoTextField)
@@ -70,7 +85,7 @@ class SingUpViewController: UIViewController {
         correoTextField.leftViewMode = UITextField.ViewMode.always
         correoTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: escribelabel.topAnchor, constant: Constants.padding + 10),
+        NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: subtitlelabel.bottomAnchor, constant: 5),
             correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
@@ -87,6 +102,29 @@ class SingUpViewController: UIViewController {
         NSLayoutConstraint.activate([continuarButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
         continuarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
+        self.view.addSubview(linkLabel)
+        linkLabel.translatesAutoresizingMaskIntoConstraints = false
+        linkLabel.text = "Aviso de privacidad"
+        linkLabel.textAlignment = .center
+        linkLabel.textColor = UIColor.bankodemiaBlue
+        
+        NSLayoutConstraint.activate([linkLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
+        linkLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        linkLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        ])
+        
+        self.view.addSubview(bottomLabel)
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "Al tocar continuar aceptas nuesto"
+        bottomLabel.numberOfLines = 0
+        bottomLabel.textAlignment = .center
+        bottomLabel.textColor = UIColor.bankodemiaBlack
+        
+        NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: linkLabel.topAnchor, constant: -5),
+        bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
     }
 

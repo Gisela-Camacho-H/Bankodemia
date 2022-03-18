@@ -9,11 +9,11 @@ import UIKit
 
 class VerificarTableViewController: UIViewController {
     
-    private lazy var backButton: UIButton = UIButton()
-    
     // labels
-    lazy var escribelosLabel: UILabel = UILabel()
-    lazy var estaLabel: UILabel = UILabel()
+    lazy var mainLabel: UILabel = UILabel()
+    lazy var bottomLabel: UILabel = UILabel()
+    
+    private lazy var backButton: UIButton = UIButton()
     
     var tableView : UITableView = UITableView()
     
@@ -24,8 +24,6 @@ class VerificarTableViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
-
-        // Do any additional setup after loading the view.
     }
     
     func initUI(){
@@ -39,28 +37,29 @@ class VerificarTableViewController: UIViewController {
                                      backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
         ])
         
-        self.view.addSubview(escribelosLabel)
-        escribelosLabel.text = "Seleccionando el tipo de documento que deseas fotografiar"
-        self.escribelosLabel.adjustsFontSizeToFitWidth = true
-        escribelosLabel.apply16Font()
-        escribelosLabel.numberOfLines = 0
-        escribelosLabel.textAlignment = .left
-        escribelosLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Seleccionando el tipo de documento que deseas fotografiar"
+        self.mainLabel.adjustsFontSizeToFitWidth = true
+        mainLabel.apply16Font()
+        mainLabel.numberOfLines = 0
+        mainLabel.textAlignment = .left
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([escribelosLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
-        escribelosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        escribelosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
         
-        self.view.addSubview(estaLabel)
-        estaLabel.translatesAutoresizingMaskIntoConstraints = false
-        estaLabel.text = "Conoce cómo protegemos tus documentos"
-        estaLabel.numberOfLines = 0
-        estaLabel.textAlignment = .center
-        estaLabel.textColor = UIColor.labelDarkGray
+        self.view.addSubview(bottomLabel)
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "Conoce cómo protegemos tus documentos"
+        bottomLabel.numberOfLines = 0
+        bottomLabel.textAlignment = .center
+        bottomLabel.textColor = UIColor.labelDarkGray
         
-        NSLayoutConstraint.activate([estaLabel.bottomAnchor.constraint(equalTo:view.bottomAnchor, constant: -Constants.buttonSize - 30),
-                                     estaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), estaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo:view.bottomAnchor, constant: -Constants.buttonSize - 30),
+        bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         

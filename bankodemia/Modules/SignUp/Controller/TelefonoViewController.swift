@@ -8,14 +8,15 @@
 import UIKit
 
 class TelefonoViewController: UIViewController {
-
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var continuarButton: UIButton = UIButton()
     
     // labels
-    lazy var escribelosLabel: UILabel = UILabel()
-    lazy var estaLabel: UILabel = UILabel()
-    lazy var celularLabel: UILabel = UILabel()
+    lazy var mainLabel: UILabel = UILabel()
+    lazy var bottomLabel: UILabel = UILabel()
+    lazy var subtitleLabel: UILabel = UILabel()
+    
+    // buttons
+    private lazy var backButton: UIButton = UIButton()
+    private lazy var continuarButton: UIButton = UIButton()
     
     lazy var telefonoTextField: UITextField = UITextField()
 
@@ -41,29 +42,29 @@ class TelefonoViewController: UIViewController {
                                      backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
         ])
         
-        self.view.addSubview(escribelosLabel)
-        escribelosLabel.text = "Lo usarás para iniciar sesión"
-        self.escribelosLabel.adjustsFontSizeToFitWidth = true
-        escribelosLabel.apply16Font()
-        escribelosLabel.numberOfLines = 0
-        escribelosLabel.textAlignment = .left
-        escribelosLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Lo usarás para iniciar sesión"
+        self.mainLabel.adjustsFontSizeToFitWidth = true
+        mainLabel.apply16Font()
+        mainLabel.numberOfLines = 0
+        mainLabel.textAlignment = .left
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([escribelosLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
-        escribelosLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        escribelosLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
        
-        self.view.addSubview(celularLabel)
-        celularLabel.text = "Tu número de celular"
-        celularLabel.apply14Font()
-        celularLabel.textAlignment = .left
+        self.view.addSubview(subtitleLabel)
+        subtitleLabel.text = "Tu número de celular"
+        subtitleLabel.apply14Font()
+        subtitleLabel.textAlignment = .left
     
-        celularLabel.translatesAutoresizingMaskIntoConstraints = false
-        celularLabel.textColor = UIColor.labelDarkGray
-        NSLayoutConstraint.activate([celularLabel.topAnchor.constraint(equalTo: escribelosLabel.topAnchor, constant: Constants.buttonSize + 30),
-       celularLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        celularLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.textColor = UIColor.labelDarkGray
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize + 30),
+        subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
         
         self.view.addSubview(telefonoTextField)
@@ -82,7 +83,7 @@ class TelefonoViewController: UIViewController {
         telefonoTextField.leftViewMode = UITextField.ViewMode.always
         telefonoTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([telefonoTextField.topAnchor.constraint(equalTo: celularLabel.topAnchor, constant: Constants.padding + 10),
+        NSLayoutConstraint.activate([telefonoTextField.topAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: Constants.padding + 10),
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
@@ -102,15 +103,16 @@ class TelefonoViewController: UIViewController {
         continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
-        self.view.addSubview(estaLabel)
-        estaLabel.translatesAutoresizingMaskIntoConstraints = false
-        estaLabel.text = "Para proteger tu cuenta, te envíaremos un código vía SMS."
-        estaLabel.numberOfLines = 0
-        estaLabel.textAlignment = .center
-        estaLabel.textColor = UIColor.bankodemiaBlack
+        self.view.addSubview(bottomLabel)
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "Para proteger tu cuenta, te envíaremos un código vía SMS."
+        bottomLabel.numberOfLines = 0
+        bottomLabel.textAlignment = .center
+        bottomLabel.textColor = UIColor.bankodemiaBlack
         
-        NSLayoutConstraint.activate([estaLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
-                                     estaLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor), estaLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
+        bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
     }
