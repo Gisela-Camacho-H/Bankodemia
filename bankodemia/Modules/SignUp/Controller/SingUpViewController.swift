@@ -8,6 +8,7 @@ class SingUpViewController: UIViewController {
     lazy var subtitlelabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
     lazy var linkLabel: UILabel = UILabel()
+    lazy var titleLable: UILabel = UILabel()
     
     // buttons
     private lazy var backButton: UIButton = UIButton()
@@ -40,8 +41,20 @@ class SingUpViewController: UIViewController {
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.buttonSize + 20),
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        ])
+        
+        self.view.addSubview(titleLable)
+        titleLable.text = "ESCRIBE TU CORREO"
+        self.titleLable.adjustsFontSizeToFitWidth = true
+        titleLable.apply14Font()
+        titleLable.textColor = UIColor.labelDarkGray
+        titleLable.textAlignment = .left
+        titleLable.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)

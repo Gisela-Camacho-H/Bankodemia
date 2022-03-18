@@ -14,6 +14,8 @@ class Confirmacio_nViewController: UIViewController {
     
     lazy var mainLabel: UILabel = UILabel()
     lazy var subtitleLabel: UILabel = UILabel()
+    
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,29 +25,25 @@ class Confirmacio_nViewController: UIViewController {
     }
     
     func initUI(){
-        view.addSubview(continuarButton)
-        continuarButton.setTitle("Volver al Inicio", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
-        continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
-        
-        continuarButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([continuarButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
-        continuarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
         ])
         
         self.view.addSubview(mainImageView)
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
         mainImageView.image = UIImage(named: "plane")
         NSLayoutConstraint.activate([mainImageView.topAnchor.constraint(equalTo:
-                view.topAnchor, constant: Constants.height / 7),
+                bankodemiaLogo.topAnchor, constant: Constants.height / 7),
         mainImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
         mainImageView.heightAnchor.constraint(equalToConstant: Constants.height / 5),
-                ])
+        ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo."
@@ -67,9 +65,23 @@ class Confirmacio_nViewController: UIViewController {
         subtitleLabel.textAlignment = .center
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.buttonSize),
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.height/10),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        ])
+        
+        view.addSubview(continuarButton)
+        continuarButton.setTitle("Volver al Inicio", for: .normal)
+        continuarButton.backgroundColor = UIColor.bankodemiaCyan
+        continuarButton.setTitleColor(.white, for: .normal)
+        continuarButton.layer.cornerRadius = Constants.cornerRadius
+        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
+        continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
+        
+        continuarButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([continuarButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
+        continuarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
     }
 

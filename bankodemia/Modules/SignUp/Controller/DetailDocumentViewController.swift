@@ -18,6 +18,7 @@ class DetailDocumentViewController: UIViewController {
     lazy var continuarButton: UIButton = UIButton()
     
     lazy var documentoImage: UIImageView = UIImageView()
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,24 @@ class DetailDocumentViewController: UIViewController {
     }
     
     func initUI(){
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
+        
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height / 6),
-                                     backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/15),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(mainLabel)

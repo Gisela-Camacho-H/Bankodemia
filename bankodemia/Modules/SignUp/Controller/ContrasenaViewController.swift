@@ -13,10 +13,24 @@ class ContrasenaViewController: UIViewController {
     lazy var mainLabel: UILabel = UILabel()
     lazy var subtitleLabel: UILabel = UILabel()
     lazy var subtitle2Label: UILabel = UILabel()
+    lazy var titleLabel: UILabel = UILabel()
+    lazy var contrasenaLabel: UILabel = UILabel()
+    lazy var confirmarLabel: UILabel = UILabel()
     
     // buttons
     lazy var backButton: UIButton = UIButton()
     private lazy var continuarButton: UIButton = UIButton()
+    
+    // textFields
+    lazy var contrasenaTextField: UITextField = UITextField()
+    lazy var confirmarTextField: UITextField = UITextField()
+    
+    // UIStacks
+    lazy var labelStackView: UIStackView = UIStackView()
+    lazy var textFieldStackView: UIStackView = UIStackView()
+    
+    
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +41,36 @@ class ContrasenaViewController: UIViewController {
     }
     
     func initUI(){
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
+        
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height / 6),
-        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        ])
+        
+        self.view.addSubview(titleLabel)
+        titleLabel.text = "CONTRASEÑA"
+        self.titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.apply14Font()
+        titleLabel.textColor = UIColor.labelDarkGray
+        titleLabel.textAlignment = .left
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLabel.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
@@ -46,7 +82,7 @@ class ContrasenaViewController: UIViewController {
         
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         self.view.addSubview(subtitleLabel)
@@ -58,9 +94,9 @@ class ContrasenaViewController: UIViewController {
     
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.textColor = UIColor.labelDarkGray
-        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize + 30),
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         self.view.addSubview(subtitle2Label)
@@ -72,10 +108,76 @@ class ContrasenaViewController: UIViewController {
     
         subtitle2Label.translatesAutoresizingMaskIntoConstraints = false
         subtitle2Label.textColor = UIColor.labelDarkGray
-        NSLayoutConstraint.activate([subtitle2Label.topAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: Constants.buttonSize + 30),
+        NSLayoutConstraint.activate([subtitle2Label.topAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: Constants.height/15),
         subtitle2Label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitle2Label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        subtitle2Label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
+        
+        // label stack
+        self.view.addSubview(contrasenaLabel)
+        self.view.addSubview(confirmarLabel)
+        contrasenaLabel.text = "Contraseña"
+        confirmarLabel.text = "Confirmar tu contraseña"
+        
+        let labelArray: [UILabel] = [contrasenaLabel, confirmarLabel]
+        
+        labelStackView.axis = .vertical
+        labelStackView.spacing = Constants.height/13
+        labelStackView.alignment = .fill
+        labelStackView.distribution = .fillEqually
+        labelArray.forEach {label in
+            labelStackView.addArrangedSubview(label)
+        }
+        view.addSubview(labelStackView)
+        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: subtitle2Label.bottomAnchor, constant: Constants.buttonSize),
+        labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        ])
+        labelArray.forEach {label in
+            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            label.backgroundColor = .white
+            label.apply14Font()
+            label.textColor = UIColor.labelDarkGray
+            label.textAlignment = .left
+        }
+        
+        // TextField stack
+        self.view.addSubview(contrasenaTextField)
+        self.view.addSubview(confirmarTextField)
+        
+        let textFieldArray: [UITextField] = [contrasenaTextField, confirmarTextField]
+        
+        textFieldStackView.axis = .vertical
+        textFieldStackView.spacing = Constants.height/20
+        textFieldStackView.alignment = .fill
+        textFieldStackView.distribution = .fillEqually
+        textFieldArray.forEach {textFieldElement in
+            textFieldStackView.addArrangedSubview(textFieldElement)
+        }
+        view.addSubview(textFieldStackView)
+        textFieldStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: contrasenaLabel.bottomAnchor, constant: 5),
+            textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        ])
+        textFieldArray.forEach {textFieldElement in
+            textFieldElement.heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
+            textFieldElement.layer.cornerRadius = 7
+            textFieldElement.layer.borderWidth = 1
+            textFieldElement.backgroundColor = .clear
+            textFieldElement.textAlignment = NSTextAlignment.left
+            textFieldElement.keyboardType = UIKeyboardType.default
+            textFieldElement.autocorrectionType = UITextAutocorrectionType.no
+            textFieldElement.clearButtonMode = UITextField.ViewMode.whileEditing
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textFieldElement.frame.height))
+            textFieldElement.leftView = paddingView
+            textFieldElement.leftViewMode = UITextField.ViewMode.always
+            textFieldElement.layer.borderColor = UIColor.labelDarkGray.cgColor
+            
+        }
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Crear contraseña", for: .normal)

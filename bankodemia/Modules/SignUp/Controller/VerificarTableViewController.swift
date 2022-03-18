@@ -12,10 +12,12 @@ class VerificarTableViewController: UIViewController {
     // labels
     lazy var mainLabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
+    lazy var titleLable: UILabel = UILabel()
     
     private lazy var backButton: UIButton = UIButton()
     
-    var tableView : UITableView = UITableView()
+    lazy var tableView : UITableView = UITableView()
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     var documentArray = ["INE", "Documento Migratorio", "Pasaporte"]
     
@@ -27,14 +29,36 @@ class VerificarTableViewController: UIViewController {
     }
     
     func initUI(){
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
+        
         self.view.addSubview(backButton)
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.tintColor = UIColor.labelDarkGray
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height / 6),
-                                     backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        ])
+        
+        self.view.addSubview(titleLable)
+        titleLable.text = "IDENTIDAD"
+        self.titleLable.adjustsFontSizeToFitWidth = true
+        titleLable.apply14Font()
+        titleLable.textColor = UIColor.labelDarkGray
+        titleLable.textAlignment = .left
+        titleLable.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
@@ -47,7 +71,7 @@ class VerificarTableViewController: UIViewController {
         
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         self.view.addSubview(bottomLabel)
@@ -63,7 +87,7 @@ class VerificarTableViewController: UIViewController {
         ])
         
         
-        tableView = UITableView(frame: CGRect(x: 10, y: Constants.height/3 , width: Constants.width - 20, height: 200))
+        tableView = UITableView(frame: CGRect(x: 10, y: Constants.height/4 + 30 , width: Constants.width - 20, height: 200))
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self //en donde se va a definir (en si mismo)
