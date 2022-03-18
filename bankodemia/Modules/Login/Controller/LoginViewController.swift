@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     // Cambia de color la flecha
         self.view.addSubview(backButton)
 
+
         backButton.backgroundColor = .clear
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         backButton.translatesAutoresizingMaskIntoConstraints = false

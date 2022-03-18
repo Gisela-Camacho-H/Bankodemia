@@ -73,7 +73,6 @@ class WelcomeViewController: UIViewController {
         
         fraseStackView.axis = .horizontal
         fraseStackView.alignment = .fill
-        buttonStackView.spacing = 1
         fraseStackView.distribution = .equalSpacing
         fraseArray.forEach {label in
             fraseStackView.addArrangedSubview(label)

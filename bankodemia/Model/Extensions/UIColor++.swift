@@ -10,4 +10,6 @@ extension UIColor{
     static var buttonGray: UIColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1)
     static var labelGray: UIColor = UIColor(red: 98/255, green: 98/255, blue: 98/255, alpha: 1)
     static var labelDarkGray: UIColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
+    static var lightGrayColor: UIColor =  UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+
 }
