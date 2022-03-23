@@ -19,6 +19,8 @@ class InicioViewController: UIViewController {
     var horaLabel: UILabel = UILabel()
     var movimiento1Label: UILabel = UILabel()
     var bankodemiaImage: UIImageView = UIImageView()
+    var preguntaImage: UIImageView = UIImageView()
+    var contactoImage: UIImageView = UIImageView()
     
     
     
@@ -201,6 +203,12 @@ class InicioViewController: UIViewController {
         bankodemiaImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
         bankodemiaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
         bankodemiaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        
+        
+        view.addSubview(preguntaImage)
+        preguntaImage.frame = CGRect(x: 150, y: 40, width: 21, height: 21)
+        preguntaImage.image = UIImage(named: "questionMark")
+        
         
 
         
