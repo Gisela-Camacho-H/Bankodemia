@@ -19,12 +19,14 @@ class Confirmacio_nViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
 
     }
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -49,7 +51,7 @@ class Confirmacio_nViewController: UIViewController {
         mainLabel.text = "¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo."
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(subtitleLabel)

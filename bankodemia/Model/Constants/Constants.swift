@@ -3,7 +3,7 @@ import UIKit
 
 struct Constants{
     static let padding: CGFloat = 30
-    static let widthProportion: CGFloat = 0.8
+    static let widthProportion: CGFloat = 0.9
     
     
 //MARK: - Button Constants

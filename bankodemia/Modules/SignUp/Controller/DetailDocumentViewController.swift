@@ -22,11 +22,13 @@ class DetailDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
     }
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -48,7 +50,7 @@ class DetailDocumentViewController: UIViewController {
         mainLabel.text = "Dale permiso a Bankodemia para utilizar la cámara. Asegñurate de tener buena luz y enfocar bien tu documento de frente"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(documentoImage)

@@ -22,13 +22,15 @@ class VerificarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
 
     }
     
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -56,7 +58,7 @@ class VerificarViewController: UIViewController {
         mainLabel.text = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
        
         self.view.addSubview(subtitleLabel)
@@ -64,7 +66,7 @@ class VerificarViewController: UIViewController {
         subtitleLabel.textColor = UIColor.labelDarkGray
         NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize + 30),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         

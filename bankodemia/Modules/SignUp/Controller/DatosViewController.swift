@@ -41,7 +41,6 @@ class DatosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
         initializeHideKeyboard()
 
@@ -49,6 +48,8 @@ class DatosViewController: UIViewController {
     
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
         
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +78,7 @@ class DatosViewController: UIViewController {
         mainLabel.text = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
        
         // label stack
@@ -104,7 +105,7 @@ class DatosViewController: UIViewController {
         
         NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
         labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         labelArray.forEach {label in
             label.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -139,7 +140,7 @@ class DatosViewController: UIViewController {
         
         NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: nombreLabel.bottomAnchor, constant: 5),
             textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
 
         let datePicker = MonthYearPickerView()
@@ -171,7 +172,7 @@ class DatosViewController: UIViewController {
         
         NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
         bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
     }

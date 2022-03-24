@@ -34,13 +34,15 @@ class ContrasenaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
 
 
     }
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -68,7 +70,7 @@ class ContrasenaViewController: UIViewController {
         mainLabel.text = "Crea una contraseña segura"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(subtitleLabel)
@@ -82,7 +84,7 @@ class ContrasenaViewController: UIViewController {
         subtitle2Label.text = "Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos"
         NSLayoutConstraint.activate([subtitle2Label.topAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: Constants.height/15),
         subtitle2Label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitle2Label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        subtitle2Label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         // label stack
@@ -105,7 +107,7 @@ class ContrasenaViewController: UIViewController {
         
         NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: subtitle2Label.bottomAnchor, constant: Constants.buttonSize),
         labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         labelArray.forEach {label in
             label.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -133,7 +135,7 @@ class ContrasenaViewController: UIViewController {
         
         NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: contrasenaLabel.bottomAnchor, constant: 5),
             textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         textFieldArray.forEach {textFieldElement in
             textFieldElement.layer.borderColor = UIColor.labelDarkGray.cgColor

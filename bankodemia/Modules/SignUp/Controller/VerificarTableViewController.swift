@@ -24,11 +24,13 @@ class VerificarTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
     }
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -56,7 +58,7 @@ class VerificarTableViewController: UIViewController {
         mainLabel.text = "Seleccionando el tipo de documento que deseas fotografiar"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(bottomLabel)
@@ -68,7 +70,7 @@ class VerificarTableViewController: UIViewController {
         
         NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo:view.bottomAnchor, constant: -Constants.buttonSize - 30),
         bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         

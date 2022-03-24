@@ -55,7 +55,8 @@ extension UIView{
             fatalError("init(coder:) has not been implemented")
         }
     }
-    
+
+    //MARK: - label
     class titleButtonLabel: UILabel {
         override init(frame: CGRect){
             super.init(frame: frame)
@@ -97,7 +98,7 @@ extension UIView{
             fatalError("init(coder:) has not been implemented")
         }
     }
-//MARK: - Text
+//MARK: - Text Field
     class signUpTextField: UITextField {
         override init(frame: CGRect){
             super.init(frame: frame)

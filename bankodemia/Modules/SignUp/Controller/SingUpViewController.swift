@@ -19,11 +19,13 @@ class SingUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
         initUI()
     }
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
         
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -52,14 +54,14 @@ class SingUpViewController: UIViewController {
         mainLabel.text = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(subtitlelabel)
         subtitlelabel.text = "Escribe tu correo"
         NSLayoutConstraint.activate([subtitlelabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
         subtitlelabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitlelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        subtitlelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(correoTextField)
@@ -67,7 +69,7 @@ class SingUpViewController: UIViewController {
         correoTextField.placeholder = "mels@gmail.com"
         NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: subtitlelabel.bottomAnchor, constant: 5),
             correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         
@@ -89,7 +91,7 @@ class SingUpViewController: UIViewController {
         
         NSLayoutConstraint.activate([linkLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
         linkLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        linkLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        linkLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(bottomLabel)
@@ -101,7 +103,7 @@ class SingUpViewController: UIViewController {
         
         NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: linkLabel.topAnchor, constant: -5),
         bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
     }
 

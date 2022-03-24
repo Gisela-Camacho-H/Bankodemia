@@ -24,7 +24,6 @@ class TelefonoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         initUI()
         //create the UITextfield to present the Date Picker
         initializeHideKeyboard()
@@ -33,6 +32,9 @@ class TelefonoViewController: UIViewController {
     
     
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
+        
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
@@ -60,7 +62,7 @@ class TelefonoViewController: UIViewController {
         mainLabel.text = "Lo usarás para iniciar sesión"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.height/15),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
        
         self.view.addSubview(subtitleLabel)
@@ -68,7 +70,7 @@ class TelefonoViewController: UIViewController {
         subtitleLabel.textColor = UIColor.labelDarkGray
         NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.height/15),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         self.view.addSubview(telefonoTextField)
@@ -76,7 +78,7 @@ class TelefonoViewController: UIViewController {
         telefonoTextField.placeholder = "+52  |    5540160405"
         NSLayoutConstraint.activate([telefonoTextField.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
+            telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         
@@ -99,7 +101,7 @@ class TelefonoViewController: UIViewController {
         
         NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
         bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
     }
