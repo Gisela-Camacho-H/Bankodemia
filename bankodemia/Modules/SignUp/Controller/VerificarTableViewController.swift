@@ -10,11 +10,11 @@ import UIKit
 class VerificarTableViewController: UIViewController {
     
     // labels
-    lazy var mainLabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
-    lazy var titleLable: UILabel = UILabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
     
-    private lazy var backButton: UIButton = UIButton()
+    private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     
     lazy var tableView : UITableView = UITableView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -40,35 +40,20 @@ class VerificarTableViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(titleLable)
         titleLable.text = "IDENTIDAD"
-        self.titleLable.adjustsFontSizeToFitWidth = true
-        titleLable.apply14Font()
-        titleLable.textColor = UIColor.labelDarkGray
-        titleLable.textAlignment = .left
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Seleccionando el tipo de documento que deseas fotografiar"
-        self.mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)

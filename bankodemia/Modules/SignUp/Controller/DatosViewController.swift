@@ -10,23 +10,23 @@ import UIKit
 class DatosViewController: UIViewController {
     
     // labels
-    lazy var mainLabel: UILabel = UILabel()
     lazy var nombreLabel: UILabel = UILabel()
     lazy var apellidosLabel: UILabel = UILabel()
     lazy var ocupacionLabel: UILabel = UILabel()
     lazy var fechaLabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
-    lazy var titleLable: UILabel = UILabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
     
     // buttons
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var continuarButton: UIButton = UIButton()
+    private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
+    private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
     // Text Fields
-    lazy var nombreTextField : UITextField = UITextField()
-    lazy var apellidosTextField : UITextField = UITextField()
-    lazy var ocupacionTextField : UITextField = UITextField()
-    lazy var dateTextField: UITextField = UITextField()
+    lazy var nombreTextField : UIView.signUpTextField = UIView.signUpTextField()
+    lazy var apellidosTextField : UIView.signUpTextField = UIView.signUpTextField()
+    lazy var ocupacionTextField : UIView.signUpTextField = UIView.signUpTextField()
+    lazy var dateTextField: UIView.signUpTextField = UIView.signUpTextField()
     
     // Stacks
     lazy var textFieldStackView : UIStackView = UIStackView()
@@ -43,7 +43,6 @@ class DatosViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
-        createUITextField()
         initializeHideKeyboard()
 
     }
@@ -62,35 +61,20 @@ class DatosViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(titleLable)
         titleLable.text = "INGRESA TUS DATOS"
-        self.titleLable.adjustsFontSizeToFitWidth = true
-        titleLable.apply14Font()
-        titleLable.textColor = UIColor.labelDarkGray
-        titleLable.textAlignment = .left
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
-        self.mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -157,20 +141,6 @@ class DatosViewController: UIViewController {
             textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
         ])
-        textFieldArray.forEach {textFieldElement in
-            textFieldElement.heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
-            textFieldElement.layer.cornerRadius = 7
-            textFieldElement.layer.borderWidth = 1
-            textFieldElement.backgroundColor = .clear
-            textFieldElement.textAlignment = NSTextAlignment.left
-            textFieldElement.keyboardType = UIKeyboardType.default
-            textFieldElement.autocorrectionType = UITextAutocorrectionType.no
-            textFieldElement.clearButtonMode = UITextField.ViewMode.whileEditing
-            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textFieldElement.frame.height))
-            textFieldElement.leftView = paddingView
-            textFieldElement.leftViewMode = UITextField.ViewMode.always
-            
-        }
 
         let datePicker = MonthYearPickerView()
         datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
@@ -184,10 +154,6 @@ class DatosViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Continuar", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false
@@ -233,27 +199,6 @@ class DatosViewController: UIViewController {
 
         view.endEditing(true)
     }
-
-    
-    func createUITextField(){
-           
-        dateTextField = UITextField()
-        dateTextField.placeholder = "Ingresa tu fecha de nacimiento"
-        dateTextField.font = UIFont.systemFont(ofSize: 14.0)
-        dateTextField.layer.borderWidth = 2
-        dateTextField.layer.cornerRadius = 7
-        dateTextField.translatesAutoresizingMaskIntoConstraints = false
-        dateTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        dateTextField.textAlignment = NSTextAlignment.left
-        dateTextField.keyboardType = UIKeyboardType.default
-        dateTextField.autocorrectionType = UITextAutocorrectionType.no
-        dateTextField.layer.borderColor = UIColor.labelDarkGray.cgColor
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.dateTextField.frame.height))
-        dateTextField.leftView = paddingView
-        dateTextField.leftViewMode = UITextField.ViewMode.always
-        
-           
-       }
 
     @objc func tapToGoBack(){
         goBack()

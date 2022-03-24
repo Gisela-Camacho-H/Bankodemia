@@ -10,13 +10,13 @@ import UIKit
 class VerificarViewController: UIViewController {
 
     // labels
-    lazy var mainLabel: UILabel = UILabel()
-    lazy var subtitleLabel: UILabel = UILabel()
-    lazy var titleLable: UILabel = UILabel()
+    lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
 
     // buttons
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var continuarButton: UIButton = UIButton()
+    private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
+    private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
@@ -40,35 +40,20 @@ class VerificarViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(titleLable)
         titleLable.text = "IDENTIDAD"
-        self.titleLable.adjustsFontSizeToFitWidth = true
-        titleLable.apply14Font()
-        titleLable.textColor = UIColor.labelDarkGray
-        titleLable.textAlignment = .left
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
-        self.mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -76,12 +61,6 @@ class VerificarViewController: UIViewController {
        
         self.view.addSubview(subtitleLabel)
         subtitleLabel.text = "Deberás subir una fotografía de tu INE o pasaporte vigente y tormarte una selfie. Si eres extranjero necesitarás una fotografía de tu documentos migratorio (FM3)"
-        self.subtitleLabel.adjustsFontSizeToFitWidth = true
-        subtitleLabel.apply14Font()
-        subtitleLabel.numberOfLines = 0
-        subtitleLabel.textAlignment = .left
-    
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.textColor = UIColor.labelDarkGray
         NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.buttonSize + 30),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -91,10 +70,6 @@ class VerificarViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Entendido", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false

@@ -10,16 +10,16 @@ import UIKit
 class TelefonoViewController: UIViewController {
     
     // labels
-    lazy var mainLabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
-    lazy var subtitleLabel: UILabel = UILabel()
-    lazy var titleLable: UILabel = UILabel()
+    lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
     
     // buttons
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var continuarButton: UIButton = UIButton()
+    private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
+    private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
-    lazy var telefonoTextField: UITextField = UITextField()
+    lazy var telefonoTextField: UIView.signUpTextField = UIView.signUpTextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
@@ -44,35 +44,20 @@ class TelefonoViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(titleLable)
         titleLable.text = "INGRESA TU TELÉFONO"
-        self.titleLable.adjustsFontSizeToFitWidth = true
-        titleLable.apply14Font()
-        titleLable.textColor = UIColor.labelDarkGray
-        titleLable.textAlignment = .left
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Lo usarás para iniciar sesión"
-        self.mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.height/15),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -80,11 +65,6 @@ class TelefonoViewController: UIViewController {
        
         self.view.addSubview(subtitleLabel)
         subtitleLabel.text = "Tu número de celular"
-        subtitleLabel.apply14Font()
-        subtitleLabel.textAlignment = .left
-        subtitleLabel.textColor = UIColor.labelDarkGray
-    
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.textColor = UIColor.labelDarkGray
         NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: Constants.height/15),
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -93,20 +73,7 @@ class TelefonoViewController: UIViewController {
         
         self.view.addSubview(telefonoTextField)
         telefonoTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
-        telefonoTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        telefonoTextField.layer.cornerRadius = 7
-        telefonoTextField.layer.borderWidth = 1
-        telefonoTextField.backgroundColor = .clear
         telefonoTextField.placeholder = "+52  |    5540160405"
-        telefonoTextField.textAlignment = NSTextAlignment.left
-        telefonoTextField.keyboardType = UIKeyboardType.default
-        telefonoTextField.autocorrectionType = UITextAutocorrectionType.no
-        telefonoTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: telefonoTextField.frame.height))
-        telefonoTextField.leftView = paddingView
-        telefonoTextField.leftViewMode = UITextField.ViewMode.always
-        telefonoTextField.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([telefonoTextField.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
@@ -115,10 +82,6 @@ class TelefonoViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Continuar", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false

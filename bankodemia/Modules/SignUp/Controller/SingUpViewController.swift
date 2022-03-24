@@ -4,17 +4,17 @@ import UIKit
 class SingUpViewController: UIViewController {
     
     // labels
-    lazy var mainLabel: UILabel = UILabel()
-    lazy var subtitlelabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
     lazy var linkLabel: UILabel = UILabel()
-    lazy var titleLable: UILabel = UILabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var subtitlelabel: UIView.textFieldLabel = UIView.textFieldLabel()
     
     // buttons
-    private lazy var backButton: UIButton = UIButton()
-    lazy var continuarButton: UIButton = UIButton()
+    lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
+    lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
-    lazy var correoTextField: UITextField = UITextField()
+    lazy var correoTextField: UIView.signUpTextField = UIView.signUpTextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
@@ -36,35 +36,20 @@ class SingUpViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(titleLable)
         titleLable.text = "ESCRIBE TU CORREO"
-        self.titleLable.adjustsFontSizeToFitWidth = true
-        titleLable.apply14Font()
-        titleLable.textColor = UIColor.labelDarkGray
-        titleLable.textAlignment = .left
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
-        self.mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -72,11 +57,6 @@ class SingUpViewController: UIViewController {
         
         self.view.addSubview(subtitlelabel)
         subtitlelabel.text = "Escribe tu correo"
-        subtitlelabel.apply14Font()
-        subtitlelabel.applyDrakGrayColor()
-        subtitlelabel.textAlignment = .left
-        subtitlelabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([subtitlelabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
         subtitlelabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         subtitlelabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -84,20 +64,7 @@ class SingUpViewController: UIViewController {
         
         self.view.addSubview(correoTextField)
         correoTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
-        correoTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        correoTextField.layer.cornerRadius = 7
-        correoTextField.layer.borderWidth = 1
-        correoTextField.backgroundColor = .clear
         correoTextField.placeholder = "mels@gmail.com"
-        correoTextField.textAlignment = NSTextAlignment.left
-        correoTextField.keyboardType = UIKeyboardType.default
-        correoTextField.autocorrectionType = UITextAutocorrectionType.no
-        correoTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: correoTextField.frame.height))
-        correoTextField.leftView = paddingView
-        correoTextField.leftViewMode = UITextField.ViewMode.always
-        correoTextField.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: subtitlelabel.bottomAnchor, constant: 5),
             correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
@@ -106,9 +73,6 @@ class SingUpViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Continuar", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false

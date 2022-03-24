@@ -10,12 +10,12 @@ import UIKit
 class DetailDocumentViewController: UIViewController {
     
     // labels
-    lazy var mainLabel: UILabel = UILabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var documentoImageText: UILabel = UILabel()
     
     // buttons
-    lazy var backButton: UIButton = UIButton()
-    lazy var continuarButton: UIButton = UIButton()
+    lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
+    lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
     lazy var documentoImage: UIImageView = UIImageView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -38,25 +38,17 @@ class DetailDocumentViewController: UIViewController {
         ])
         
         self.view.addSubview(backButton)
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.tintColor = UIColor.labelDarkGray
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/15),
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/15),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "Dale permiso a Bankodemia para utilizar la cámara. Asegñurate de tener buena luz y enfocar bien tu documento de frente"
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
         ])
         
         self.view.addSubview(documentoImage)
@@ -86,10 +78,6 @@ class DetailDocumentViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Subir Información", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false

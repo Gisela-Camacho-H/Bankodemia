@@ -9,10 +9,10 @@ import UIKit
 
 class Confirmacio_nViewController: UIViewController {
     
-    private lazy var continuarButton: UIButton = UIButton()
+    private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     lazy var mainImageView: UIImageView = UIImageView()
     
-    lazy var mainLabel: UILabel = UILabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var subtitleLabel: UILabel = UILabel()
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -47,11 +47,6 @@ class Confirmacio_nViewController: UIViewController {
         
         self.view.addSubview(mainLabel)
         mainLabel.text = "¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo."
-        mainLabel.apply16Font()
-        mainLabel.numberOfLines = 0
-        mainLabel.textAlignment = .left
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.90)
@@ -72,10 +67,6 @@ class Confirmacio_nViewController: UIViewController {
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Volver al Inicio", for: .normal)
-        continuarButton.backgroundColor = UIColor.bankodemiaCyan
-        continuarButton.setTitleColor(.white, for: .normal)
-        continuarButton.layer.cornerRadius = Constants.cornerRadius
-        continuarButton.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
         continuarButton.translatesAutoresizingMaskIntoConstraints = false
