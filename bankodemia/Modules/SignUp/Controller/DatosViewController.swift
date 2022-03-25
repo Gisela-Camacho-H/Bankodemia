@@ -152,6 +152,19 @@ class DatosViewController: UIViewController {
         }
         dateTextField.inputView = datePicker
         
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.bankodemiaCyan
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Aceptar", style: UIBarButtonItem.Style.plain , target: self, action: #selector(dismissMyKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        dateTextField.inputAccessoryView = toolBar
+        
         
         view.addSubview(continuarButton)
         continuarButton.setTitle("Continuar", for: .normal)
