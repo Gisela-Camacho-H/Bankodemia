@@ -40,6 +40,9 @@
 		56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EE27CB303600C708ED /* TabBarViewController.swift */; };
 		56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96F327CB313200C708ED /* TarjetaViewController.swift */; };
 		56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96F827CB318A00C708ED /* ServiciosViewController.swift */; };
+		BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */; };
+		BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */; };
+		BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		56FD96EE27CB303600C708ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		56FD96F327CB313200C708ED /* TarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetaViewController.swift; sourceTree = "<group>"; };
 		56FD96F827CB318A00C708ED /* ServiciosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiciosViewController.swift; sourceTree = "<group>"; };
+		BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTarjetaViewController.swift; sourceTree = "<group>"; };
+		BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarClabeViewController.swift; sourceTree = "<group>"; };
+		BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAgregadoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */,
+				BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */,
+				BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */,
+				BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +497,7 @@
 			files = (
 				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
+				BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */,
 				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
 				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
 				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
@@ -505,6 +515,7 @@
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
+				BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
 				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
@@ -512,6 +523,7 @@
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
+				BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

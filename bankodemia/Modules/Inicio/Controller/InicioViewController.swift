@@ -87,7 +87,7 @@ class InicioViewController: UIViewController {
         enviarButton.layer.cornerRadius = 6
         enviarButton.backgroundColor = UIColor.white
         enviarButton.layer.borderColor = .init(red: 25, green: 203, blue: 203, alpha: 0)
-   //     enviarButton.addTarget(self, action: #selector(onSendButtonTap), for: .touchUpInside)
+        enviarButton.addTarget(self, action: #selector(onSendButtonTap), for: .touchUpInside)
         
         
         
@@ -212,10 +212,19 @@ class InicioViewController: UIViewController {
         
 
         
-        // MARK: Funcionalidades Botones
         
-        
-        
+    }
+    
+    // MARK: Funcionalidades Botones
+    
+    @objc func onSendButtonTap(){
+        goToSend()
+    }
+    
+    func goToSend() {
+        let enviarViewController = EnviarViewController()
+        enviarViewController.modalPresentationStyle = .fullScreen
+        self.present(enviarViewController, animated: true, completion: nil)
     }
 
 }

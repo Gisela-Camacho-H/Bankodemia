@@ -55,6 +55,18 @@ extension UIView{
             fatalError("init(coder:) has not been implemented")
         }
     }
+    
+    class addAccountButton: UIButton {
+        override init(frame: CGRect){
+            super.init(frame: frame)
+            backgroundColor = .clear
+            setImage(UIImage(imageLiteralResourceName: "addUser"), for: .normal)
+            translatesAutoresizingMaskIntoConstraints = false
+        }
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
 
     //MARK: - label
     class titleButtonLabel: UILabel {

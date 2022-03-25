@@ -1,27 +1,26 @@
 //
-//  EnviarViewController.swift
+//  AgregarContactoTarjetaViewController.swift
 //  bankodemia
 //
-//  Created by Itzel Ibanez on 17/03/22.
+//  Created by Adriana Limon on 3/24/22.
 //
 
 import UIKit
 
-class EnviarViewController: UIViewController {
+class AgregarTarjetaViewController: UIViewController {
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
-    lazy var addAccountButton: UIView.addAccountButton = UIView.addAccountButton()
+    lazy var addContactButton: UIView.cyanButton = UIView.cyanButton()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         
         initUI()
     }
- 
+    
     func initUI(){
         
         view.applyWhiteBackgroundColor()
@@ -44,19 +43,22 @@ class EnviarViewController: UIViewController {
         ])
         
         self.view.addSubview(titleLabel)
-        titleLabel.text = "ENVIAR DINERO"
+        titleLabel.text = "AGREGAR CONTACTO"
         NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         titleLabel.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
-        self.view.addSubview(addAccountButton)
-        addAccountButton.addTarget(self, action: #selector(tapToAddAccount), for: .touchUpInside)
-        NSLayoutConstraint.activate([addAccountButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/11.5), addAccountButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        view.addSubview(addContactButton)
+        addContactButton.addTarget(self, action: #selector(tapToAddAccount), for: .touchUpInside)
+        addContactButton.setTitle("Agregar Contacto", for: .normal)
+        addContactButton.backgroundColor = UIColor.bankodemiaCyan
+        addContactButton.setTitleColor(.white, for: .normal)
+        addContactButton.layer.cornerRadius = 5
+        addContactButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([addContactButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
+        addContactButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        addContactButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
-        addAccountButton.translatesAutoresizingMaskIntoConstraints = false
-        addAccountButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        addAccountButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        
     }
     
     //MARK: Funcionalidad Botones
@@ -66,20 +68,19 @@ class EnviarViewController: UIViewController {
     }
     
     func toGoBack() {
-        let inicioViewController = InicioViewController()
-        inicioViewController.modalPresentationStyle = .fullScreen
-        self.present(inicioViewController, animated: true, completion: nil)
+        let enviarViewController = EnviarViewController()
+        enviarViewController.modalPresentationStyle = .fullScreen
+        self.present(enviarViewController, animated: true, completion: nil)
     }
-    
     
     @objc func tapToAddAccount(){
         toAddAccount()
     }
     
     func toAddAccount() {
-        let agregarTarjetaViewController = AgregarTarjetaViewController()
-        agregarTarjetaViewController.modalPresentationStyle = .fullScreen
-        self.present(agregarTarjetaViewController, animated: true, completion: nil)
+        let confirmarAgregadoViewController = ConfirmarAgregadoViewController()
+        confirmarAgregadoViewController.modalPresentationStyle = .fullScreen
+        self.present(confirmarAgregadoViewController, animated: true, completion: nil)
     }
     
 }
