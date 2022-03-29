@@ -91,6 +91,7 @@ extension UIView{
             numberOfLines = 0
             textAlignment = .left
             translatesAutoresizingMaskIntoConstraints = false
+            textColor = UIColor.bankodemiaBlack
         }
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
@@ -111,7 +112,7 @@ extension UIView{
         }
     }
 //MARK: - Text Field
-    class signUpTextField: UITextField {
+    class mainTextField: UITextField {
         override init(frame: CGRect){
             super.init(frame: frame)
             heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
@@ -120,6 +121,7 @@ extension UIView{
             backgroundColor = .clear
             textAlignment = NSTextAlignment.left
             keyboardType = UIKeyboardType.default
+            textColor = UIColor.bankodemiaBlack
             autocorrectionType = UITextAutocorrectionType.no
             clearButtonMode = UITextField.ViewMode.whileEditing
             leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: frame.height))

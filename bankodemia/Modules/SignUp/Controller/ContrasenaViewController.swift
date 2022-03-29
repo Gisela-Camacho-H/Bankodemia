@@ -24,8 +24,8 @@ class ContrasenaViewController: UIViewController {
     lazy var mostrarConfirmarButton: UIButton = UIButton()
     
     // textFields
-    lazy var contrasenaTextField: UIView.signUpTextField = UIView.signUpTextField()
-    lazy var confirmarTextField: UIView.signUpTextField = UIView.signUpTextField()
+    lazy var contrasenaTextField: UIView.mainTextField = UIView.mainTextField()
+    lazy var confirmarTextField: UIView.mainTextField = UIView.mainTextField()
     
     // UIStacks
     lazy var labelStackView: UIStackView = UIStackView()

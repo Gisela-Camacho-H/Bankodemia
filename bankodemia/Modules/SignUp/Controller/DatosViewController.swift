@@ -23,10 +23,10 @@ class DatosViewController: UIViewController {
     private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
     // Text Fields
-    lazy var nombreTextField : UIView.signUpTextField = UIView.signUpTextField()
-    lazy var apellidosTextField : UIView.signUpTextField = UIView.signUpTextField()
-    lazy var ocupacionTextField : UIView.signUpTextField = UIView.signUpTextField()
-    lazy var dateTextField: UIView.signUpTextField = UIView.signUpTextField()
+    lazy var nombreTextField : UIView.mainTextField = UIView.mainTextField()
+    lazy var apellidosTextField : UIView.mainTextField = UIView.mainTextField()
+    lazy var ocupacionTextField : UIView.mainTextField = UIView.mainTextField()
+    lazy var dateTextField: UIView.mainTextField = UIView.mainTextField()
     
     // Stacks
     lazy var textFieldStackView : UIStackView = UIStackView()

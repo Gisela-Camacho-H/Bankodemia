@@ -14,7 +14,7 @@ class SingUpViewController: UIViewController {
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
-    lazy var correoTextField: UIView.signUpTextField = UIView.signUpTextField()
+    lazy var correoTextField: UIView.mainTextField = UIView.mainTextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {

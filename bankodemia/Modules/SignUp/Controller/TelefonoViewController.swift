@@ -19,7 +19,7 @@ class TelefonoViewController: UIViewController {
     private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
-    lazy var telefonoTextField: UIView.signUpTextField = UIView.signUpTextField()
+    lazy var telefonoTextField: UIView.mainTextField = UIView.mainTextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     let countryCode = ["+ 52", "+ 01", "+ 44", "+ 91", "+ 86", "+ 31"]

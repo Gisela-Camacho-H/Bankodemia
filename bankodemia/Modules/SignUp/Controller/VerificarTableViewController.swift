@@ -120,6 +120,8 @@ extension VerificarTableViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = documentArray[indexPath.row]
+        cell.textLabel?.textColor = UIColor.bankodemiaBlack
+        cell.textLabel?.backgroundColor = .white
         
         return cell
     }

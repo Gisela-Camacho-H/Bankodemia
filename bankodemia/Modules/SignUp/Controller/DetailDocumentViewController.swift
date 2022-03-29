@@ -78,6 +78,7 @@ class DetailDocumentViewController: UIViewController {
         documentoImageText.apply14Font()
         documentoImageText.numberOfLines = 0
         documentoImageText.textAlignment = .center
+        documentoImageText.textColor = UIColor.bankodemiaBlack
         documentoImageText.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([documentoImageText.topAnchor.constraint(equalTo: documentoImage.topAnchor, constant: Constants.buttonSize + 50),

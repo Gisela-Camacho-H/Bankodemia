@@ -10,9 +10,9 @@ class LoginViewController: UIViewController {
     private lazy var iniciarLabel: UILabel = UILabel()
     private lazy var escribeLabel: UILabel = UILabel()
     private lazy var emailLabel: UILabel = UILabel()
-    private lazy var emailTextField: UITextField = UITextField()
+    private lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
     private lazy var passwordLabel: UILabel = UILabel()
-    private lazy var passwordTextField: UITextField = UITextField()
+    private lazy var passwordTextField: UIView.mainTextField = UIView.mainTextField()
     private lazy var finalLabel: UILabel = UILabel()
     private lazy var contactButton: UIButton = UIButton()
     private lazy var loginButton: UIButton = UIButton()
@@ -133,6 +133,7 @@ class LoginViewController: UIViewController {
         
     self.view.addSubview(emailTextField)
     emailTextField.placeholder = "mels@gmail.com"
+    emailTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
     emailTextField.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
     emailTextField.font = UIFont(name: "Poppins-Regular", size: 14)
     emailTextField.textAlignment = .left
@@ -142,6 +143,7 @@ class LoginViewController: UIViewController {
         
         self.view.addSubview(passwordTextField)
         passwordTextField.placeholder = "*******"
+        passwordTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
         passwordTextField.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
         passwordTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         passwordTextField.textAlignment = .left
@@ -167,8 +169,7 @@ class LoginViewController: UIViewController {
         
         // MARK: TEXT Field Stack
         
-    let textFieldArray: [UITextField] = [emailTextField, passwordTextField]
-                
+        let textFieldArray: [UIView.mainTextField] = [emailTextField, passwordTextField]
         textFieldStack.axis = .vertical
         textFieldStack.spacing = Constants.padding
         textFieldStack.alignment = .fill
