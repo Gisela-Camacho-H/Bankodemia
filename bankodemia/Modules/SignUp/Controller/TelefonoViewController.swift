@@ -21,12 +21,19 @@ class TelefonoViewController: UIViewController {
     
     lazy var telefonoTextField: UIView.signUpTextField = UIView.signUpTextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
+    
+    let countryCode = ["+ 52", "+ 01", "+ 44", "+ 91", "+ 86", "+ 31"]
+    let countryName = ["México", "United States", "United Kingdom", "India", "China", "Netherlands"]
+    
+    var pickerView = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
         //create the UITextfield to present the Date Picker
         initializeHideKeyboard()
+        pickerView.delegate = self
+        pickerView.dataSource = self
 
     }
     
@@ -80,6 +87,21 @@ class TelefonoViewController: UIViewController {
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
+        
+        telefonoTextField.inputView = pickerView
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.bankodemiaCyan
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Aceptar", style: UIBarButtonItem.Style.plain , target: self, action: #selector(dismissMyKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        telefonoTextField.inputAccessoryView = toolBar
         
         
         view.addSubview(continuarButton)
@@ -142,4 +164,19 @@ class TelefonoViewController: UIViewController {
     }
 }
 
+extension TelefonoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryCode.count
+    }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(countryCode[row])  \(countryName[row])"
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        telefonoTextField.text = "\(countryCode[row])     "
+    }
+}
+
