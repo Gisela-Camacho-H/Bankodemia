@@ -43,6 +43,7 @@
 		BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */; };
 		BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */; };
 		BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */; };
+		BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94FA027EE71E5006E27E0 /* AccountObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTarjetaViewController.swift; sourceTree = "<group>"; };
 		BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarClabeViewController.swift; sourceTree = "<group>"; };
 		BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAgregadoViewController.swift; sourceTree = "<group>"; };
+		BDE94FA027EE71E5006E27E0 /* AccountObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		19BCFA8227E42996007FD12D /* Enviar */ = {
 			isa = PBXGroup;
 			children = (
+				BDE94FA227EE77D2006E27E0 /* Model */,
 				19BCFA8427E429B8007FD12D /* Controller */,
 				19BCFA8327E429AA007FD12D /* ViewModel */,
 			);
@@ -421,6 +424,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BDE94FA227EE77D2006E27E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDE94FA027EE71E5006E27E0 /* AccountObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -521,6 +532,7 @@
 				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
+				BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */,

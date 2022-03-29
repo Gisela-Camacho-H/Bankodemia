@@ -13,7 +13,7 @@ class EnviarViewController: UIViewController {
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var addAccountButton: UIView.addAccountButton = UIView.addAccountButton()
-    
+    var dataSource: Account?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class EnviarViewController: UIViewController {
         NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
                 view.topAnchor, constant: Constants.height / 14),
         bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 14),
+        bankodemiaLogo.widthAnchor.constraint(equalToConstant: 70),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
         
         self.view.addSubview(backButton)

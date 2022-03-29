@@ -12,6 +12,7 @@ class ConfirmarAgregadoViewController: UIViewController {
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     lazy var backToMainButton: UIView.cyanButton = UIView.cyanButton()
     lazy var clientsImage: UIImageView = UIImageView()
+    lazy var successLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,8 @@ class ConfirmarAgregadoViewController: UIViewController {
         NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
                 view.topAnchor, constant: Constants.height / 14),
         bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 14),
+        bankodemiaLogo.widthAnchor.constraint(equalToConstant: 70),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
         
         view.addSubview(backToMainButton)
@@ -49,12 +50,24 @@ class ConfirmarAgregadoViewController: UIViewController {
         self.view.addSubview(clientsImage)
         clientsImage.translatesAutoresizingMaskIntoConstraints = false
         clientsImage.image = UIImage(named: "clientsBankodemia")
-        NSLayoutConstraint.activate([clientsImage.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height / 3.5),
-        clientsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        clientsImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        clientsImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-        clientsImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.22),
-                ])
+        clientsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        clientsImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        clientsImage.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        clientsImage.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        
+        self.view.addSubview(successLabel)
+        successLabel.textColor = UIColor.bankodemiaBlack
+        successLabel.backgroundColor = .clear
+        successLabel.font = UIFont(name: "Poppins-Medium", size: 16)
+        successLabel.textAlignment = .center
+        successLabel.attributedText = NSMutableAttributedString(string: "Tu contacto fue agregado con éxito", attributes: [NSAttributedString.Key.kern: 0.7])
+        successLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(successLabel)
+        successLabel.translatesAutoresizingMaskIntoConstraints = false
+        successLabel.widthAnchor.constraint(equalToConstant: 328).isActive = true
+        successLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        successLabel.bottomAnchor.constraint(equalTo: clientsImage.bottomAnchor, constant: 32).isActive = true
     }
     
     //MARK: Funcionalidad Botones
