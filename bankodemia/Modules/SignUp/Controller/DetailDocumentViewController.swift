@@ -11,6 +11,7 @@ class DetailDocumentViewController: UIViewController {
     
     // labels
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var documentoImageText: UILabel = UILabel()
     
     // buttons
@@ -46,8 +47,15 @@ class DetailDocumentViewController: UIViewController {
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
+        self.view.addSubview(titleLable)
+        titleLable.text = ""
+        NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
+        ])
+        
+        
         self.view.addSubview(mainLabel)
-        mainLabel.text = "Dale permiso a Bankodemia para utilizar la cámara. Asegñurate de tener buena luz y enfocar bien tu documento de frente"
+        mainLabel.text = "Dale permiso a Bankodemia para utilizar la cámara. Asegurate de tener buena luz y enfocar bien tu documento de frente"
         NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
         mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)

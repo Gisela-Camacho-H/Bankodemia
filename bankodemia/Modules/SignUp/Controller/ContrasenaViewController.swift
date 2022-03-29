@@ -20,6 +20,8 @@ class ContrasenaViewController: UIViewController {
     // buttons
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
+    lazy var mostrarContrasenaButton: UIButton = UIButton()
+    lazy var mostrarConfirmarButton: UIButton = UIButton()
     
     // textFields
     lazy var contrasenaTextField: UIView.signUpTextField = UIView.signUpTextField()
@@ -120,6 +122,8 @@ class ContrasenaViewController: UIViewController {
         // TextField stack
         self.view.addSubview(contrasenaTextField)
         self.view.addSubview(confirmarTextField)
+        contrasenaTextField.isSecureTextEntry = true
+        confirmarTextField.isSecureTextEntry = true
         
         let textFieldArray: [UITextField] = [contrasenaTextField, confirmarTextField]
         
@@ -152,6 +156,26 @@ class ContrasenaViewController: UIViewController {
         continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
+        mostrarContrasenaButton = UIButton()
+        view.addSubview(mostrarContrasenaButton)
+        mostrarContrasenaButton.setImage(UIImage(systemName: "eye.fill" ), for: .normal)
+        mostrarContrasenaButton.tintColor = UIColor.labelDarkGray
+        mostrarContrasenaButton.addTarget(self, action: #selector(contrasenaVerpass), for: .touchUpInside)
+        mostrarContrasenaButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([mostrarContrasenaButton.topAnchor.constraint(equalTo: contrasenaTextField.topAnchor, constant: 10),
+        mostrarContrasenaButton.rightAnchor.constraint(equalTo: contrasenaTextField.rightAnchor, constant: -20)
+        ])
+        
+        mostrarConfirmarButton = UIButton()
+        view.addSubview(mostrarConfirmarButton)
+        mostrarConfirmarButton.setImage(UIImage(systemName: "eye.slash.fill" ), for: .normal)
+        mostrarConfirmarButton.tintColor = UIColor.labelDarkGray
+        mostrarConfirmarButton.addTarget(self, action: #selector(confirmarVerpass), for: .touchUpInside)
+        mostrarConfirmarButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([mostrarConfirmarButton.topAnchor.constraint(equalTo: confirmarTextField.topAnchor, constant: 10),
+        mostrarConfirmarButton.rightAnchor.constraint(equalTo: confirmarTextField.rightAnchor, constant: -20)
+        ])
+        
     }
     
     @objc func onSignUpButtonTap(){
@@ -162,6 +186,14 @@ class ContrasenaViewController: UIViewController {
         let loginViewController = Confirmacio_nViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         self.present(loginViewController, animated: true, completion: nil)
+    }
+    
+    @objc func contrasenaVerpass(){
+        contrasenaTextField.isSecureTextEntry.toggle()
+    }
+    
+    @objc func confirmarVerpass(){
+        confirmarTextField.isSecureTextEntry.toggle()
     }
     
     @objc func tapToGoBack(){
