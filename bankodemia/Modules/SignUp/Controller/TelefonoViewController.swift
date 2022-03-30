@@ -20,6 +20,7 @@ class TelefonoViewController: UIViewController {
     private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     
     lazy var telefonoTextField: UIView.mainTextField = UIView.mainTextField()
+    lazy var numberTextField: UITextField = UITextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     let countryCode = ["+ 52", "+ 01", "+ 44", "+ 91", "+ 86", "+ 31"]
@@ -34,6 +35,7 @@ class TelefonoViewController: UIViewController {
         initializeHideKeyboard()
         pickerView.delegate = self
         pickerView.dataSource = self
+        numberTextField.delegate = self
 
     }
     
@@ -87,6 +89,24 @@ class TelefonoViewController: UIViewController {
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
+        
+        
+        self.view.addSubview(numberTextField)
+        
+        numberTextField.heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
+        numberTextField.backgroundColor = .clear
+        numberTextField.textAlignment = NSTextAlignment.left
+        numberTextField.keyboardType = UIKeyboardType.default
+        numberTextField.textColor = UIColor.bankodemiaBlack
+        numberTextField.autocorrectionType = UITextAutocorrectionType.no
+        numberTextField.clearButtonMode = UITextField.ViewMode.whileEditing
+        numberTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([numberTextField.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
+            numberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            numberTextField.leftAnchor.constraint(equalTo: telefonoTextField.leftAnchor, constant: 70),
+                                     numberTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
+        ])
+        
         
         telefonoTextField.inputView = pickerView
         
@@ -176,7 +196,24 @@ extension TelefonoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return "\(countryCode[row])  \(countryName[row])"
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        telefonoTextField.text = "\(countryCode[row])     "
+        telefonoTextField.text = "\(countryCode[row])"
     }
 }
 
+extension TelefonoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let textFieldText = textField.text {
+            if let rangeOfTextToReplace = Range(range, in: textFieldText){
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= 10
+            }
+        }
+        return false
+    }
+}

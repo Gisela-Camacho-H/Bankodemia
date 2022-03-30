@@ -22,11 +22,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        view.backgroundColor = .systemBackground
         
         
     }
     func initUI(){
+        
+        view.applyWhiteBackgroundColor()
         //MARK: Imagen de icono
         
         
