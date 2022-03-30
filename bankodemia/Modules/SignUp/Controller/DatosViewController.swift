@@ -43,6 +43,10 @@ class DatosViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         initializeHideKeyboard()
+        nombreTextField.delegate = self
+        apellidosTextField.delegate = self
+        ocupacionTextField.delegate = self
+        dateTextField.delegate = self
 
     }
     
@@ -341,3 +345,9 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     
 }
     
+extension DatosViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+}

@@ -21,6 +21,7 @@ class SingUpViewController: UIViewController {
         super.viewDidLoad()
 
         initUI()
+        correoTextField.delegate = self
     }
     
     func initUI(){
@@ -123,5 +124,12 @@ class SingUpViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+}
+
+extension SingUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
     }
 }

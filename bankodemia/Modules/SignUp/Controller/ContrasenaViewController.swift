@@ -37,6 +37,8 @@ class ContrasenaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        contrasenaTextField.delegate = self
+        confirmarTextField.delegate = self
 
 
     }
@@ -168,7 +170,7 @@ class ContrasenaViewController: UIViewController {
         
         mostrarConfirmarButton = UIButton()
         view.addSubview(mostrarConfirmarButton)
-        mostrarConfirmarButton.setImage(UIImage(systemName: "eye.slash.fill" ), for: .normal)
+        mostrarConfirmarButton.setImage(UIImage(systemName: "eye.fill" ), for: .normal)
         mostrarConfirmarButton.tintColor = UIColor.labelDarkGray
         mostrarConfirmarButton.addTarget(self, action: #selector(confirmarVerpass), for: .touchUpInside)
         mostrarConfirmarButton.translatesAutoresizingMaskIntoConstraints = false
@@ -190,10 +192,12 @@ class ContrasenaViewController: UIViewController {
     
     @objc func contrasenaVerpass(){
         contrasenaTextField.isSecureTextEntry.toggle()
+        mostrarContrasenaButton.setImage(UIImage(systemName: "eye.slash.fill" ), for: .normal)
     }
     
     @objc func confirmarVerpass(){
         confirmarTextField.isSecureTextEntry.toggle()
+        mostrarConfirmarButton.setImage(UIImage(systemName: "eye.slash.fill" ), for: .normal)
     }
     
     @objc func tapToGoBack(){
@@ -204,4 +208,21 @@ class ContrasenaViewController: UIViewController {
         dismiss(animated: true)
     }
     
+}
+extension ContrasenaViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let textFieldText = textField.text {
+            if let rangeOfTextToReplace = Range(range, in: textFieldText){
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= 6
+            }
+        }
+        return false
+    }
 }
