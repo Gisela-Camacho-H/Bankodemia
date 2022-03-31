@@ -9,7 +9,7 @@ import UIKit
 
 class ServiciosViewController: UIViewController {
     
-    var bankodemiaImage: UIImageView = UIImageView()
+    // UILabels
     var servicesLabel: UILabel = UILabel()
     var recargaLabel: UILabel = UILabel()
     var telcelLabel: UILabel = UILabel()
@@ -26,7 +26,8 @@ class ServiciosViewController: UIViewController {
     var tiendasLabel: UILabel = UILabel()
     var liverpoolLabel: UILabel = UILabel()
     
-    
+    // UIImageView
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     
     
@@ -39,18 +40,15 @@ class ServiciosViewController: UIViewController {
     func initUI() {
         view.backgroundColor = .white
         
-        
-        bankodemiaImage.frame = CGRect(x: 0, y: 0, width: 70, height: 40)
-        bankodemiaImage.image = UIImage(named: "bigLogo")
-
-        view.addSubview(bankodemiaImage)
-        bankodemiaImage.translatesAutoresizingMaskIntoConstraints = false
-        bankodemiaImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        bankodemiaImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        bankodemiaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
-        bankodemiaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-        
-        
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
         
         
         

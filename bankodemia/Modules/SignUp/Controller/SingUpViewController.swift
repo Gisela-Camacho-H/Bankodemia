@@ -97,7 +97,7 @@ class SingUpViewController: UIViewController {
         
         self.view.addSubview(bottomLabel)
         bottomLabel.translatesAutoresizingMaskIntoConstraints = false
-        bottomLabel.text = "Al tocar continuar aceptas nuesto"
+        bottomLabel.text = "Al tocar continuar aceptas nuestro"
         bottomLabel.numberOfLines = 0
         bottomLabel.textAlignment = .center
         bottomLabel.textColor = UIColor.bankodemiaBlack

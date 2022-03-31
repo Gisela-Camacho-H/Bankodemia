@@ -9,16 +9,18 @@ import UIKit
 
 class TarjetaViewController: UIViewController {
     
+    // UILabels
     var tarjetaLabel: UILabel = UILabel()
-    var tarjetaImage: UIImage = UIImage()
-//    necesito declarar mas cosas
     var noTarjetaLabel: UILabel = UILabel()
     var noCuentaLabel: UILabel = UILabel()
     var vigenciaLabel: UILabel = UILabel()
     var fechaLabel: UILabel = UILabel()
     var cvvLabel: UILabel = UILabel()
     var cvvNumeroLabel: UILabel = UILabel()
-    var bankodemiaImage: UIImageView = UIImageView()
+    
+    // UIImage
+    var tarjetaImage: UIImage = UIImage()
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +32,16 @@ class TarjetaViewController: UIViewController {
         
      //MARK: Banner
         
-        bankodemiaImage.frame = CGRect(x: 0, y: 0, width: 70, height: 40)
-        bankodemiaImage.image = UIImage(named: "bigLogo")
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        ])
 
-        view.addSubview(bankodemiaImage)
-        bankodemiaImage.translatesAutoresizingMaskIntoConstraints = false
-        bankodemiaImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        bankodemiaImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        bankodemiaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
-        bankodemiaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-        
-  
         // MARK: Tarjeta Label
         view.addSubview(tarjetaLabel)
         tarjetaLabel.frame = CGRect(x: 0, y: 0, width: 64, height: 21)
@@ -65,19 +66,7 @@ class TarjetaViewController: UIViewController {
         // MARK: Componentes de tarjeta
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+ 
         // MARK: Numero de tarjeta info
         
         

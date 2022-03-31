@@ -3,21 +3,30 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // stackView
     private lazy var textFieldStack: UIStackView = UIStackView()
     private lazy var labelStackView: UIStackView = UIStackView()
-    private lazy var iconImage: UIImageView = UIImageView()
-    private lazy var backButton: UIButton = UIButton()
-    private lazy var iniciarLabel: UILabel = UILabel()
-    private lazy var escribeLabel: UILabel = UILabel()
-    private lazy var emailLabel: UILabel = UILabel()
-    private lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
-    private lazy var passwordLabel: UILabel = UILabel()
-    private lazy var passwordTextField: UIView.mainTextField = UIView.mainTextField()
-    private lazy var finalLabel: UILabel = UILabel()
+    
+    // ImageView
+    lazy var bankodemiaLogo: UIImageView = UIImageView()
+    
+    // UIButtons
+    lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     private lazy var contactButton: UIButton = UIButton()
     private lazy var loginButton: UIButton = UIButton()
-    private lazy var iniciarSesionButton: UIButton = UIButton()
-
+    lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
+    
+    // UILabel
+    lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
+    private lazy var emailLabel: UILabel = UILabel()
+    private lazy var passwordLabel: UILabel = UILabel()
+    lazy var bottomLabel: UILabel = UILabel()
+    lazy var linkLabel: UILabel = UILabel()
+    
+    // textFields
+    private lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
+    private lazy var passwordTextField: UIView.mainTextField = UIView.mainTextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,150 +38,84 @@ class LoginViewController: UIViewController {
         
         view.applyWhiteBackgroundColor()
         //MARK: Imagen de icono
-        
-        
-        iconImage.frame = CGRect(x: 0, y: 0, width: 70, height: 40)
-        iconImage.image = UIImage(named: "bigLogo")
-
-        view.addSubview(iconImage)
-        iconImage.translatesAutoresizingMaskIntoConstraints = false
-        iconImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        iconImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        iconImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 145).isActive = true
-        iconImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-                                     
-        
-        
-        
-        
-        //MARK: Buttons
-        
-        
-    // Cambia de color la flecha
-        self.view.addSubview(backButton)
-
-
-        backButton.backgroundColor = .clear
-        backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.frame = CGRect(x: 0, y: 0, width: 13, height: 10)
-        
-        
-        
-        
-        
-  //      backButton.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-
-
-        view.addSubview(backButton)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 85).isActive = true
-        
-        
-        
-        
-        
-    //    NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: Constants.height / 7),
-     //
-    //    backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
-    //    ])
-        
-      
-        
-        
-        // PARA EL LABEL DEL BOTON
-        //NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: iconImage.topAnchor, constant: Constants.height / 24)
-                                     
-                            
-        
-        
-    // MARK: LAbels
-        
-        
-        self.view.addSubview(iniciarLabel)
-        iniciarLabel.textColor = UIColor(red: 0.384, green: 0.384, blue: 0.384, alpha: 1)
-        iniciarLabel.font = UIFont(name: "Poppins-Medium", size: 14)
-        iniciarLabel.textAlignment = .center
-        iniciarLabel.attributedText = NSMutableAttributedString(string: "Iniciar Sesión", attributes: [NSAttributedString.Key.kern: 0.7])
-        
-        view.addSubview(iniciarLabel)
-        iniciarLabel.translatesAutoresizingMaskIntoConstraints = false
-        iniciarLabel.widthAnchor.constraint(equalToConstant: 107).isActive = true
-        iniciarLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        iniciarLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56).isActive = true
-        iniciarLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 85).isActive = true
-
-       
-        
-        
-        
-           
-        
-        
-        self.view.addSubview(escribeLabel)
-        escribeLabel.text = "Escribe el correo y teléfono con el que te registraste, a través de estos te enviaremos el acceso"
-        self.escribeLabel.adjustsFontSizeToFitWidth = true
-        escribeLabel.apply16Font()
-        escribeLabel.numberOfLines = 0
-        escribeLabel.textColor = UIColor.black
-        escribeLabel.textAlignment = .left
-        escribeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([escribeLabel.topAnchor.constraint(equalTo: iniciarLabel.topAnchor, constant: Constants.height / 11),
-                                     escribeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     escribeLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85)
+        self.view.addSubview(bankodemiaLogo)
+        bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
+        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
+                view.topAnchor, constant: Constants.height / 14),
+        bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
         ])
         
-       
+        //MARK: Buttons
+        self.view.addSubview(backButton)
+        backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        ])
+
         
-        //MARK: Placeholders
+    // MARK: Labels
+        self.view.addSubview(titleLabel)
+        titleLabel.text = "Iniciar Sesión"
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLabel.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
+        ])
         
-//        correo electronico
-        
-    self.view.addSubview(emailTextField)
-    emailTextField.placeholder = "mels@gmail.com"
-    emailTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
-    emailTextField.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
-    emailTextField.font = UIFont(name: "Poppins-Regular", size: 14)
-    emailTextField.textAlignment = .left
     
-        
-//        contraseña
-        
-        self.view.addSubview(passwordTextField)
-        passwordTextField.placeholder = "*******"
-        passwordTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
-        passwordTextField.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
-        passwordTextField.font = UIFont(name: "Poppins-Regular", size: 14)
-        passwordTextField.textAlignment = .left
-        passwordTextField.isSecureTextEntry = true
+        self.view.addSubview(mainLabel)
+        mainLabel.text = "Escribe el correo y teléfono con el que te registraste, a través de estos te enviaremos el acceso"
+        NSLayoutConstraint.activate([mainLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: Constants.buttonSize),
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        mainLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
         
         
-        //MARK: Labels
-        
+        // label stack
         self.view.addSubview(emailLabel)
-        emailLabel.text = "Escribe tu correo"
-        emailLabel.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
-
-        emailLabel.font = UIFont(name: "Poppins-Medium", size: 14)
-        
-        
         self.view.addSubview(passwordLabel)
+        emailLabel.text = "Escribe tu correo"
         passwordLabel.text = "Escribe tu contraseña"
-        passwordLabel.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
-
-        passwordLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         
+        let labelArray: [UILabel] = [emailLabel, passwordLabel]
         
+        labelStackView.axis = .vertical
+        labelStackView.spacing = Constants.height/13
+        labelStackView.alignment = .fill
+        labelStackView.distribution = .fillEqually
+        labelArray.forEach {label in
+            labelStackView.addArrangedSubview(label)
+        }
+        view.addSubview(labelStackView)
+        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([labelStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: Constants.padding),
+        labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        labelStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        labelArray.forEach {label in
+            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            label.backgroundColor = .white
+            label.apply14Font()
+            label.textColor = UIColor.labelDarkGray
+            label.textAlignment = .left
+        }
+        
+        // correo electronico
+            self.view.addSubview(emailTextField)
+            emailTextField.placeholder = "mels@gmail.com"
+        // contraseña
+                self.view.addSubview(passwordTextField)
+                passwordTextField.placeholder = "*******"
+                passwordTextField.isSecureTextEntry = true
         
         // MARK: TEXT Field Stack
         
         let textFieldArray: [UIView.mainTextField] = [emailTextField, passwordTextField]
         textFieldStack.axis = .vertical
-        textFieldStack.spacing = Constants.padding
+        textFieldStack.spacing = Constants.height/20
         textFieldStack.alignment = .fill
         textFieldStack.distribution = .fillEqually
         textFieldArray.forEach {button in
@@ -181,98 +124,50 @@ class LoginViewController: UIViewController {
         view.addSubview(textFieldStack)
         textFieldStack.translatesAutoresizingMaskIntoConstraints = false
                 
-        NSLayoutConstraint.activate([textFieldStack.bottomAnchor.constraint(equalTo: escribeLabel.bottomAnchor, constant: 140),
+        NSLayoutConstraint.activate([textFieldStack.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 5),
 //          escribeLabel.bottomAnchor, constant:  Constants.height / 30)
             textFieldStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textFieldStack.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
                 ])
             textFieldArray.forEach {textField in
-            textField.heightAnchor.constraint(equalToConstant: Constants.buttonSize).isActive = true
-//                textField.layer.cornerRadius = 4
-                textField.layer.borderWidth = 1
-                 textField.layer.cornerRadius = Constants.cornerRadius
-                textField.layer.borderColor = UIColor(red: 0, green: 0.8, blue: 0.8, alpha: 0.9).cgColor
+                    textField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
                 }
-        
-        
-        // MARK: Stack de labels
-        
-        
-//        let labelArray = [emailLabel, passwordLabel,]
-//
-//        labelStackView.axis = .horizontal
-//        labelStackView.alignment = .fill
-//        textFieldStack.spacing = 1
-//        labelStackView.distribution = .equalSpacing
-//        labelArray.forEach {label in
-//            labelStackView.addArrangedSubview(label)
-//        }
-//        view.addSubview(labelStackView)
-//
-//        labelArray.forEach {label in
-//            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//            label.textAlignment = .center
-//            label.applyTitleFont()
-//        }
-//        labelStackView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([labelStackView.bottomAnchor.constraint(equalTo: textFieldStack.bottomAnchor, constant: 30),
-//        labelStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-//        ])
-  
-        
-        
-        
-        
-        
-        
-        
+           
   // MARK: Botones
         
-        view.addSubview(backButton)
-        backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
+        view.addSubview(continuarButton)
+        continuarButton.setTitle("Iniciar Sesión", for: .normal)
+        continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
         
+        continuarButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([continuarButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
+        continuarButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                     continuarButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        ])
         
-        view.addSubview(finalLabel)
-        finalLabel.textAlignment = .center
-        finalLabel.text = "¿Necesitas ayuda? Escríbenos a  bankodemia@com.mx"
-        finalLabel.textColor = UIColor(red: 0.087, green: 0.087, blue: 0.087, alpha: 1)
-        finalLabel.font = UIFont(name: "Poppins-Regular", size: 14)
-        finalLabel.numberOfLines = 0
-        finalLabel.lineBreakMode = .byWordWrapping
+        self.view.addSubview(linkLabel)
+        linkLabel.translatesAutoresizingMaskIntoConstraints = false
+        linkLabel.text = "bankodemia@com.mx"
+        linkLabel.textAlignment = .center
+        linkLabel.textColor = UIColor.bankodemiaBlue
         
-       
-
-        finalLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        finalLabel.widthAnchor.constraint(equalToConstant: 328).isActive = true
-
-        finalLabel.heightAnchor.constraint(equalToConstant: 42).isActive = true
-
-        finalLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-
-        finalLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 530).isActive = true
+        NSLayoutConstraint.activate([linkLabel.bottomAnchor.constraint(equalTo: continuarButton.topAnchor, constant: -20),
+        linkLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        linkLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
         
+        self.view.addSubview(bottomLabel)
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "¿Necesitas ayuda? Escribenos a"
+        bottomLabel.numberOfLines = 0
+        bottomLabel.textAlignment = .center
+        bottomLabel.textColor = UIColor.bankodemiaBlack
         
-        view.addSubview(iniciarSesionButton)
-        iniciarSesionButton.setTitle("Iniciar Sesión", for: .normal)
-        iniciarSesionButton.backgroundColor = UIColor.bankodemiaCyan
-        iniciarSesionButton.setTitleColor(.white, for: .normal)
-        iniciarSesionButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
-        
-        iniciarSesionButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([iniciarSesionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -50),
-        iniciarSesionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        iniciarSesionButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        NSLayoutConstraint.activate([bottomLabel.bottomAnchor.constraint(equalTo: linkLabel.topAnchor, constant: -5),
+        bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bottomLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
     }
-    
-    
-    
-    
-    
-    
-    
     
     // MARK: Funcionalidad Botones
 
