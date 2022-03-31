@@ -77,7 +77,7 @@ class VerificarTableViewController: UIViewController {
         tableView = UITableView(frame: CGRect(x: 10, y: Constants.height/4 + 30 , width: Constants.width - 20, height: 200))
         tableView.backgroundColor = .white
         tableView.delegate = self
-        tableView.dataSource = self //en donde se va a definir (en si mismo)
+        tableView.dataSource = self 
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }

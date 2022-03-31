@@ -7,16 +7,18 @@
 
 import UIKit
 
-class DetailDocumentViewController: UIViewController {
+class DetailDocumentViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // labels
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
-    lazy var documentoImageText: UILabel = UILabel()
     
     // buttons
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
+    lazy var documentoImageButton: UIButton = UIButton()
+    
+    let imagePicker: UIImagePickerController = UIImagePickerController()
     
     lazy var documentoImage: UIImageView = UIImageView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -24,6 +26,7 @@ class DetailDocumentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        imagePicker.delegate = self
     }
     
     func initUI(){
@@ -73,17 +76,17 @@ class DetailDocumentViewController: UIViewController {
         documentoImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80)
         ])
         
-        self.view.addSubview(documentoImageText)
-        documentoImageText.text = "Arrastra tu archivo aquí o subelo desde tu ORDENADOR"
-        documentoImageText.apply14Font()
-        documentoImageText.numberOfLines = 0
-        documentoImageText.textAlignment = .center
-        documentoImageText.textColor = UIColor.bankodemiaBlack
-        documentoImageText.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([documentoImageText.topAnchor.constraint(equalTo: documentoImage.topAnchor, constant: Constants.buttonSize + 50),
-        documentoImageText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        documentoImageText.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.60)
+        view.addSubview(documentoImageButton)
+        documentoImageButton.setTitle("Arrastra tu archivo aquí o subelo desde tu ORDENADOR", for: .normal)
+        documentoImageButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
+        documentoImageButton.titleLabel?.apply14Font()
+        documentoImageButton.titleLabel?.numberOfLines = 0
+        documentoImageButton.titleLabel?.textAlignment = .center
+        documentoImageButton.translatesAutoresizingMaskIntoConstraints = false
+        documentoImageButton.addTarget(self, action: #selector(seleccionaFoto), for: .touchUpInside)
+        NSLayoutConstraint.activate([documentoImageButton.topAnchor.constraint(equalTo: documentoImage.topAnchor, constant: Constants.buttonSize + 50),
+        documentoImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        documentoImageButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.60)
         ])
         
         
@@ -115,6 +118,27 @@ class DetailDocumentViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+    
+    @objc func seleccionaFoto(_ sender: AnyObject){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .photoLibrary
+            
+            present(imagePicker, animated: true, completion: nil)
+            documentoImageButton.setTitleColor(.clear, for: .normal)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imagenSeleccionada: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            documentoImage.image = imagenSeleccionada
+            
+            if imagePicker.sourceType == .camera {
+                UIImageWriteToSavedPhotosAlbum(imagenSeleccionada, nil, nil, nil)
+            }
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
 
