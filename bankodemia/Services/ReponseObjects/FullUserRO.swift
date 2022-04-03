@@ -9,11 +9,11 @@ import Foundation
 
 struct FullUserRO: Codable {
         let success: Bool
-        let data: Data
+        let data: userData
     }
 
     // MARK: - DataClass
-    struct Data: Codable {
+    struct userData: Codable {
         let user: User
         let transactions: [Transaction]
         let balance: Double

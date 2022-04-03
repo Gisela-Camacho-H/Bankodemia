@@ -80,12 +80,7 @@ class ServiceBuilder: ServicesBuilderProtocol {
         guard let currentEndpoint = currentEndpoint else {
             return nil
         }
-        
         switch currentEndpoint {
-        case .authenticatedUser(let token):
-            return "Bearer \(token)"
-        case.logoutUser(let token):
-            return "Bearer \(token)"
         default:
             return nil
         }
@@ -100,8 +95,8 @@ class ServiceBuilder: ServicesBuilderProtocol {
         // Creamos el request usando la url base
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         // Agregando headers
-        request.addValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
-        request.addValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         // Agregar header de autenticación, en caso de que se tenga un beaerer token.
         // El bearer token es la llave para que nos identifiquemos con
         // el servicio.
@@ -118,7 +113,7 @@ class ServiceBuilder: ServicesBuilderProtocol {
                 self?.completionHandler?(.fail(.unrecognized, error))
                 return
             }
-            guard response.statusCode == 200 else {
+            guard response.statusCode == 200 || response.statusCode == 201 else {
                 self?.completionHandler?(.fail(NetworkError.networkErrorFrom(statusCode: response.statusCode), error))
                 return
             }

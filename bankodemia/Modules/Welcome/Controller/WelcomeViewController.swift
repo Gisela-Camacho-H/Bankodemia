@@ -137,7 +137,10 @@ class WelcomeViewController: UIViewController {
     }
     
     func goToLogin() {
+        let loginViewModel: LoginViewModel = LoginViewModel()
         let loginViewController: LoginViewController = LoginViewController()
+        loginViewController.loginViewModel = loginViewModel
+        loginViewModel.loginViewController = loginViewController
         loginViewController.modalPresentationStyle = .fullScreen
         self.present(loginViewController, animated: true, completion: nil)
     }

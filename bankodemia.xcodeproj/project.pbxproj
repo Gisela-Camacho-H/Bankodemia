@@ -33,11 +33,16 @@
 		56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */; };
 		56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */; };
 		56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */; };
+		564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B8B9E27FA2709008869D7 /* LoginModuleProtocols.swift */; };
+		564B8BA127FA2726008869D7 /* LoginModuleAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B8BA027FA2726008869D7 /* LoginModuleAPIDataManager.swift */; };
+		564B8BA327FA274C008869D7 /* LoginModuleLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B8BA227FA274C008869D7 /* LoginModuleLocalDataManager.swift */; };
+		564B8BA427FA36FD008869D7 /* ServicesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3F27F69D0A008E8EE0 /* ServicesBuilder.swift */; };
 		565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E789E27BDB81700FE708D /* AppDelegate.swift */; };
 		565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E78A027BDB81700FE708D /* SceneDelegate.swift */; };
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
 		565E78A827BDB81900FE708D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A727BDB81900FE708D /* Assets.xcassets */; };
 		565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A927BDB81900FE708D /* LaunchScreen.storyboard */; };
+		56D935C127FA39B200E002ED /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
 		56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */; };
 		56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */; };
 		56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */; };
@@ -82,6 +87,9 @@
 		56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		56412CB227E294AA0027BBA7 /* DetailDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDocumentViewController.swift; sourceTree = "<group>"; };
 		56412CB427E2A7CB0027BBA7 /* ContrasenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrasenaViewController.swift; sourceTree = "<group>"; };
+		564B8B9E27FA2709008869D7 /* LoginModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleProtocols.swift; sourceTree = "<group>"; };
+		564B8BA027FA2726008869D7 /* LoginModuleAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleAPIDataManager.swift; sourceTree = "<group>"; };
+		564B8BA227FA274C008869D7 /* LoginModuleLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleLocalDataManager.swift; sourceTree = "<group>"; };
 		565E789B27BDB81700FE708D /* bankodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565E789E27BDB81700FE708D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E78A027BDB81700FE708D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +198,9 @@
 		225B4D7727C3DD53003E6180 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				564B8B9E27FA2709008869D7 /* LoginModuleProtocols.swift */,
+				564B8BA027FA2726008869D7 /* LoginModuleAPIDataManager.swift */,
+				564B8BA227FA274C008869D7 /* LoginModuleLocalDataManager.swift */,
 				225B4D8027C3DE00003E6180 /* ViewModel */,
 				225B4D7F27C3DDF8003E6180 /* Controller */,
 			);
@@ -577,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564B8BA127FA2726008869D7 /* LoginModuleAPIDataManager.swift in Sources */,
 				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */,
@@ -590,17 +602,19 @@
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
+				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
+				564B8BA427FA36FD008869D7 /* ServicesBuilder.swift in Sources */,
+				564B8BA327FA274C008869D7 /* LoginModuleLocalDataManager.swift in Sources */,
 				560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */,
 				560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
 				1987C3F727F9527E00A982DD /* DetalleViewController.swift in Sources */,
-				56FE2E3E27F69C19008E8EE0 /* ResponseParser.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
@@ -609,6 +623,7 @@
 				56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
 				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
+				56D935C127FA39B200E002ED /* ResponseParser.swift in Sources */,
 				560C438627F999B700CC6FAE /* RegisterRO.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,

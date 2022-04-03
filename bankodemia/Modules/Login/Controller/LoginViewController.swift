@@ -3,6 +3,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var loginViewModel: LoginViewModelProtocol?
+    
     // stackView
     private lazy var textFieldStack: UIStackView = UIStackView()
     private lazy var labelStackView: UIStackView = UIStackView()
@@ -178,9 +180,10 @@ class LoginViewController: UIViewController {
     }
     
     func goToSignUp() {
-        let loginViewController: TabBarViewController = TabBarViewController()
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+        let user: String? = emailTextField.text
+        let countersign: String? = passwordTextField.text
+        loginViewModel?.tapOnLoginButtonWithInputs(countersign: countersign, userEmail: user)
+        
     }
     
     
@@ -190,6 +193,21 @@ class LoginViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+    
+}
+
+extension LoginViewController : LoginViewControllerProtocol {
+    
+    func setViewModelConnection(viewModel: LoginViewModelProtocol) {
+        loginViewModel = viewModel
+    }
+    
+    func continueToUserDetailView() {
+        let loginViewController: TabBarViewController = TabBarViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+
     }
     
 }
