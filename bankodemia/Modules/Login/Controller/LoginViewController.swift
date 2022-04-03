@@ -106,6 +106,8 @@ class LoginViewController: UIViewController {
         // correo electronico
             self.view.addSubview(emailTextField)
             emailTextField.placeholder = "mels@gmail.com"
+            emailTextField.keyboardType = UIKeyboardType.emailAddress
+            emailTextField.autocapitalizationType = .none
         // contraseña
                 self.view.addSubview(passwordTextField)
                 passwordTextField.placeholder = "*******"

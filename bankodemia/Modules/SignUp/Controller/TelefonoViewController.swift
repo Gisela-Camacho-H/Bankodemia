@@ -81,10 +81,10 @@ class TelefonoViewController: UIViewController {
         subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         subtitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
-        
+
         self.view.addSubview(telefonoTextField)
+        telefonoTextField.placeholder = "+52  |"
         telefonoTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
-        telefonoTextField.placeholder = "+52  |    5540160405"
         NSLayoutConstraint.activate([telefonoTextField.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
             telefonoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             telefonoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -96,6 +96,7 @@ class TelefonoViewController: UIViewController {
         numberTextField.heightAnchor.constraint(equalToConstant: Constants.height/20).isActive = true
         numberTextField.backgroundColor = .clear
         numberTextField.textAlignment = NSTextAlignment.left
+        numberTextField.placeholder = "   5540160405"
         numberTextField.keyboardType = UIKeyboardType.default
         numberTextField.textColor = UIColor.bankodemiaBlack
         numberTextField.autocorrectionType = UITextAutocorrectionType.no

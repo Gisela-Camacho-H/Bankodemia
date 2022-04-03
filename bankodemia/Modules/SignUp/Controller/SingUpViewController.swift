@@ -68,6 +68,8 @@ class SingUpViewController: UIViewController {
         self.view.addSubview(correoTextField)
         correoTextField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
         correoTextField.placeholder = "mels@gmail.com"
+        correoTextField.autocapitalizationType = .none
+        correoTextField.keyboardType = UIKeyboardType.emailAddress
         NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: subtitlelabel.bottomAnchor, constant: 5),
             correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
