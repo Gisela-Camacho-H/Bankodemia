@@ -131,7 +131,7 @@ class SingUpViewController: UIViewController {
 
 extension SingUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // dismiss keyboard
+        textField.resignFirstResponder()
         return true
     }
 }

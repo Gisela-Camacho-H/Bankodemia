@@ -134,11 +134,23 @@ class DetailDocumentViewController: UIViewController, UIImagePickerControllerDel
         if let imagenSeleccionada: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             documentoImage.image = imagenSeleccionada
             
+            //let base64 = UIImage.convertImageToBase64(image: imagenSeleccionada)
+            //print(base64)
+            
             if imagePicker.sourceType == .camera {
                 UIImageWriteToSavedPhotosAlbum(imagenSeleccionada, nil, nil, nil)
             }
         }
         imagePicker.dismiss(animated: true, completion: nil)
+    
+    }
+    
+}
+
+extension UIImage{
+    class func convertImageToBase64(image: UIImage) -> String {
+        let imageData = image.pngData()!
+        return imageData.base64EncodedString()
     }
 }
 

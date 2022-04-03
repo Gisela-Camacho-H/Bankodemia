@@ -7,11 +7,11 @@
 
 import Foundation
 
-class DataParser<DataExpected: Codable> {
+class DataParser<DataToBeParsed: Codable> {
     lazy var decoder: JSONDecoder = JSONDecoder()
-    func parseData(data: Data) -> DataExpected? {
+    func parseData(unparsedData: Data) -> DataToBeParsed? {
         do {
-            let dataDecode: DataExpected = try decoder.decode(DataExpected.self, from: data)
+            let dataDecode: DataToBeParsed = try decoder.decode(DataToBeParsed.self, from: unparsedData)
             return dataDecode
         } catch {
             print(error)
@@ -19,3 +19,4 @@ class DataParser<DataExpected: Codable> {
         }
     }
 }
+

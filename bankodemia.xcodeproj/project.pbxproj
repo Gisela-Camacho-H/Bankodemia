@@ -22,6 +22,10 @@
 		22C877A427C4800100521C71 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A127C4800100521C71 /* Poppins-SemiBold.ttf */; };
 		22C877A527C4800100521C71 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A227C4800100521C71 /* Poppins-Medium.ttf */; };
 		22C877A627C4800100521C71 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A327C4800100521C71 /* Poppins-Regular.ttf */; };
+		560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C437F27F97FD100CC6FAE /* RegisterDTO.swift */; };
+		560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438127F9852600CC6FAE /* TransactionDTO.swift */; };
+		560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438327F998B200CC6FAE /* FullUserRO.swift */; };
+		560C438627F999B700CC6FAE /* RegisterRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438527F999B700CC6FAE /* RegisterRO.swift */; };
 		56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56341CD727E012C300123524 /* TelefonoViewController.swift */; };
 		563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD5CA27DA9F12000A7420 /* DatosViewController.swift */; };
 		56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56412CAC27E271290027BBA7 /* VerificarViewController.swift */; };
@@ -44,8 +48,6 @@
 		56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3727F69AB8008E8EE0 /* LoginRO.swift */; };
 		56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3927F69AEB008E8EE0 /* Response.swift */; };
 		56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3B27F69B25008E8EE0 /* LoginDTO.swift */; };
-		56FE2E3E27F69C19008E8EE0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
-		56FE2E4027F69D0A008E8EE0 /* ServicesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3F27F69D0A008E8EE0 /* ServicesBuilder.swift */; };
 		56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E4127F69D19008E8EE0 /* Endpoints.swift */; };
 		BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */; };
 		BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */; };
@@ -69,6 +71,10 @@
 		22C877A127C4800100521C71 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		22C877A227C4800100521C71 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		22C877A327C4800100521C71 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		560C437F27F97FD100CC6FAE /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
+		560C438127F9852600CC6FAE /* TransactionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDTO.swift; sourceTree = "<group>"; };
+		560C438327F998B200CC6FAE /* FullUserRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserRO.swift; sourceTree = "<group>"; };
+		560C438527F999B700CC6FAE /* RegisterRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRO.swift; sourceTree = "<group>"; };
 		56341CD727E012C300123524 /* TelefonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		563FD5CA27DA9F12000A7420 /* DatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewController.swift; sourceTree = "<group>"; };
 		56412CAC27E271290027BBA7 /* VerificarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificarViewController.swift; sourceTree = "<group>"; };
@@ -473,6 +479,8 @@
 			children = (
 				56FE2E3727F69AB8008E8EE0 /* LoginRO.swift */,
 				56FE2E3927F69AEB008E8EE0 /* Response.swift */,
+				560C438327F998B200CC6FAE /* FullUserRO.swift */,
+				560C438527F999B700CC6FAE /* RegisterRO.swift */,
 			);
 			path = ReponseObjects;
 			sourceTree = "<group>";
@@ -481,6 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				56FE2E3B27F69B25008E8EE0 /* LoginDTO.swift */,
+				560C437F27F97FD100CC6FAE /* RegisterDTO.swift */,
+				560C438127F9852600CC6FAE /* TransactionDTO.swift */,
 			);
 			path = DataTransferObjects;
 			sourceTree = "<group>";
@@ -582,9 +592,10 @@
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
-				56FE2E4027F69D0A008E8EE0 /* ServicesBuilder.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
+				560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */,
+				560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
@@ -598,11 +609,13 @@
 				56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
 				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
+				560C438627F999B700CC6FAE /* RegisterRO.swift in Sources */,
 				225B4D9F27C3F9B9003E6180 /* UIView++.swift in Sources */,
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
+				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
 				BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);

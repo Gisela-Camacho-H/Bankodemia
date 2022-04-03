@@ -8,8 +8,11 @@
 import Foundation
 
 struct LoginRO: Codable {
-    let plainTextToken: String
+    let token: String
+    let expiresIn: String
+    
     enum CodingKeys: String, CodingKey {
-        case plainTextToken = "plain-text-token"
+        case token = "plain-text-token"
+        case expiresIn = "1h"
     }
 }
