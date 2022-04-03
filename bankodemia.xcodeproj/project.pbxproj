@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1987C3F727F9527E00A982DD /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1987C3F627F9527E00A982DD /* DetalleViewController.swift */; };
 		19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */; };
 		225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */; };
 		225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1987C3F627F9527E00A982DD /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarViewController.swift; sourceTree = "<group>"; };
 		225B4D8127C3DF31003E6180 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -111,11 +113,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		196470A627F949D800488DDC /* New Group */ = {
+		1987C3F327F94F2C00A982DD /* Recibir  */ = {
+			isa = PBXGroup;
+			children = (
+				1987C3F527F9517100A982DD /* Controller */,
+				1987C3F427F9516300A982DD /* Model  */,
+			);
+			path = "Recibir ";
+			sourceTree = "<group>";
+		};
+		1987C3F427F9516300A982DD /* Model  */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = "Model ";
+			sourceTree = "<group>";
+		};
+		1987C3F527F9517100A982DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1987C3F627F9527E00A982DD /* DetalleViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		19BCFA8227E42996007FD12D /* Enviar */ = {
@@ -149,7 +168,7 @@
 		225B4D7627C3DD2D003E6180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				196470A627F949D800488DDC /* New Group */,
+				1987C3F327F94F2C00A982DD /* Recibir  */,
 				19BCFA8227E42996007FD12D /* Enviar */,
 				56FD96F527CB316D00C708ED /* Servicios */,
 				56FD96F027CB311400C708ED /* Tarjeta */,
@@ -569,6 +588,7 @@
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
+				1987C3F727F9527E00A982DD /* DetalleViewController.swift in Sources */,
 				56FE2E3E27F69C19008E8EE0 /* ResponseParser.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,

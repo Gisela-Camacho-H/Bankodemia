@@ -105,7 +105,7 @@ class InicioViewController: UIViewController {
         recibirButton.layer.cornerRadius = 6
         recibirButton.backgroundColor = UIColor.bankodemiaCyan
         recibirButton.layer.borderColor = .init(red: 25, green: 203, blue: 203, alpha: 0)
-      //  enviarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
+        recibirButton.addTarget(self, action: #selector(onRecibirButtonTap), for: .touchUpInside)
 
 
         fechaLabel.frame = CGRect(x: 0, y: 0, width: 111, height: 21)
@@ -129,6 +129,8 @@ class InicioViewController: UIViewController {
         fondoLabel.textColor = UIColor(red: 0.302, green: 0.302, blue: 0.302, alpha: 1)
         fondoLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         fondoLabel.text = "Fondeo Bienvenida"
+        
+        
 
 
         view.addSubview(fondoLabel)
@@ -173,6 +175,17 @@ class InicioViewController: UIViewController {
     }
     
     // MARK: Funcionalidades Botones
+    
+    @objc func onRecibirButtonTap(){
+        goToDetalle()
+    }
+    
+    func goToDetalle() {
+        let detalleViewController = DetalleViewController()
+        detalleViewController.modalPresentationStyle = .fullScreen
+        self.present(detalleViewController, animated: true, completion: nil)
+    }
+    
     
     @objc func onSendButtonTap(){
         goToSend()
