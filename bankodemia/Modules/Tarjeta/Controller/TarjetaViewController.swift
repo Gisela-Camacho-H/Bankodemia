@@ -19,7 +19,7 @@ class TarjetaViewController: UIViewController {
     var cvvNumeroLabel: UILabel = UILabel()
     
     // UIImage
-    var tarjetaImage: UIImage = UIImage()
+    var tarjetaImage: UIImageView = UIImageView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
@@ -64,6 +64,18 @@ class TarjetaViewController: UIViewController {
         
         
         // MARK: Componentes de tarjeta
+        
+        
+        view.addSubview(tarjetaImage)
+        tarjetaImage.translatesAutoresizingMaskIntoConstraints = false
+        tarjetaImage.image = UIImage(named: "tarjeta")
+        view.addSubview(tarjetaImage)
+        tarjetaImage.translatesAutoresizingMaskIntoConstraints = false
+        tarjetaImage.widthAnchor.constraint(equalToConstant: 144).isActive = true
+        tarjetaImage.heightAnchor.constraint(equalToConstant: 244).isActive = true
+        tarjetaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 117).isActive = true
+        tarjetaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 176).isActive = true
+                
         
         
  

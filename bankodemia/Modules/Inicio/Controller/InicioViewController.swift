@@ -38,7 +38,7 @@ class InicioViewController: UIViewController {
     func initUI(){
         view.backgroundColor = .white
         
-        self.view.addSubview(bankodemiaLogo)
+        view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "smallLogo")
         NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
@@ -47,6 +47,12 @@ class InicioViewController: UIViewController {
         bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
         bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
         ])
+        
+        
+        view.addSubview(preguntaImage)
+        view.frame = CGRect(x: 50, y: 50, width: 21, height: 21)
+        
+        
         
 
         dineroLabel.frame = CGRect(x: 0, y: 0, width: 144, height: 21)
@@ -163,10 +169,7 @@ class InicioViewController: UIViewController {
         movimiento1Label.topAnchor.constraint(equalTo: view.topAnchor, constant: 310).isActive = true
         
         
-        view.addSubview(preguntaImage)
-        preguntaImage.frame = CGRect(x: 150, y: 40, width: 21, height: 21)
-        preguntaImage.image = UIImage(named: "questionMark")
-        
+                
     }
     
     // MARK: Funcionalidades Botones
