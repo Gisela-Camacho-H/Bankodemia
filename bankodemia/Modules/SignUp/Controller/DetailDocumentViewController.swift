@@ -9,6 +9,8 @@ import UIKit
 
 class DetailDocumentViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var detailDocumentViewModel: DetailDocumentViewModel?
+    
     // labels
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
@@ -103,7 +105,7 @@ class DetailDocumentViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
@@ -145,6 +147,20 @@ class DetailDocumentViewController: UIViewController, UIImagePickerControllerDel
     
     }
     
+    func didPressedContinueButton() {
+        detailDocumentViewModel?.validateAndProcessInputData(identityImage: documentoImage.image ?? UIImage())
+        }
+
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: ContrasenaViewModel = ContrasenaViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: ContrasenaViewController = ContrasenaViewController()
+        nextViewController.contrasenaViewModel = nextViewModel
+        nextViewModel.contrasenaViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
+    }
 }
 
 extension UIImage{

@@ -145,9 +145,13 @@ class WelcomeViewController: UIViewController {
         self.present(loginViewController, animated: true, completion: nil)
     }
     func goToSignUp() {
-        let signUpViewController: SingUpViewController = SingUpViewController()
+        let signUpViewController: SignUpViewController = SignUpViewController()
+        let signupViewModel: SignUpViewModel = SignUpViewModel()
+        signupViewModel.viewController = signUpViewController
+        signUpViewController.signUpViewModel = signupViewModel
         signUpViewController.modalPresentationStyle = .fullScreen
         self.present(signUpViewController, animated: true, completion: nil)
+        
     }
     
 }

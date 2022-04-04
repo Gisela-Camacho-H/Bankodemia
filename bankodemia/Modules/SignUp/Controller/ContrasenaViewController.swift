@@ -9,6 +9,8 @@ import UIKit
 
 class ContrasenaViewController: UIViewController {
     
+    var contrasenaViewModel: ContrasenaViewModel?
+    
     // labels
     lazy var contrasenaLabel: UILabel = UILabel()
     lazy var confirmarLabel: UILabel = UILabel()
@@ -181,11 +183,11 @@ class ContrasenaViewController: UIViewController {
     }
     
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
-        let loginViewController = Confirmacio_nViewController()
+        let loginViewController = ConfirmacionViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         self.present(loginViewController, animated: true, completion: nil)
     }
@@ -206,6 +208,21 @@ class ContrasenaViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+    
+    func didPressedContinueButton() {
+        contrasenaViewModel?.validateAndProcessInputData(countersign: contrasenaTextField.text ?? "")
+        }
+
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: EnviandoDatosViewModel = EnviandoDatosViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: EnviandoDatosViewController = EnviandoDatosViewController()
+        nextViewController.enviandoDatosViewModel = nextViewModel
+        nextViewModel.enviandoDatosViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
     }
     
 }

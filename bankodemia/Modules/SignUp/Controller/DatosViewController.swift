@@ -9,6 +9,8 @@ import UIKit
 
 class DatosViewController: UIViewController {
     
+    var datosViewModel: DatosViewModel?
+    
     // labels
     lazy var nombreLabel: UILabel = UILabel()
     lazy var apellidosLabel: UILabel = UILabel()
@@ -149,7 +151,7 @@ class DatosViewController: UIViewController {
 
         let datePicker = MonthYearPickerView()
         datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
-            let string = String(format: "%02d / %02d / %d", day + 1 , month, year)
+            let string = String(format: "%02d-%02d-%d", year, month, day + 1)
             self.dateTextField.text = string
             //self.dateTextField.resignFirstResponder()
             //self.view.endEditing(true)
@@ -195,7 +197,7 @@ class DatosViewController: UIViewController {
     }
     
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
@@ -224,6 +226,21 @@ class DatosViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+    
+    func didPressedContinueButton() {
+        datosViewModel?.validateAndProcessInputData(name: nombreTextField.text ?? "", lastName: apellidosTextField.text ?? "", birthDate: dateTextField.text ?? "", ocupation: ocupacionTextField.text ?? "")
+    }
+
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: TelefonoViewModel = TelefonoViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: TelefonoViewController = TelefonoViewController()
+        nextViewController.telefonoViewModel = nextViewModel
+        nextViewModel.telefonoViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
     }
 }
 

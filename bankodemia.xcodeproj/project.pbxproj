@@ -13,7 +13,7 @@
 		225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */; };
 		225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */; };
 		225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8727C3E019003E6180 /* LoginViewModel.swift */; };
-		225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8927C3E041003E6180 /* SingUpViewController.swift */; };
+		225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8927C3E041003E6180 /* SignUpViewController.swift */; };
 		225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D8B27C3E06D003E6180 /* LoginViewController.swift */; };
 		225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9327C3E441003E6180 /* UIColor++.swift */; };
 		225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B4D9527C3EDBB003E6180 /* UILabel++.swift */; };
@@ -43,6 +43,16 @@
 		565E78A827BDB81900FE708D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A727BDB81900FE708D /* Assets.xcassets */; };
 		565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A927BDB81900FE708D /* LaunchScreen.storyboard */; };
 		56D935C127FA39B200E002ED /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
+		56D935C427FA544F00E002ED /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C327FA544F00E002ED /* RegisterData.swift */; };
+		56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C527FA5B1400E002ED /* DatosViewModel.swift */; };
+		56D935C827FA6C5000E002ED /* TelefonoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C727FA6C5000E002ED /* TelefonoViewModel.swift */; };
+		56D935CA27FA760900E002ED /* VerificarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C927FA760900E002ED /* VerificarViewModel.swift */; };
+		56D935CC27FA803200E002ED /* VerificarTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935CB27FA803100E002ED /* VerificarTableViewModel.swift */; };
+		56D935CE27FA82CF00E002ED /* DetailDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935CD27FA82CF00E002ED /* DetailDocumentViewModel.swift */; };
+		56D935D027FA8CD500E002ED /* ContrasenaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935CF27FA8CD500E002ED /* ContrasenaViewModel.swift */; };
+		56D935D227FA94EB00E002ED /* EnviandoDatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D127FA94EB00E002ED /* EnviandoDatosViewModel.swift */; };
+		56D935D527FA9DAC00E002ED /* SignupModuleAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D427FA9DAC00E002ED /* SignupModuleAPIDataManager.swift */; };
+		56D935D727FA9FAB00E002ED /* SignupModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D627FA9FAB00E002ED /* SignupModuleProtocols.swift */; };
 		56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */; };
 		56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */; };
 		56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */; };
@@ -74,7 +84,7 @@
 		225B4D8327C3DFCC003E6180 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		225B4D8727C3E019003E6180 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		225B4D8927C3E041003E6180 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		225B4D8927C3E041003E6180 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		225B4D8B27C3E06D003E6180 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		225B4D9327C3E441003E6180 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
 		225B4D9527C3EDBB003E6180 /* UILabel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
@@ -104,6 +114,16 @@
 		565E78A727BDB81900FE708D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565E78AA27BDB81900FE708D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565E78AC27BDB81900FE708D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D935C327FA544F00E002ED /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
+		56D935C527FA5B1400E002ED /* DatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewModel.swift; sourceTree = "<group>"; };
+		56D935C727FA6C5000E002ED /* TelefonoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewModel.swift; sourceTree = "<group>"; };
+		56D935C927FA760900E002ED /* VerificarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificarViewModel.swift; sourceTree = "<group>"; };
+		56D935CB27FA803100E002ED /* VerificarTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificarTableViewModel.swift; sourceTree = "<group>"; };
+		56D935CD27FA82CF00E002ED /* DetailDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDocumentViewModel.swift; sourceTree = "<group>"; };
+		56D935CF27FA8CD500E002ED /* ContrasenaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrasenaViewModel.swift; sourceTree = "<group>"; };
+		56D935D127FA94EB00E002ED /* EnviandoDatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviandoDatosViewModel.swift; sourceTree = "<group>"; };
+		56D935D427FA9DAC00E002ED /* SignupModuleAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModuleAPIDataManager.swift; sourceTree = "<group>"; };
+		56D935D627FA9FAB00E002ED /* SignupModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModuleProtocols.swift; sourceTree = "<group>"; };
 		56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviandoDatosViewController.swift; sourceTree = "<group>"; };
 		56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacionViewController.swift; sourceTree = "<group>"; };
 		56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
@@ -259,7 +279,7 @@
 		225B4D7D27C3DDE7003E6180 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				225B4D8927C3E041003E6180 /* SingUpViewController.swift */,
+				225B4D8927C3E041003E6180 /* SignUpViewController.swift */,
 				563FD5CA27DA9F12000A7420 /* DatosViewController.swift */,
 				56341CD727E012C300123524 /* TelefonoViewController.swift */,
 				56412CAC27E271290027BBA7 /* VerificarViewController.swift */,
@@ -275,8 +295,17 @@
 		225B4D7E27C3DDF0003E6180 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				56D935D427FA9DAC00E002ED /* SignupModuleAPIDataManager.swift */,
+				56D935D627FA9FAB00E002ED /* SignupModuleProtocols.swift */,
 				225B4D8527C3DFF2003E6180 /* SignUpViewModel.swift */,
 				56412CB027E28B770027BBA7 /* DocumentsTableViewCell.swift */,
+				56D935C527FA5B1400E002ED /* DatosViewModel.swift */,
+				56D935C727FA6C5000E002ED /* TelefonoViewModel.swift */,
+				56D935C927FA760900E002ED /* VerificarViewModel.swift */,
+				56D935CB27FA803100E002ED /* VerificarTableViewModel.swift */,
+				56D935CD27FA82CF00E002ED /* DetailDocumentViewModel.swift */,
+				56D935CF27FA8CD500E002ED /* ContrasenaViewModel.swift */,
+				56D935D127FA94EB00E002ED /* EnviandoDatosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -422,6 +451,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		56D935C227FA542200E002ED /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				56D935C327FA544F00E002ED /* RegisterData.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
 		56FD96F027CB311400C708ED /* Tarjeta */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +519,7 @@
 		56FE2E3127F69A0F008E8EE0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				56D935C227FA542200E002ED /* entity */,
 				56FE2E3427F69A32008E8EE0 /* DataTransferObjects */,
 				56FE2E3327F69A24008E8EE0 /* ReponseObjects */,
 				56FE2E3227F69A1C008E8EE0 /* Errors */,
@@ -604,23 +642,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				564B8BA127FA2726008869D7 /* LoginModuleAPIDataManager.swift in Sources */,
+				56D935D227FA94EB00E002ED /* EnviandoDatosViewModel.swift in Sources */,
+				56D935CA27FA760900E002ED /* VerificarViewModel.swift in Sources */,
 				56FD96F427CB313200C708ED /* TarjetaViewController.swift in Sources */,
 				225B4D8C27C3E06D003E6180 /* LoginViewController.swift in Sources */,
 				56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */,
 				BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */,
+				56D935D027FA8CD500E002ED /* ContrasenaViewModel.swift in Sources */,
 				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
 				BD0D82CA27F942B7009ABC83 /* AccountTableViewCell.swift in Sources */,
 				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
 				56FE2E3627F69A5E008E8EE0 /* NetworkError.swift in Sources */,
 				BD0D82CC27F981BC009ABC83 /* DetailAccountViewController.swift in Sources */,
 				56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */,
+				56D935D727FA9FAB00E002ED /* SignupModuleProtocols.swift in Sources */,
 				56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */,
 				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
-				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */,
@@ -629,16 +671,20 @@
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
 				BD0D82D027FA6E36009ABC83 /* TransaccionFinalizadaViewController.swift in Sources */,
+				56D935CC27FA803200E002ED /* VerificarTableViewModel.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
 				564B8BA427FA36FD008869D7 /* ServicesBuilder.swift in Sources */,
 				564B8BA327FA274C008869D7 /* LoginModuleLocalDataManager.swift in Sources */,
 				560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */,
+				56D935C427FA544F00E002ED /* RegisterData.swift in Sources */,
 				560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */,
+				56D935D527FA9DAC00E002ED /* SignupModuleAPIDataManager.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
 				BD0D82CE27FA4576009ABC83 /* ModalViewController.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
 				1987C3F727F9527E00A982DD /* DetalleViewController.swift in Sources */,
+				56D935CE27FA82CF00E002ED /* DetailDocumentViewModel.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
@@ -653,7 +699,9 @@
 				225B4D8627C3DFF2003E6180 /* SignUpViewModel.swift in Sources */,
 				BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */,
 				565E78A127BDB81700FE708D /* SceneDelegate.swift in Sources */,
+				56D935C827FA6C5000E002ED /* TelefonoViewModel.swift in Sources */,
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
+				56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */,
 				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
 				BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
@@ -811,6 +859,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -822,7 +871,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -839,6 +888,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -850,7 +900,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

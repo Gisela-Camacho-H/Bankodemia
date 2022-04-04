@@ -9,6 +9,8 @@ import UIKit
 
 class VerificarTableViewController: UIViewController {
     
+    var verificarTableViewModel: VerificarTableViewModel?
+    
     // labels
     lazy var bottomLabel: UILabel = UILabel()
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
@@ -20,7 +22,7 @@ class VerificarTableViewController: UIViewController {
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     var documentArray = ["INE", "Documento Migratorio", "Pasaporte"]
-    
+    var documentType: [IdentityImageType] = [.ine, .migrationForm, .passport]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +91,16 @@ class VerificarTableViewController: UIViewController {
     func goBack() {
         dismiss(animated: true)
     }
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: DetailDocumentViewModel = DetailDocumentViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: DetailDocumentViewController = DetailDocumentViewController()
+        nextViewController.detailDocumentViewModel = nextViewModel
+        nextViewModel.detailDocumentViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
+    }
 }
 
 
@@ -99,7 +111,9 @@ extension VerificarTableViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
+        let documentType = documentType[indexPath.row]
+        verificarTableViewModel?.validateAndProcessInputData(identityImageType: documentType)
         let vc = DetailDocumentViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)

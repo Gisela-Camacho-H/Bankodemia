@@ -8,6 +8,8 @@
 import UIKit
 
 class VerificarViewController: UIViewController {
+    
+    var verificarViewModel: VerificarViewModel?
 
     // labels
     lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
@@ -83,7 +85,7 @@ class VerificarViewController: UIViewController {
     }
     
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
@@ -98,5 +100,20 @@ class VerificarViewController: UIViewController {
     
     func goBack() {
         dismiss(animated: true)
+    }
+    
+    func didPressedContinueButton() {
+            verificarViewModel?.validateAndProcessInputData()
+        }
+
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: VerificarTableViewModel = VerificarTableViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: VerificarTableViewController = VerificarTableViewController()
+        nextViewController.verificarTableViewModel = nextViewModel
+        nextViewModel.verificarTableViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
     }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class TelefonoViewController: UIViewController {
     
+    var telefonoViewModel: TelefonoViewModel?
+    
     // labels
     lazy var bottomLabel: UILabel = UILabel()
     lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
@@ -23,7 +25,7 @@ class TelefonoViewController: UIViewController {
     lazy var numberTextField: UITextField = UITextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
-    let countryCode = ["+ 52", "+ 01", "+ 44", "+ 91", "+ 86", "+ 31"]
+    let countryCode = ["+52", "+01", "+44", "+91", "+86", "+31"]
     let countryName = ["México", "United States", "United Kingdom", "India", "China", "Netherlands"]
     
     var pickerView = UIPickerView()
@@ -150,7 +152,7 @@ class TelefonoViewController: UIViewController {
     }
     
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
@@ -173,9 +175,6 @@ class TelefonoViewController: UIViewController {
         view.endEditing(true)
     }
 
-    
-    
-
     @objc func tapToGoBack(){
         goBack()
     }
@@ -183,6 +182,24 @@ class TelefonoViewController: UIViewController {
     func goBack() {
         dismiss(animated: true)
     }
+    
+    func didPressedContinueButton() {
+        guard let code = telefonoTextField.text,
+              let telefono = numberTextField.text else { return }
+            telefonoViewModel?.validateAndProcessInputData(phone: code + telefono)
+        }
+
+    
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: VerificarViewModel = VerificarViewModel()
+        nextViewModel.registerData = registerData
+        let nextViewController: VerificarViewController = VerificarViewController()
+        nextViewController.verificarViewModel = nextViewModel
+        nextViewModel.verificarViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension TelefonoViewController: UIPickerViewDelegate, UIPickerViewDataSource {

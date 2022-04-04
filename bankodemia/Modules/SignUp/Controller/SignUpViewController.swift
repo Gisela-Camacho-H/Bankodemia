@@ -1,8 +1,9 @@
 
 import UIKit
 
-class SingUpViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
+    var signUpViewModel: SignUpViewModel?
     // labels
     lazy var bottomLabel: UILabel = UILabel()
     lazy var linkLabel: UILabel = UILabel()
@@ -111,7 +112,7 @@ class SingUpViewController: UIViewController {
     }
 
     @objc func onSignUpButtonTap(){
-        goToSignUp()
+        didPressedContinueButton()
     }
     
     func goToSignUp() {
@@ -127,9 +128,24 @@ class SingUpViewController: UIViewController {
     func goBack() {
         dismiss(animated: true)
     }
+    
+    func didPressedContinueButton() {
+        signUpViewModel?.validateAndProcessInputData(email: correoTextField.text ?? "")
+    }
+
+    func continueToNextView(withData registerData: RegisterData) {
+        let nextViewModel: DatosViewModel = DatosViewModel()
+        nextViewModel.registerData = registerData  
+        let nextViewController: DatosViewController = DatosViewController()
+        nextViewController.datosViewModel = nextViewModel
+        nextViewModel.DatosViewController = nextViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        present(nextViewController, animated: true, completion: nil)
+    }
 }
 
-extension SingUpViewController: UITextFieldDelegate {
+
+extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

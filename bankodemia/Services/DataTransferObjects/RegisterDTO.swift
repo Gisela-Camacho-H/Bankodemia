@@ -16,8 +16,9 @@ struct RegisterDTO: Codable {
     let identityImage: String
     let identityImageType: String
     let occupation: String
+    let phone: String
     
-    enum CodingKeys: String, CodingKey {
-        case name,email, lastName, birthDate, password, identityImage, identityImageType, occupation
-    }
+   // enum CodingKeys: String, CodingKey {
+     //   case name,email, lastName, birthDate, password, identityImage, identityImageType, occupation
+    //}
 }

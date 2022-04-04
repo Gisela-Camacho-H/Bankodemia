@@ -24,7 +24,7 @@ struct UserSignup: Codable {
     let isPhoneVerified: Bool
     let phone, password, birthDate, occupation: String
     let lastName, name, email, id: String
-    let v: Int
+    let v: Int?
 
     enum CodingKeys: String, CodingKey {
         case identityImageType, identityImage, isPhoneVerified, phone, password, birthDate, occupation, lastName, name, email

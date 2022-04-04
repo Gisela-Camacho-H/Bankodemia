@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Confirmacio_nViewController: UIViewController {
+class ConfirmacionViewController: UIViewController {
     
     private lazy var continuarButton: UIView.cyanButton = UIView.cyanButton()
     lazy var mainImageView: UIImageView = UIImageView()
