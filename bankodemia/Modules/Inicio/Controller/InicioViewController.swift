@@ -7,7 +7,8 @@
 
 import UIKit
 
-class InicioViewController: UIViewController , UserDetailViewControllerProtocol{
+class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol{
+    
     
     var viewModel: UserDetailViewModelProtocol?
     // UILabel
@@ -31,6 +32,7 @@ class InicioViewController: UIViewController , UserDetailViewControllerProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        viewModel?.fetchUserData()
     }
     
     func initUI(){
@@ -203,5 +205,4 @@ class InicioViewController: UIViewController , UserDetailViewControllerProtocol{
     func dismissToLogin() {
         self.dismiss(animated: true, completion: nil)
     }
-
 }

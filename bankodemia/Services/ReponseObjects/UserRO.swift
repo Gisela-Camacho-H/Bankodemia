@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FullUserRO: Codable {
+struct UserRO: Codable {
         let success: Bool
         let data: userData
     }

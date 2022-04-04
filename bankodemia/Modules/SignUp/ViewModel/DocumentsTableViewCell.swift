@@ -15,16 +15,6 @@ class DocumentTableViewCell: UITableViewCell{
     var nextButton: UIButton?
     var documentArray = ["INE", "Documento Migratorio", "Pasaporte"]
     
-
-   /* init(){
-        self.nameDocument = UILabel()
-        self.nextButton = UIButton()
-        contentView.addSubview(nameDocument!)
-        contentView.addSubview(nextButton!)
-    
-        
-    }*/
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -15,11 +15,11 @@ class UserDetailAPIDataManager: UserDetailAPIDataManagerProtocol {
     
     func fetchUserData(with bearer: String) {
         dataTask?.cancel()
-        dataTask = serviceBuilder.set(endpoint: .fullProfile)
+        dataTask = serviceBuilder.set(endpoint: .fullProfile(token: bearer))
             .set(completionHandler: {[weak self] response in
                 switch response {
                 case .success(let data):
-                    guard let userRO: FullUserRO = DataParser().parseData(unparsedData: data) else {
+                    guard let userRO: UserRO = DataParser().parseData(unparsedData: data) else {
                         return
                     }
                     DispatchQueue.main.async {
@@ -35,7 +35,7 @@ class UserDetailAPIDataManager: UserDetailAPIDataManagerProtocol {
         dataTask?.resume()
     }
     
-    private func processSuccessData(userRO: FullUserRO) {
+    private func processSuccessData(userRO: UserRO) {
         self.viewModel?.didObtainedUserData(user: userRO)
     }
     
@@ -45,10 +45,11 @@ class UserDetailAPIDataManager: UserDetailAPIDataManagerProtocol {
     
     func performLogOut(with bearer: String) {
         dataTask?.cancel()
-        dataTask = serviceBuilder.set(endpoint: .fullProfile)
+        dataTask = serviceBuilder.set(endpoint: .fullProfile(token: bearer))
             .createService()
         dataTask?.resume()
         viewModel?.didLogOutUser()
     }
     
 }
+

@@ -13,7 +13,7 @@ enum Endpoint {
     case listUsers
     case searchUsers
     case getUsers(Int)
-    case fullProfile
+    case fullProfile(token: String)
     case makeTransaction(TransactionDTO)
     case listTransactions
     case transactionDetail(Int)
@@ -26,7 +26,7 @@ enum Endpoint {
         case .listUsers: return "users"
         case .searchUsers: return "users/search"
         case .getUsers(let id): return "users/\(id)"
-        case .fullProfile: return "users/me/profile"
+        case .fullProfile(_): return "users/me/profile"
         case .makeTransaction(_): return "transactions"
         case .listTransactions: return "transactions/me"
         case .transactionDetail(let id): return "transaction/\(id)"

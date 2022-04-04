@@ -35,7 +35,7 @@ class UserDetailViewModel: UserDetailViewModelProtocol {
 }
 
 extension UserDetailViewModel: UserDetailAPIDataManagerOutputProtocol {
-    func didObtainedUserData(user: FullUserRO) {
+    func didObtainedUserData(user: UserRO) {
         viewController?.updateUIWithInfo(balance: user.data.balance, email: user.data.user.email, id: user.data.transactions[0]._id)
     }
     

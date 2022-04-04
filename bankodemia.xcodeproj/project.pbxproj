@@ -24,7 +24,7 @@
 		22C877A627C4800100521C71 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C877A327C4800100521C71 /* Poppins-Regular.ttf */; };
 		560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C437F27F97FD100CC6FAE /* RegisterDTO.swift */; };
 		560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438127F9852600CC6FAE /* TransactionDTO.swift */; };
-		560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438327F998B200CC6FAE /* FullUserRO.swift */; };
+		560C438427F998B200CC6FAE /* UserRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438327F998B200CC6FAE /* UserRO.swift */; };
 		560C438627F999B700CC6FAE /* RegisterRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C438527F999B700CC6FAE /* RegisterRO.swift */; };
 		56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56341CD727E012C300123524 /* TelefonoViewController.swift */; };
 		563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD5CA27DA9F12000A7420 /* DatosViewController.swift */; };
@@ -96,7 +96,7 @@
 		22C877A327C4800100521C71 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		560C437F27F97FD100CC6FAE /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
 		560C438127F9852600CC6FAE /* TransactionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDTO.swift; sourceTree = "<group>"; };
-		560C438327F998B200CC6FAE /* FullUserRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserRO.swift; sourceTree = "<group>"; };
+		560C438327F998B200CC6FAE /* UserRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRO.swift; sourceTree = "<group>"; };
 		560C438527F999B700CC6FAE /* RegisterRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRO.swift; sourceTree = "<group>"; };
 		56341CD727E012C300123524 /* TelefonoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		563FD5CA27DA9F12000A7420 /* DatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewController.swift; sourceTree = "<group>"; };
@@ -552,7 +552,7 @@
 			children = (
 				56FE2E3727F69AB8008E8EE0 /* LoginRO.swift */,
 				56FE2E3927F69AEB008E8EE0 /* Response.swift */,
-				560C438327F998B200CC6FAE /* FullUserRO.swift */,
+				560C438327F998B200CC6FAE /* UserRO.swift */,
 				560C438527F999B700CC6FAE /* RegisterRO.swift */,
 			);
 			path = ReponseObjects;
@@ -714,7 +714,7 @@
 				56D935C827FA6C5000E002ED /* TelefonoViewModel.swift in Sources */,
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */,
-				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
+				560C438427F998B200CC6FAE /* UserRO.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

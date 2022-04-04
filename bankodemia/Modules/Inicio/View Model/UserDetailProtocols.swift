@@ -34,10 +34,11 @@ protocol UserDetailAPIDataManagerProtocol {
 }
 
 protocol UserDetailAPIDataManagerOutputProtocol: AnyObject {
-    func didObtainedUserData(user: FullUserRO)
+    func didObtainedUserData(user: UserRO)
     func didLogOutUser()
 }
 
 protocol UserDetailLocalDataManagerProtocol {
     func obtainStoredToken() -> String?
 }
+
