@@ -237,7 +237,7 @@ extension ContrasenaViewController: UITextFieldDelegate {
             if let rangeOfTextToReplace = Range(range, in: textFieldText){
                 let substringToReplace = textFieldText[rangeOfTextToReplace]
                 let count = textFieldText.count - substringToReplace.count + string.count
-                return count <= 6
+                return count <= 10
             }
         }
         return false

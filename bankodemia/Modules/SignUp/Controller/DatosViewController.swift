@@ -153,8 +153,6 @@ class DatosViewController: UIViewController {
         datePicker.onDateSelected = { (day: Int, month: Int, year: Int) in
             let string = String(format: "%02d-%02d-%d", year, month, day + 1)
             self.dateTextField.text = string
-            //self.dateTextField.resignFirstResponder()
-            //self.view.endEditing(true)
         }
         dateTextField.inputView = datePicker
         
@@ -285,7 +283,6 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         var years: [Int] = []
         if years.count == 0 {
             var year = 1922
-            //Calendar(identifier: .gregorian).component(.year, from: Date())
             for _ in 1...101 {
                 years.append(year)
                 year += 1

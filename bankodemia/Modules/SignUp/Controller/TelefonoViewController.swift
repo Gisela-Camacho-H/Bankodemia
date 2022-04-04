@@ -25,8 +25,8 @@ class TelefonoViewController: UIViewController {
     lazy var numberTextField: UITextField = UITextField()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
-    let countryCode = ["+52", "+01", "+44", "+91", "+86", "+31"]
-    let countryName = ["México", "United States", "United Kingdom", "India", "China", "Netherlands"]
+    let countryCode = ["+01","+52", "+44", "+91", "+86", "+31"]
+    let countryName = [ "United States", "México", "United Kingdom", "India", "China", "Netherlands"]
     
     var pickerView = UIPickerView()
 
@@ -38,6 +38,7 @@ class TelefonoViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         numberTextField.delegate = self
+        telefonoTextField.delegate = self
 
     }
     
@@ -100,6 +101,7 @@ class TelefonoViewController: UIViewController {
         numberTextField.textAlignment = NSTextAlignment.left
         numberTextField.placeholder = "   5540160405"
         numberTextField.keyboardType = UIKeyboardType.default
+        numberTextField.keyboardType = .numberPad
         numberTextField.textColor = UIColor.bankodemiaBlack
         numberTextField.autocorrectionType = UITextAutocorrectionType.no
         numberTextField.clearButtonMode = UITextField.ViewMode.whileEditing
@@ -235,3 +237,4 @@ extension TelefonoViewController: UITextFieldDelegate {
         return false
     }
 }
+

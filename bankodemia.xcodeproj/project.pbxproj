@@ -53,6 +53,10 @@
 		56D935D227FA94EB00E002ED /* EnviandoDatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D127FA94EB00E002ED /* EnviandoDatosViewModel.swift */; };
 		56D935D527FA9DAC00E002ED /* SignupModuleAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D427FA9DAC00E002ED /* SignupModuleAPIDataManager.swift */; };
 		56D935D727FA9FAB00E002ED /* SignupModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D627FA9FAB00E002ED /* SignupModuleProtocols.swift */; };
+		56D935DA27FAEB4500E002ED /* UserDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935D927FAEB4500E002ED /* UserDetailProtocols.swift */; };
+		56D935DC27FAEB6A00E002ED /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935DB27FAEB6A00E002ED /* UserDetailViewModel.swift */; };
+		56D935DE27FAEB9800E002ED /* UserDetailAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935DD27FAEB9800E002ED /* UserDetailAPIDataManager.swift */; };
+		56D935E027FAEBBC00E002ED /* UserDetailLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935DF27FAEBBC00E002ED /* UserDetailLocalDataManager.swift */; };
 		56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */; };
 		56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */; };
 		56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */; };
@@ -63,9 +67,6 @@
 		56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3727F69AB8008E8EE0 /* LoginRO.swift */; };
 		56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3927F69AEB008E8EE0 /* Response.swift */; };
 		56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3B27F69B25008E8EE0 /* LoginDTO.swift */; };
-		56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E4127F69D19008E8EE0 /* Endpoints.swift */; };
-		56FE2E3E27F69C19008E8EE0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
-		56FE2E4027F69D0A008E8EE0 /* ServicesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3F27F69D0A008E8EE0 /* ServicesBuilder.swift */; };
 		56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E4127F69D19008E8EE0 /* Endpoints.swift */; };
 		BD0D82CA27F942B7009ABC83 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82C927F942B7009ABC83 /* AccountTableViewCell.swift */; };
 		BD0D82CC27F981BC009ABC83 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CB27F981BC009ABC83 /* DetailAccountViewController.swift */; };
@@ -124,6 +125,10 @@
 		56D935D127FA94EB00E002ED /* EnviandoDatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviandoDatosViewModel.swift; sourceTree = "<group>"; };
 		56D935D427FA9DAC00E002ED /* SignupModuleAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModuleAPIDataManager.swift; sourceTree = "<group>"; };
 		56D935D627FA9FAB00E002ED /* SignupModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModuleProtocols.swift; sourceTree = "<group>"; };
+		56D935D927FAEB4500E002ED /* UserDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailProtocols.swift; sourceTree = "<group>"; };
+		56D935DB27FAEB6A00E002ED /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		56D935DD27FAEB9800E002ED /* UserDetailAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailAPIDataManager.swift; sourceTree = "<group>"; };
+		56D935DF27FAEBBC00E002ED /* UserDetailLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocalDataManager.swift; sourceTree = "<group>"; };
 		56ED679B27E3E527000B6146 /* EnviandoDatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviandoDatosViewController.swift; sourceTree = "<group>"; };
 		56ED679E27E3E583000B6146 /* ConfirmacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacionViewController.swift; sourceTree = "<group>"; };
 		56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
@@ -406,7 +411,7 @@
 		56910DDF27CB288200F27013 /* Inicio */ = {
 			isa = PBXGroup;
 			children = (
-				56910DE427CB2B1F00F27013 /* ViewModel */,
+				56D935D827FAEB1900E002ED /* View Model */,
 				56910DE327CB2B1900F27013 /* Controller */,
 			);
 			path = Inicio;
@@ -444,19 +449,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		56910DE427CB2B1F00F27013 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		56D935C227FA542200E002ED /* entity */ = {
 			isa = PBXGroup;
 			children = (
 				56D935C327FA544F00E002ED /* RegisterData.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		56D935D827FAEB1900E002ED /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				56D935D927FAEB4500E002ED /* UserDetailProtocols.swift */,
+				56D935DB27FAEB6A00E002ED /* UserDetailViewModel.swift */,
+				56D935DD27FAEB9800E002ED /* UserDetailAPIDataManager.swift */,
+				56D935DF27FAEBBC00E002ED /* UserDetailLocalDataManager.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		56FD96F027CB311400C708ED /* Tarjeta */ = {
@@ -657,19 +666,20 @@
 				56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */,
 				56D935D727FA9FAB00E002ED /* SignupModuleProtocols.swift in Sources */,
 				56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */,
+				56D935DE27FAEB9800E002ED /* UserDetailAPIDataManager.swift in Sources */,
 				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
+				56D935E027FAEBBC00E002ED /* UserDetailLocalDataManager.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
 				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */,
-				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
-				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
 				BD0D82D027FA6E36009ABC83 /* TransaccionFinalizadaViewController.swift in Sources */,
 				56D935CC27FA803200E002ED /* VerificarTableViewModel.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
@@ -690,7 +700,9 @@
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
 				BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
+				56D935DA27FAEB4500E002ED /* UserDetailProtocols.swift in Sources */,
 				56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */,
+				56D935DC27FAEB6A00E002ED /* UserDetailViewModel.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,
 				56ED679F27E3E583000B6146 /* ConfirmacionViewController.swift in Sources */,
 				56D935C127FA39B200E002ED /* ResponseParser.swift in Sources */,
@@ -703,7 +715,6 @@
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */,
 				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
-				BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,9 @@
 
 import UIKit
 
-class InicioViewController: UIViewController {
+class InicioViewController: UIViewController , UserDetailViewControllerProtocol{
     
+    var viewModel: UserDetailViewModelProtocol?
     // UILabel
     var dineroLabel: UILabel = UILabel()
     var cantidadLabel: UILabel = UILabel()
@@ -27,9 +28,6 @@ class InicioViewController: UIViewController {
     var contactoImage: UIImageView = UIImageView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -51,9 +49,6 @@ class InicioViewController: UIViewController {
         
         view.addSubview(preguntaImage)
         view.frame = CGRect(x: 50, y: 50, width: 21, height: 21)
-        
-        
-        
 
         dineroLabel.frame = CGRect(x: 0, y: 0, width: 144, height: 21)
         dineroLabel.backgroundColor = .white
@@ -195,6 +190,18 @@ class InicioViewController: UIViewController {
         let enviarViewController = EnviarViewController()
         enviarViewController.modalPresentationStyle = .fullScreen
         self.present(enviarViewController, animated: true, completion: nil)
+    }
+    
+    func setViewModelConnection(_ viewModel: UserDetailViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+    
+    func updateUIWithInfo(balance: Double, email: String, id: String) {
+        cantidadLabel.text = String(balance)
+    }
+    
+    func dismissToLogin() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

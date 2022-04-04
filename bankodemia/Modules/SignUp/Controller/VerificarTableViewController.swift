@@ -135,7 +135,7 @@ extension VerificarTableViewController : UITableViewDelegate{
         cell.textLabel?.text = documentArray[indexPath.row]
         cell.textLabel?.textColor = UIColor.bankodemiaBlack
         cell.textLabel?.backgroundColor = .white
-        
+        cell.selectionStyle = .none
         return cell
     }
     
