@@ -21,7 +21,7 @@ class AgregarTarjetaViewController: UIViewController {
     lazy var nameTextField: UIView.mainTextField = UIView.mainTextField()
     lazy var emailLabel: UILabel = UILabel()
     lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
-    lazy var cardButtonLabel: UILabel = UILabel()
+    lazy var cardButton: UIButton = UIButton()
     lazy var clabeButton: UIButton = UIButton()
     
     override func viewDidLoad() {
@@ -58,19 +58,20 @@ class AgregarTarjetaViewController: UIViewController {
         titleLabel.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
-        self.view.addSubview(cardButtonLabel)
-        cardButtonLabel.textColor = UIColor.bankodemiaCyan
-        cardButtonLabel.backgroundColor = .clear
-        cardButtonLabel.font = UIFont(name: "Poppins-SemiBold", size: 18)
-        cardButtonLabel.textAlignment = .center
-        cardButtonLabel.attributedText = NSMutableAttributedString(string: "Tarjeta", attributes: [NSAttributedString.Key.kern: 0.7])
+        self.view.addSubview(cardButton)
+        cardButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
+        cardButton.backgroundColor = .clear
+        cardButton.setTitle("Tarjeta", for: .normal)
+        cardButton.titleLabel.self?.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        cardButton.contentHorizontalAlignment = .center
+        cardButton.addTarget(self, action: #selector(tapToGoToCard), for: .touchUpInside)
         
-        view.addSubview(cardButtonLabel)
-        cardButtonLabel.translatesAutoresizingMaskIntoConstraints = false
-        cardButtonLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        cardButtonLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        cardButtonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cardButtonLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 45).isActive = true
+        view.addSubview(cardButton)
+        cardButton.translatesAutoresizingMaskIntoConstraints = false
+        cardButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        cardButton.heightAnchor.constraint(equalToConstant: 21).isActive = true
+        cardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cardButton.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 45).isActive = true
         
         self.view.addSubview(clabeButton)
         clabeButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
@@ -98,7 +99,7 @@ class AgregarTarjetaViewController: UIViewController {
         cardDigitsLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
         cardDigitsLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
         cardDigitsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        cardDigitsLabel.topAnchor.constraint(equalTo: cardButtonLabel.topAnchor, constant: 45).isActive = true
+        cardDigitsLabel.topAnchor.constraint(equalTo: cardButton.topAnchor, constant: 45).isActive = true
         
         self.view.addSubview(cardDigitsTextField)
         cardDigitsTextField.layer.borderColor = UIColor.labelGray.cgColor
@@ -189,13 +190,7 @@ class AgregarTarjetaViewController: UIViewController {
     //MARK: Funcionalidad Botones
     
     @objc func tapToGoBack(){
-        toGoBack()
-    }
-    
-    func toGoBack() {
-        let enviarViewController = EnviarViewController()
-        enviarViewController.modalPresentationStyle = .fullScreen
-        self.present(enviarViewController, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func tapToAddAccount(){
@@ -213,8 +208,19 @@ class AgregarTarjetaViewController: UIViewController {
     }
     
     func goToClabe() {
-        let agregarClabeViewController = AgregarClabeViewController()
-        agregarClabeViewController.modalPresentationStyle = .fullScreen
-        self.present(agregarClabeViewController, animated: false, completion: nil)
+        
+        cardButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
+        clabeButton.setTitleColor(UIColor.bankodemiaCyan, for: .normal)
+        cardDigitsLabel.attributedText = NSMutableAttributedString(string: "18 dígitos", attributes: [NSAttributedString.Key.kern: 0.7])
+    }
+    
+    @objc func tapToGoToCard(){
+        goToCard()
+    }
+    
+    func goToCard(){
+        cardButton.setTitleColor(UIColor.bankodemiaCyan, for: .normal)
+        clabeButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
+        cardDigitsLabel.attributedText = NSMutableAttributedString(string: "No. de tarjeta", attributes: [NSAttributedString.Key.kern: 0.7])
     }
 }

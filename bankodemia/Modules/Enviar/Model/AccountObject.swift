@@ -7,13 +7,16 @@
 
 import UIKit
 
+var accountArray = [Account]().self
+
 class Account {
-    var name : String?
+    
+    var clientName : String?
     var accountNumber : String?
     var bankEntity : String?
     
-    init(name : String, accountNumber : String, bankEntity : String){
-        self.name = name
+    init(clientName : String, accountNumber : String, bankEntity : String){
+        self.clientName = clientName
         self.accountNumber = accountNumber
         self.bankEntity = bankEntity
     }

@@ -1,29 +1,27 @@
 //
-//  ConfirmarAgregadoViewController.swift
+//  TransaccionFinalizadaViewController.swift
 //  bankodemia
 //
-//  Created by Adriana Limon on 3/24/22.
+//  Created by Adriana Limon on 4/3/22.
 //
 
 import UIKit
 
-class ConfirmarAgregadoViewController: UIViewController {
+class TransaccionFinalizadaViewController: UIViewController {
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
+    lazy var confirmationImage: UIImageView = UIImageView()
+    lazy var confirmationLabel: UILabel = UILabel()
     lazy var backToMainButton: UIView.cyanButton = UIView.cyanButton()
-    lazy var clientsImage: UIImageView = UIImageView()
-    lazy var successLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         
         initUI()
     }
     
-    func initUI(){
-        
-        view.applyWhiteBackgroundColor()
+    func initUI() {
         
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +32,27 @@ class ConfirmarAgregadoViewController: UIViewController {
         bankodemiaLogo.widthAnchor.constraint(equalToConstant: 70),
         bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
+        
+        view.addSubview(confirmationImage)
+        confirmationImage.translatesAutoresizingMaskIntoConstraints = false
+        confirmationImage.image = UIImage(named: "confirmationImage")
+        confirmationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        confirmationImage.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: 120).isActive = true
+        confirmationImage.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        confirmationImage.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
+        view.addSubview(confirmationLabel)
+        confirmationLabel.textColor = UIColor.bankodemiaBlack
+        confirmationLabel.translatesAutoresizingMaskIntoConstraints = false
+        confirmationLabel.backgroundColor = .clear
+        confirmationLabel.font = UIFont(name: "Poppins-Medium", size: 16)
+        confirmationLabel.textAlignment = .center
+        confirmationLabel.text = "Tu transacción ha sido finalizada"
+        confirmationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        confirmationLabel.topAnchor.constraint(equalTo: confirmationImage.bottomAnchor, constant: 12).isActive = true
+        confirmationLabel.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        confirmationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
         
         view.addSubview(backToMainButton)
         backToMainButton.addTarget(self, action: #selector(tapToBackToMain), for: .touchUpInside)
@@ -47,27 +66,6 @@ class ConfirmarAgregadoViewController: UIViewController {
         backToMainButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
-        self.view.addSubview(clientsImage)
-        clientsImage.translatesAutoresizingMaskIntoConstraints = false
-        clientsImage.image = UIImage(named: "clientsBankodemia")
-        clientsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        clientsImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        clientsImage.widthAnchor.constraint(equalToConstant: 240).isActive = true
-        clientsImage.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        
-        self.view.addSubview(successLabel)
-        successLabel.textColor = UIColor.bankodemiaBlack
-        successLabel.backgroundColor = .clear
-        successLabel.font = UIFont(name: "Poppins-Medium", size: 16)
-        successLabel.textAlignment = .center
-        successLabel.attributedText = NSMutableAttributedString(string: "Tu contacto fue agregado con éxito", attributes: [NSAttributedString.Key.kern: 0.7])
-        successLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        view.addSubview(successLabel)
-        successLabel.translatesAutoresizingMaskIntoConstraints = false
-        successLabel.widthAnchor.constraint(equalToConstant: 328).isActive = true
-        successLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        successLabel.bottomAnchor.constraint(equalTo: clientsImage.bottomAnchor, constant: 32).isActive = true
     }
     
     //MARK: Funcionalidad Botones

@@ -101,7 +101,6 @@ extension VerificarTableViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = DetailDocumentViewController()
-        //vc.product = producto
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
         

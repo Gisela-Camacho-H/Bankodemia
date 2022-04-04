@@ -13,7 +13,8 @@ class EnviarViewController: UIViewController {
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var addAccountButton: UIView.addAccountButton = UIView.addAccountButton()
-    var dataSource: Account?
+    lazy var tableView = UITableView()
+    public var dataSource: [Account]? = [Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA"),Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA"),Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class EnviarViewController: UIViewController {
         
         initUI()
     }
+    
  
     func initUI(){
         
@@ -57,20 +59,21 @@ class EnviarViewController: UIViewController {
         addAccountButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
         addAccountButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
+        tableView = UITableView(frame: CGRect(x: 0, y: Constants.height/4, width: Constants.width, height: Constants.height))
+        tableView.backgroundColor = .clear
+        tableView.center.x = self.view.center.x
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
     }
     
     //MARK: Funcionalidad Botones
     
     @objc func tapToGoBack(){
-        toGoBack()
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    func toGoBack() {
-        let inicioViewController = InicioViewController()
-        inicioViewController.modalPresentationStyle = .fullScreen
-        self.present(inicioViewController, animated: true, completion: nil)
-    }
-    
     
     @objc func tapToAddAccount(){
         toAddAccount()
@@ -81,5 +84,40 @@ class EnviarViewController: UIViewController {
         agregarTarjetaViewController.modalPresentationStyle = .fullScreen
         self.present(agregarTarjetaViewController, animated: true, completion: nil)
     }
+
+}
+
+extension EnviarViewController : UITableViewDelegate{
+    // numero de secciones que vamos a usar
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = DetailAccountViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        
+    }
+    
+}
+
+// MARK: - UITableDataSource
+
+extension EnviarViewController : UITableViewDataSource{
+    // numero de celdas por cada secciones que tiene cada categoria
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource?.count ?? 0
+    }
+    //tipo de celda que se mostrara
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cuenta = dataSource?[indexPath.row] else { return UITableViewCell()}
+        let cell = AccountTableViewCell(cuenta: cuenta)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.height * 0.1
+    }
 }

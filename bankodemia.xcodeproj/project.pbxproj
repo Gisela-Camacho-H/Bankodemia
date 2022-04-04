@@ -54,8 +54,15 @@
 		56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3927F69AEB008E8EE0 /* Response.swift */; };
 		56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3B27F69B25008E8EE0 /* LoginDTO.swift */; };
 		56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E4127F69D19008E8EE0 /* Endpoints.swift */; };
+		56FE2E3E27F69C19008E8EE0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
+		56FE2E4027F69D0A008E8EE0 /* ServicesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3F27F69D0A008E8EE0 /* ServicesBuilder.swift */; };
+		56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E4127F69D19008E8EE0 /* Endpoints.swift */; };
+		BD0D82CA27F942B7009ABC83 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82C927F942B7009ABC83 /* AccountTableViewCell.swift */; };
+		BD0D82CC27F981BC009ABC83 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CB27F981BC009ABC83 /* DetailAccountViewController.swift */; };
+		BD0D82CE27FA4576009ABC83 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */; };
+		BD0D82D027FA6E36009ABC83 /* TransaccionFinalizadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */; };
+		BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */; };
 		BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */; };
-		BDE94F9D27ED64F1006E27E0 /* AgregarClabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */; };
 		BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */; };
 		BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94FA027EE71E5006E27E0 /* AccountObject.swift */; };
 /* End PBXBuildFile section */
@@ -110,8 +117,12 @@
 		56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		56FE2E3F27F69D0A008E8EE0 /* ServicesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesBuilder.swift; sourceTree = "<group>"; };
 		56FE2E4127F69D19008E8EE0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		BD0D82C927F942B7009ABC83 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		BD0D82CB27F981BC009ABC83 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
+		BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaccionFinalizadaViewController.swift; sourceTree = "<group>"; };
+		BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsperaViewController.swift; sourceTree = "<group>"; };
 		BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTarjetaViewController.swift; sourceTree = "<group>"; };
-		BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarClabeViewController.swift; sourceTree = "<group>"; };
 		BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAgregadoViewController.swift; sourceTree = "<group>"; };
 		BDE94FA027EE71E5006E27E0 /* AccountObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,8 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				19BCFA8527E42A0B007FD12D /* EnviarViewController.swift */,
+				BD0D82C927F942B7009ABC83 /* AccountTableViewCell.swift */,
+				BD0D82CB27F981BC009ABC83 /* DetailAccountViewController.swift */,
+				BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */,
 				BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */,
-				BDE94F9C27ED64F1006E27E0 /* AgregarClabeViewController.swift */,
+				BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */,
+				BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */,
 				BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */,
 			);
 			path = Controller;
@@ -594,8 +609,10 @@
 				56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */,
 				BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */,
 				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
+				BD0D82CA27F942B7009ABC83 /* AccountTableViewCell.swift in Sources */,
 				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
 				56FE2E3627F69A5E008E8EE0 /* NetworkError.swift in Sources */,
+				BD0D82CC27F981BC009ABC83 /* DetailAccountViewController.swift in Sources */,
 				56FE2E3C27F69B25008E8EE0 /* LoginDTO.swift in Sources */,
 				56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */,
 				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
@@ -606,6 +623,12 @@
 				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
+				BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
+				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
+				225B4D9027C3E2B9003E6180 /* ViewController.swift in Sources */,
+				BD0D82D027FA6E36009ABC83 /* TransaccionFinalizadaViewController.swift in Sources */,
 				56FD96ED27CB2FFC00C708ED /* InicioViewController.swift in Sources */,
 				564B8BA427FA36FD008869D7 /* ServicesBuilder.swift in Sources */,
 				564B8BA327FA274C008869D7 /* LoginModuleLocalDataManager.swift in Sources */,
@@ -613,6 +636,7 @@
 				560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
+				BD0D82CE27FA4576009ABC83 /* ModalViewController.swift in Sources */,
 				56FD96F927CB318A00C708ED /* ServiciosViewController.swift in Sources */,
 				1987C3F727F9527E00A982DD /* DetalleViewController.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
