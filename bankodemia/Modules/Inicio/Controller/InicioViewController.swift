@@ -29,9 +29,12 @@ class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.tableView.reloadData()
         initUI()
         viewModel?.fetchUserData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     func initUI(){

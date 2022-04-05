@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     private lazy var passwordLabel: UILabel = UILabel()
     lazy var bottomLabel: UILabel = UILabel()
     lazy var linkLabel: UILabel = UILabel()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     // textFields
     private lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
@@ -139,6 +140,12 @@ class LoginViewController: UIViewController {
                     textField.layer.borderColor = UIColor.bankodemiaCyan.cgColor
                 }
            
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
   // MARK: Botones
         
         view.addSubview(continuarButton)
@@ -219,6 +226,9 @@ extension LoginViewController : LoginViewControllerProtocol {
     }
     
     func continueToUserDetailView() {
+        if passwordTextField.text == "" || emailTextField.text == "" {
+            validacionTextFieldLabel.text = "Ingresa todos campos"
+        } else {
         let viewModel: UserDetailViewModel = UserDetailViewModel()
         let userViewController : InicioViewController = InicioViewController()
         userViewController.viewModel = viewModel
@@ -226,7 +236,7 @@ extension LoginViewController : LoginViewControllerProtocol {
         let tabBarViewController: TabBarViewController = TabBarViewController()
         tabBarViewController.modalPresentationStyle = .fullScreen
         self.present(tabBarViewController, animated: true, completion: nil)
-
+        }
     }
     
 }
