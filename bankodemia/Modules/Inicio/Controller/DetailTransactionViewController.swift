@@ -97,7 +97,7 @@ class DetailTransactionViewController: UIViewController {
         totalQuantityLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
         totalQuantityLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         totalQuantityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        totalQuantityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 152).isActive = true
+        totalQuantityLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 45).isActive = true
         
         view.addSubview(conceptLabel)
         conceptLabel.backgroundColor = .clear
@@ -116,7 +116,7 @@ class DetailTransactionViewController: UIViewController {
         dateHourTitleLabel.text = "FECHA Y HORA"
         dateHourTitleLabel.font = UIFont(name: "Poppins-SemiBold", size: 14)
         dateHourTitleLabel.textAlignment = .left
-        NSLayoutConstraint.activate([dateHourTitleLabel.topAnchor.constraint(equalTo: conceptLabel.bottomAnchor, constant: 40),
+        NSLayoutConstraint.activate([dateHourTitleLabel.topAnchor.constraint(equalTo: conceptLabel.bottomAnchor, constant: 55),
         dateHourTitleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         dateHourTitleLabel.translatesAutoresizingMaskIntoConstraints = false

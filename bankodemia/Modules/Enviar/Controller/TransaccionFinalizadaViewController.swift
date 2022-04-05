@@ -37,7 +37,7 @@ class TransaccionFinalizadaViewController: UIViewController {
         confirmationImage.translatesAutoresizingMaskIntoConstraints = false
         confirmationImage.image = UIImage(named: "confirmationImage")
         confirmationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        confirmationImage.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: 120).isActive = true
+        confirmationImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         confirmationImage.widthAnchor.constraint(equalToConstant: 180).isActive = true
         confirmationImage.heightAnchor.constraint(equalToConstant: 180).isActive = true
         

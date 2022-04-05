@@ -218,8 +218,8 @@
 				BD0D82CB27F981BC009ABC83 /* DetailAccountViewController.swift */,
 				BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */,
 				BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */,
-				BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */,
 				BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */,
+				BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */,
 				BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */,
 			);
 			path = Controller;
@@ -420,7 +420,6 @@
 				56D935D827FAEB1900E002ED /* View Model */,
 				BD0D82D527FADD5C009ABC83 /* Model */,
 				56910DE327CB2B1900F27013 /* Controller */,
-				56910DE427CB2B1F00F27013 /* ViewModel */,
 			);
 			path = Inicio;
 			sourceTree = "<group>";
@@ -692,7 +691,7 @@
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				BD0D82D927FAE929009ABC83 /* TransactionTableViewCell.swift in Sources */,
 				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
-				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
 				BD0D82D727FADD7D009ABC83 /* TransactionObject.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
@@ -736,7 +735,7 @@
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */,
 				560C438427F998B200CC6FAE /* UserRO.swift in Sources */,
-				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
+				560C438427F998B200CC6FAE /* UserRO.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -895,6 +894,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -924,6 +924,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,10 +15,10 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     lazy var profileIcon: UIImageView = UIImageView()
     lazy var helpIcon: UIImageView = UIImageView()
-    var dineroLabel: UILabel = UILabel()
-    var cantidadLabel: UILabel = UILabel()
-    var sendButton: UIButton = UIButton ()
-    var getButton: UIButton = UIButton ()
+    lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var quantityLabel: UILabel = UILabel()
+    lazy var sendButton: UIButton = UIButton ()
+    lazy var getButton: UIButton = UIButton ()
     lazy var tableView = UITableView()
     public var dataSource: [TransactionObject]? = [TransactionObject(transactionConcept: "Croquetas para el perrito", transactionHour: "7:00 p.m.", transactionQuantity: "+ $ 50.00"),TransactionObject(transactionConcept: "Croquetas para el gatito", transactionHour: "8:18 p.m.", transactionQuantity: "+ $ 88.00"),TransactionObject(transactionConcept: "Renta del mes", transactionHour: "9:22 p.m.", transactionQuantity: "+ $ 1999.00")]
     
@@ -61,31 +61,25 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         profileIcon.widthAnchor.constraint(equalToConstant: 25).isActive = true
         profileIcon.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
-        view.addSubview(dineroLabel)
-        dineroLabel.frame = CGRect(x: 0, y: 0, width: 144, height: 21)
-        dineroLabel.backgroundColor = .white
-        dineroLabel.textColor = UIColor(red: 0.384, green: 0.384, blue: 0.384, alpha: 1)
-        dineroLabel.font = UIFont(name: "Poppins-Medium", size: 14)
-        dineroLabel.textAlignment = .center
-        dineroLabel.attributedText = NSMutableAttributedString(string: "DINERO DISPONIBLE", attributes: [NSAttributedString.Key.kern: 0.7])
-        dineroLabel.translatesAutoresizingMaskIntoConstraints = false
-        dineroLabel.widthAnchor.constraint(equalToConstant: 144).isActive = true
-        dineroLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        dineroLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22).isActive = true
-        dineroLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 109).isActive = true
+        self.view.addSubview(titleLabel)
+        titleLabel.backgroundColor = .clear
+        titleLabel.text = "ENVIAR DINERO"
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        ])
         
-        view.addSubview(cantidadLabel)
-        cantidadLabel.frame = CGRect(x: 0, y: 0, width: 85, height: 30)
-        cantidadLabel.backgroundColor = .clear
-        cantidadLabel.textColor = UIColor(red: 0.087, green: 0.087, blue: 0.087, alpha: 1)
-        cantidadLabel.font = UIFont(name: "Poppins-SemiBold", size: 20)
-        cantidadLabel.text = "$160.00"
-        cantidadLabel.textAlignment = .center
-        cantidadLabel.translatesAutoresizingMaskIntoConstraints = false
-        cantidadLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        cantidadLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        cantidadLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cantidadLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 152).isActive = true
+        view.addSubview(quantityLabel)
+        quantityLabel.frame = CGRect(x: 0, y: 0, width: 85, height: 30)
+        quantityLabel.backgroundColor = .clear
+        quantityLabel.textColor = UIColor(red: 0.087, green: 0.087, blue: 0.087, alpha: 1)
+        quantityLabel.font = UIFont(name: "Poppins-SemiBold", size: 20)
+        quantityLabel.text = "$160.00"
+        quantityLabel.textAlignment = .center
+        quantityLabel.translatesAutoresizingMaskIntoConstraints = false
+        quantityLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        quantityLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        quantityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        quantityLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 45).isActive = true
         
         view.addSubview(sendButton)
         sendButton.setTitle("Enviar", for: .normal)
@@ -98,9 +92,9 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         sendButton.setTitleColor(.bankodemiaCyan, for: .normal)
         sendButton.layer.cornerRadius = 5
         sendButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([sendButton.topAnchor.constraint(equalTo: cantidadLabel.bottomAnchor, constant: 35),
+        NSLayoutConstraint.activate([sendButton.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 55),
         sendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-        sendButton.widthAnchor.constraint(equalToConstant: 130)
+        sendButton.widthAnchor.constraint(equalToConstant: 138)
         ])
 
         view.addSubview(getButton)
@@ -114,12 +108,12 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         getButton.setTitleColor(.white, for: .normal)
         getButton.layer.cornerRadius = 5
         getButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([getButton.topAnchor.constraint(equalTo: cantidadLabel.bottomAnchor, constant: 35),
+        NSLayoutConstraint.activate([getButton.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 55),
         getButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-        getButton.widthAnchor.constraint(equalToConstant: 130)
+        getButton.widthAnchor.constraint(equalToConstant: 138)
         ])
         
-        tableView = UITableView(frame: CGRect(x: 0, y: Constants.height/2, width: Constants.width, height: Constants.height))
+        tableView = UITableView(frame: CGRect(x: 0, y: Constants.height/2.2, width: Constants.width, height: Constants.height))
         tableView.backgroundColor = .clear
         tableView.center.x = self.view.center.x
         tableView.delegate = self
@@ -157,7 +151,7 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
     }
     
     func updateUIWithInfo(balance: Double, email: String, id: String) {
-        cantidadLabel.text = String(balance)
+        quantityLabel.text = String(balance)
     }
     
     func dismissToLogin() {
