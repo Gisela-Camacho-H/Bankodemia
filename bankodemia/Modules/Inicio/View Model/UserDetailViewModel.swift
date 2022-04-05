@@ -8,8 +8,8 @@
 import Foundation
 
 class UserDetailViewModel: UserDetailViewModelProtocol {
-
-    //var userViewController: InicioViewController?
+    
+    var userDetailViewController: InicioViewController?
     var apiDataManager: UserDetailAPIDataManagerProtocol? = UserDetailAPIDataManager()
     var localDataManager: UserDetailLocalDataManagerProtocol? = UserDetailLocalDataManager()
     weak var viewController: UserDetailViewControllerProtocol?

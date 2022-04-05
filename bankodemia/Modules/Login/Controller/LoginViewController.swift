@@ -222,9 +222,9 @@ extension LoginViewController : LoginViewControllerProtocol {
         let viewModel: UserDetailViewModel = UserDetailViewModel()
         let userViewController : InicioViewController = InicioViewController()
         userViewController.viewModel = viewModel
-        viewModel.viewController = userViewController
+        viewModel.userDetailViewController = userViewController
+        userViewController.modalPresentationStyle = .fullScreen
         let tabBarViewController: TabBarViewController = TabBarViewController()
-        tabBarViewController.modalPresentationStyle = .fullScreen
         self.present(tabBarViewController, animated: true, completion: nil)
 
     }
@@ -237,4 +237,3 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-
