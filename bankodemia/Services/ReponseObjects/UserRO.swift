@@ -35,9 +35,3 @@ struct UserRO: Codable {
     struct User: Codable {
         let _id, email, name, lastName: String
     }
-    
-    enum CodingKeys: String, CodingKey {
-        case success
-        case data
-        
-    }

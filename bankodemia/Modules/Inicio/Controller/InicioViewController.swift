@@ -6,10 +6,9 @@
 //
 
 import UIKit
+import Foundation
 
 class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
-    
-    
     
     var viewModel: UserDetailViewModelProtocol?
     // UILabel
@@ -21,11 +20,16 @@ class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
     lazy var sendButton: UIButton = UIButton ()
     lazy var getButton: UIButton = UIButton ()
     lazy var tableView = UITableView()
+    
+    let defaults = UserDefaults.standard
+
+    
     public var dataSource: [TransactionObject]? = [TransactionObject(transactionConcept: "Croquetas para el perrito", transactionHour: "7:00 p.m.", transactionQuantity: "+ $ 50.00"),TransactionObject(transactionConcept: "Croquetas para el gatito", transactionHour: "8:18 p.m.", transactionQuantity: "+ $ 88.00"),TransactionObject(transactionConcept: "Renta del mes", transactionHour: "9:22 p.m.", transactionQuantity: "+ $ 1999.00")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tableView.reloadData()
         initUI()
         viewModel?.fetchUserData()
     }
@@ -34,6 +38,16 @@ class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
         
         view.applyWhiteBackgroundColor()
         
+        let account = defaults.string(forKey: "account")
+        let name = defaults.string(forKey: "name")
+        let quantity = defaults.string(forKey: "quantity")
+        let date = defaults.string(forKey: "date")
+        let payment = defaults.string(forKey: "paymentConcept")
+        print(payment)
+        
+        let transaction = TransactionObject(transactionConcept: payment ?? "", transactionHour: "2:20pm", transactionQuantity: quantity ?? "")
+        self.dataSource?.append(transaction)
+
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
         bankodemiaLogo.image = UIImage(named: "bigLogo")

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol UserDetailViewModelProtocol {
+    
     var apiDataManager: UserDetailAPIDataManagerProtocol? { get set }
     var localDataManager: UserDetailLocalDataManagerProtocol? { get set }
     var viewController: UserDetailViewControllerProtocol? { get set }
@@ -22,7 +23,6 @@ protocol UserDetailViewControllerProtocol: UIViewController {
     
     func setViewModelConnection(_ viewModel: UserDetailViewModelProtocol)
     func updateUIWithInfo(balance: Double)
-    func dismissToLogin()
 }
 
 protocol UserDetailAPIDataManagerProtocol {

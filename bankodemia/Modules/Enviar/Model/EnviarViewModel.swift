@@ -9,6 +9,7 @@ import Foundation
 
 class EnviarViewModel: EnviarViewModelProtocol {
     
+    
     weak var enviarViewController: EnviarViewControllerProtocol?
     var enviarLocalDataManager: EnviarLocalDataManagerProtocol? = EnviarModuleLocalDataManager()
     var enviarAPIDataManager: EnviarAPIDataManagerProtocol? = EnviarAPIDataManager()
