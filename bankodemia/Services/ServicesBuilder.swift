@@ -54,12 +54,18 @@ class ServiceBuilder: ServicesBuilderProtocol {
         case .getUsers(_):
             break
         case .fullProfile:
-            break
+            return nil
         case .makeTransaction(_):
             break
         case .listTransactions:
             break
         case .transactionDetail(_):
+            break
+        case .saveContacts(_):
+            break
+        case .listContacts:
+            break
+        case .getContact:
             break
         }
         return data
@@ -70,7 +76,10 @@ class ServiceBuilder: ServicesBuilderProtocol {
             return
         }
         switch currentEndpoint {
-
+        case .fullProfile(let token):
+            let completeToken: String = "bearer \(token)"
+            request.addValue(completeToken, forHTTPHeaderField: "Authorization")
+            
         default:
             return
         }
@@ -81,6 +90,8 @@ class ServiceBuilder: ServicesBuilderProtocol {
             return nil
         }
         switch currentEndpoint {
+        case .fullProfile(let token):
+            return "Bearer \(token)"
         default:
             return nil
         }

@@ -14,7 +14,7 @@ var detailDocumentViewController: DetailDocumentViewController?
 var registerData: RegisterData?
     
     func validateAndProcessInputData(identityImage: UIImage) {
-            
+        
             registerData?.identityImage = identityImage
             guard let registerData = registerData else {
                 return

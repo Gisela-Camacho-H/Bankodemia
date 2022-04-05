@@ -219,9 +219,9 @@ extension LoginViewController : LoginViewControllerProtocol {
     }
     
     func continueToUserDetailView() {
-        let loginViewController: TabBarViewController = TabBarViewController()
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+        let userDetailController: TabBarViewController = TabBarViewController()
+        userDetailController.modalPresentationStyle = .fullScreen
+        self.present(userDetailController, animated: true, completion: nil)
 
     }
     

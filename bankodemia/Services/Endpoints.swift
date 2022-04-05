@@ -10,13 +10,16 @@ import Foundation
 enum Endpoint {
     case login(LoginDTO)
     case register(RegisterDTO)
-    case listUsers
-    case searchUsers
+    case listUsers(token: String)
+    case searchUsers(token: String)
     case getUsers(Int)
     case fullProfile(token: String)
-    case makeTransaction(TransactionDTO)
-    case listTransactions
+    case makeTransaction(TransactionDTO, token: String)
+    case listTransactions(token: String)
     case transactionDetail(Int)
+    case saveContacts(ContactsDTO)
+    case listContacts(token: String)
+    case getContact(token: String)
     
     
     var path: String {
@@ -30,14 +33,17 @@ enum Endpoint {
         case .makeTransaction(_): return "transactions"
         case .listTransactions: return "transactions/me"
         case .transactionDetail(let id): return "transaction/\(id)"
+        case .saveContacts(_): return "contacts"
+        case .listContacts: return "contacts"
+        case .getContact(let id): return "contacts/\(id)"
         }
     }
     
     var method: String {
         switch self {
-        case .login(_), .register(_), .makeTransaction(_):
+        case .login(_), .register(_), .makeTransaction(_), .saveContacts(_):
             return "POST"
-        case .listUsers, .searchUsers, .getUsers(_), .fullProfile, .listTransactions, .transactionDetail(_):
+        case .listUsers, .searchUsers, .getUsers(_), .fullProfile, .listTransactions, .transactionDetail(_), .listContacts, .getContact:
             return "GET"
         }
     }

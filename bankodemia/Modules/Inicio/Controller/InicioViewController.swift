@@ -150,7 +150,7 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         self.viewModel = viewModel
     }
     
-    func updateUIWithInfo(balance: Double, email: String, id: String) {
+    func updateUIWithInfo(balance: Double) {
         quantityLabel.text = String(balance)
     }
     

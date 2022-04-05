@@ -19,6 +19,7 @@ class DatosViewController: UIViewController {
     lazy var bottomLabel: UILabel = UILabel()
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     // buttons
     private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -147,6 +148,13 @@ class DatosViewController: UIViewController {
         NSLayoutConstraint.activate([textFieldStackView.topAnchor.constraint(equalTo: nombreLabel.bottomAnchor, constant: 5),
             textFieldStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textFieldStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
 
         let datePicker = MonthYearPickerView()
