@@ -25,7 +25,6 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     
     lazy var accountName: UILabel = UILabel()
     lazy var accountNumber: UILabel = UILabel()
-    
 
     lazy var amt: Int = 0
 

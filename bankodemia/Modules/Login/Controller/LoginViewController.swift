@@ -222,9 +222,9 @@ extension LoginViewController : LoginViewControllerProtocol {
         let viewModel: UserDetailViewModel = UserDetailViewModel()
         let userViewController : InicioViewController = InicioViewController()
         userViewController.viewModel = viewModel
-        viewModel.userDetailViewController = userViewController
-        userViewController.modalPresentationStyle = .fullScreen
+        viewModel.viewController = userViewController
         let tabBarViewController: TabBarViewController = TabBarViewController()
+        tabBarViewController.modalPresentationStyle = .fullScreen
         self.present(tabBarViewController, animated: true, completion: nil)
 
     }

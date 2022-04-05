@@ -12,7 +12,7 @@ protocol UserDetailViewModelProtocol {
     
     var apiDataManager: UserDetailAPIDataManagerProtocol? { get set }
     var localDataManager: UserDetailLocalDataManagerProtocol? { get set }
-    var userDetailviewController: UserDetailViewControllerProtocol? { get set }
+    var viewController: UserDetailViewControllerProtocol? { get set }
     
     func setViewControllerConnection(_ viewController: UserDetailViewControllerProtocol)
     func fetchUserData()
