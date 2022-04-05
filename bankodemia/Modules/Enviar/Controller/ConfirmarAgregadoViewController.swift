@@ -77,11 +77,9 @@ class ConfirmarAgregadoViewController: UIViewController {
     }
     
     func backToMain() {
-        if let first = presentingViewController,
-                let second = first.presentingViewController{
-                  first.view.isHidden = true
-                  second.dismiss(animated: true)
-             }
+        let backViewController: EnviarViewController = EnviarViewController()
+        backViewController.modalPresentationStyle = .fullScreen
+        self.present(backViewController, animated: true, completion: nil)
     }
     
 }

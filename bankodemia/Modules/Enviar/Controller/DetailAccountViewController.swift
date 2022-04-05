@@ -10,6 +10,7 @@ import UIKit
 class DetailAccountViewController: UIViewController, UITextFieldDelegate {
 
     var cuenta: Account?
+    var enviarViewModel : EnviarViewModel?
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -25,12 +26,16 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     lazy var accountName: UILabel = UILabel()
     lazy var accountNumber: UILabel = UILabel()
     
+
     lazy var amt: Int = 0
+
+    var defaults = UserDefaults.standard
     
     let name = "Dany De San Pedro"
-    let account = "12345678"
+    let account = "62495950856dbc3e115fd854"
     let bank = "BAKODEMIA"
 
+    var dateTime = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,6 +188,11 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         let modalViewController = ModalViewController()
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: false, completion: nil)
+        UserDefaults.standard.set(account, forKey: "account")
+        UserDefaults.standard.set(name, forKey: "name")
+        UserDefaults.standard.set(quantityTextField.text, forKey: "quantity")
+        UserDefaults.standard.set(paymentConceptTextField.text, forKey: "paymentConcept")
+        UserDefaults.standard.set(dateTime, forKey: "date")
     }
     
     func initializeHideKeyboard(){
