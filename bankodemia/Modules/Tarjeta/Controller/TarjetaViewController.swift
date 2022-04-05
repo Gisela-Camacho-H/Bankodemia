@@ -10,7 +10,7 @@ import UIKit
 class TarjetaViewController: UIViewController {
     
     // UILabels
-    var tarjetaLabel: UILabel = UILabel()
+    var tarjetaLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     var noTarjetaLabel: UILabel = UILabel()
     var noCuentaLabel: UILabel = UILabel()
     var vigenciaLabel: UILabel = UILabel()
@@ -44,6 +44,14 @@ class TarjetaViewController: UIViewController {
         bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
         
+        view.addSubview(tarjetaImage)
+        tarjetaImage.translatesAutoresizingMaskIntoConstraints = false
+        tarjetaImage.image = UIImage(named: "tarjeta")
+        tarjetaImage.widthAnchor.constraint(equalToConstant: 144).isActive = true
+        tarjetaImage.heightAnchor.constraint(equalToConstant: 244).isActive = true
+        tarjetaImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 117).isActive = true
+        tarjetaImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 176).isActive = true
+        
         self.view.addSubview(helpIcon)
         helpIcon.translatesAutoresizingMaskIntoConstraints = false
         helpIcon.image = UIImage(named: "helpIcon")
@@ -63,24 +71,12 @@ class TarjetaViewController: UIViewController {
         profileIcon.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
         // MARK: Tarjeta Label
-        view.addSubview(tarjetaLabel)
-        tarjetaLabel.frame = CGRect(x: 0, y: 0, width: 64, height: 21)
-        tarjetaLabel.backgroundColor = .white
-        tarjetaLabel.textColor = UIColor(red: 0.384, green: 0.384, blue: 0.384, alpha: 1)
-        tarjetaLabel.font = UIFont(name: "Poppins-Medium", size: 14)
-        tarjetaLabel.textAlignment = .center
-        tarjetaLabel.attributedText = NSMutableAttributedString(string: "TARJETA", attributes: [NSAttributedString.Key.kern: 0.7])
-        
-    
-        view.addSubview(tarjetaLabel)
-        tarjetaLabel.textAlignment = .center
-        tarjetaLabel.attributedText = NSMutableAttributedString(string: "TARJETA", attributes: [NSAttributedString.Key.kern: 0.7])
-
-        tarjetaLabel.translatesAutoresizingMaskIntoConstraints = false
-        tarjetaLabel.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        tarjetaLabel.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        tarjetaLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27).isActive = true
-        tarjetaLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 115).isActive = true
+        self.view.addSubview(tarjetaLabel)
+        tarjetaLabel.backgroundColor = .clear
+        tarjetaLabel.text = "TARJETA"
+        NSLayoutConstraint.activate([tarjetaLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        tarjetaLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding)
+        ])
         
         
         // MARK: Componentes de tarjeta

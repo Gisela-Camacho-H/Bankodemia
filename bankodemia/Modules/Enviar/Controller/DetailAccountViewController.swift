@@ -43,7 +43,6 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         initializeHideKeyboard()
         quantityTextField.delegate = self
         quantityTextField.placeholder = updateAmount()
-        
         initUI()
     }
  
@@ -253,9 +252,3 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-/* extension DetailAccountViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // dismiss keyboard
-        return true
-    }
-} */

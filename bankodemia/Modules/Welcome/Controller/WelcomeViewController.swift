@@ -98,7 +98,7 @@ class WelcomeViewController: UIViewController {
                 fraseStackView.bottomAnchor, constant: Constants.height / 14),
                 welcomeImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 welcomeImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                                             welcomeImage.heightAnchor.constraint(equalToConstant: Constants.height / 3),
+                welcomeImage.heightAnchor.constraint(equalToConstant: Constants.height / 3),
                 ])
         
 //MARK: - Button Stack
