@@ -19,6 +19,7 @@ class VerificarTableViewController: UIViewController {
     private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
     
     lazy var tableView : UITableView = UITableView()
+    lazy var tableViewCell : UITableViewCell = UITableViewCell()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
     
     var documentArray = ["INE", "Documento Migratorio", "Pasaporte"]
@@ -77,11 +78,12 @@ class VerificarTableViewController: UIViewController {
         
         
         tableView = UITableView(frame: CGRect(x: 10, y: Constants.height/4 + 30 , width: Constants.width - 20, height: 200))
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self 
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
     }
 
     @objc func tapToGoBack(){

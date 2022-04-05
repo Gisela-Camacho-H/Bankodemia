@@ -75,11 +75,13 @@ class TransaccionFinalizadaViewController: UIViewController {
     }
     
     func backToMain() {
-        if let first = presentingViewController,
-                let second = first.presentingViewController{
-                  first.view.isHidden = true
-                  second.dismiss(animated: true)
-             }
+        
+        var previousViewController = presentingViewController
+        
+        while !(previousViewController is UITabBarController) {
+            previousViewController = previousViewController?.presentingViewController
+        }
+        
+        previousViewController?.dismiss(animated: true, completion: nil)
     }
-    
 }

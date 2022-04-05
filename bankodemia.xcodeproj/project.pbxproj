@@ -73,6 +73,9 @@
 		BD0D82CE27FA4576009ABC83 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */; };
 		BD0D82D027FA6E36009ABC83 /* TransaccionFinalizadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */; };
 		BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */; };
+		BD0D82D727FADD7D009ABC83 /* TransactionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82D627FADD7C009ABC83 /* TransactionObject.swift */; };
+		BD0D82D927FAE929009ABC83 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82D827FAE929009ABC83 /* TransactionTableViewCell.swift */; };
+		BD0D82DB27FAE972009ABC83 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D82DA27FAE972009ABC83 /* DetailTransactionViewController.swift */; };
 		BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */; };
 		BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */; };
 		BDE94FA127EE71E5006E27E0 /* AccountObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE94FA027EE71E5006E27E0 /* AccountObject.swift */; };
@@ -147,6 +150,9 @@
 		BD0D82CD27FA4575009ABC83 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		BD0D82CF27FA6E35009ABC83 /* TransaccionFinalizadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaccionFinalizadaViewController.swift; sourceTree = "<group>"; };
 		BD0D82D127FA83C9009ABC83 /* EsperaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsperaViewController.swift; sourceTree = "<group>"; };
+		BD0D82D627FADD7C009ABC83 /* TransactionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionObject.swift; sourceTree = "<group>"; };
+		BD0D82D827FAE929009ABC83 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		BD0D82DA27FAE972009ABC83 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		BDE94F9A27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTarjetaViewController.swift; sourceTree = "<group>"; };
 		BDE94F9E27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAgregadoViewController.swift; sourceTree = "<group>"; };
 		BDE94FA027EE71E5006E27E0 /* AccountObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountObject.swift; sourceTree = "<group>"; };
@@ -412,7 +418,9 @@
 			isa = PBXGroup;
 			children = (
 				56D935D827FAEB1900E002ED /* View Model */,
+				BD0D82D527FADD5C009ABC83 /* Model */,
 				56910DE327CB2B1900F27013 /* Controller */,
+				56910DE427CB2B1F00F27013 /* ViewModel */,
 			);
 			path = Inicio;
 			sourceTree = "<group>";
@@ -445,6 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				56FD96EC27CB2FFC00C708ED /* InicioViewController.swift */,
+				BD0D82D827FAE929009ABC83 /* TransactionTableViewCell.swift */,
+				BD0D82DA27FAE972009ABC83 /* DetailTransactionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +578,14 @@
 			path = DataTransferObjects;
 			sourceTree = "<group>";
 		};
+		BD0D82D527FADD5C009ABC83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD0D82D627FADD7C009ABC83 /* TransactionObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BDE94FA227EE77D2006E27E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,8 +690,10 @@
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56D935E027FAEBBC00E002ED /* UserDetailLocalDataManager.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
+				BD0D82D927FAE929009ABC83 /* TransactionTableViewCell.swift in Sources */,
 				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
-				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
+				BD0D82D727FADD7D009ABC83 /* TransactionObject.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */,
@@ -697,6 +717,7 @@
 				56D935CE27FA82CF00E002ED /* DetailDocumentViewModel.swift in Sources */,
 				225B4D8227C3DF31003E6180 /* WelcomeViewModel.swift in Sources */,
 				225B4DA327C3FABE003E6180 /* Constants.swift in Sources */,
+				BD0D82DB27FAE972009ABC83 /* DetailTransactionViewController.swift in Sources */,
 				56412CB327E294AA0027BBA7 /* DetailDocumentViewController.swift in Sources */,
 				BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
@@ -715,6 +736,7 @@
 				56FD96EF27CB303600C708ED /* TabBarViewController.swift in Sources */,
 				56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */,
 				560C438427F998B200CC6FAE /* UserRO.swift in Sources */,
+				560C438427F998B200CC6FAE /* FullUserRO.swift in Sources */,
 				225B4D8827C3E019003E6180 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

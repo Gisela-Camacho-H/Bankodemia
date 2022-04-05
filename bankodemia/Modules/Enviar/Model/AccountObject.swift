@@ -20,4 +20,5 @@ class Account {
         self.accountNumber = accountNumber
         self.bankEntity = bankEntity
     }
+    
 }

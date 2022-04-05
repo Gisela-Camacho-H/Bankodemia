@@ -25,6 +25,7 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     lazy var accountName: UILabel = UILabel()
     lazy var accountNumber: UILabel = UILabel()
     
+    let name = "Dany De San Pedro"
     let account = "12345678"
     let bank = "BAKODEMIA"
     
@@ -73,7 +74,7 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         ])
         
         self.view.addSubview(accountName)
-        accountName.text = "Dany De San Pedro"
+        accountName.text = name
         accountName.backgroundColor = .clear
         accountName.font = UIFont(name: "Poppins-SemiBold", size: 14)
         accountName.textColor = .bankodemiaBlack

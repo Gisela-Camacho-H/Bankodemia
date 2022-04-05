@@ -17,7 +17,7 @@ class EsperaViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        processTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timeaction), userInfo: nil, repeats: false)
+        processTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timeaction), userInfo: nil, repeats: false)
         
         initUI()
     }
