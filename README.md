@@ -20,12 +20,11 @@ Status: This application still IN PROGRESS
 
 ***
 
-A list of technologies used within the project:
 * [Bankodemia API](https://bankodemia.kodemia.mx/swagger/#/): Version 1.0 
 
 ## Installation
 ***
-A little intro about the installation. 
+
 ```
 $ git clone 
 $ cd ../path/to/the/file
