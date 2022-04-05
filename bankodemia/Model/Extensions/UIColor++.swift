@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 extension UIColor{
-    // me di cuenta que hay más colores de los indicados, cuando apliquen algún color cerciorense que es el correcto en el figma
     static var bankodemiaBlack: UIColor = UIColor(red: 22/255, green: 22/255, blue: 22/255, alpha: 1)
     static var bankodemiaCyan: UIColor = UIColor(red: 0, green: 204/255, blue: 204/255, alpha: 1)
     static var bankodemiaBlue: UIColor = UIColor(red: 123/255, green: 120/255, blue: 234/255, alpha: 1)

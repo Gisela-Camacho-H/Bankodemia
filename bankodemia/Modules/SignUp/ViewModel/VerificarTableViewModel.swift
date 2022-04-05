@@ -14,6 +14,7 @@ var registerData: RegisterData?
     
     func validateAndProcessInputData(identityImageType: IdentityImageType ) {
             
+
             registerData?.identityImageType = identityImageType
             guard let registerData = registerData else {
                 return

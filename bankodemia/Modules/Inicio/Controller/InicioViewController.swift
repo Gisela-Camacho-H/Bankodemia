@@ -7,7 +7,8 @@
 
 import UIKit
 
-class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol{
+class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
+    
     
     
     var viewModel: UserDetailViewModelProtocol?
@@ -80,7 +81,7 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         quantityLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         quantityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         quantityLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 45).isActive = true
-        
+
         view.addSubview(sendButton)
         sendButton.setTitle("Enviar", for: .normal)
         sendButton.layer.borderColor = UIColor.bankodemiaCyan.cgColor
@@ -150,7 +151,7 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         self.viewModel = viewModel
     }
     
-    func updateUIWithInfo(balance: Double, email: String, id: String) {
+    func updateUIWithInfo(balance: Double) {
         quantityLabel.text = String(balance)
     }
     

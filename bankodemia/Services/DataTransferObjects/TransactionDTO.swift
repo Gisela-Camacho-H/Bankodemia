@@ -12,11 +12,4 @@ struct TransactionDTO: Codable {
     let type: String
     let concept: String
     let destinationUser: String?
-    
-    enum CodingKeys: String, CodingKey {
-       case amount
-       case type
-       case concept
-       case destinationUser
-    }
 }
