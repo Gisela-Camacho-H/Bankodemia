@@ -7,9 +7,15 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol{
     
     
+=======
+class InicioViewController: UIViewController,  UserDetailViewControllerProtocol{
+    
+    var userViewModel: UserDetailViewModel?
+>>>>>>> c207274 (changes in viewModel inicio)
     var viewModel: UserDetailViewModelProtocol?
     // UILabel
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -26,7 +32,7 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
-        viewModel?.fetchUserData()
+        userViewModel?.fetchUserData()
     }
     
     func initUI(){

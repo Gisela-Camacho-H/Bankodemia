@@ -8,7 +8,7 @@
 import Foundation
 
 class UserDetailViewModel: UserDetailViewModelProtocol {
-    
+    var userDetailviewController: UserDetailViewControllerProtocol?
     var userDetailViewController: InicioViewController?
     var apiDataManager: UserDetailAPIDataManagerProtocol? = UserDetailAPIDataManager()
     var localDataManager: UserDetailLocalDataManagerProtocol? = UserDetailLocalDataManager()
@@ -29,6 +29,6 @@ class UserDetailViewModel: UserDetailViewModelProtocol {
 
 extension UserDetailViewModel: UserDetailAPIDataManagerOutputProtocol {
     func didObtainedUserData(user: UserRO) {
-        viewController?.updateUIWithInfo(balance: user.data.balance)
+        userDetailViewController?.updateUIWithInfo(balance: user.data.balance)
     }
 }
