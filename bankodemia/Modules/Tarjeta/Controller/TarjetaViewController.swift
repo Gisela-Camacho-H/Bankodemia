@@ -19,8 +19,10 @@ class TarjetaViewController: UIViewController {
     var cvvNumeroLabel: UILabel = UILabel()
     
     // UIImage
-    var tarjetaImage: UIImageView = UIImageView()
+    lazy var tarjetaImage: UIImageView = UIImageView()
     lazy var bankodemiaLogo: UIImageView = UIImageView()
+    lazy var profileIcon: UIImageView = UIImageView()
+    lazy var helpIcon: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +36,31 @@ class TarjetaViewController: UIViewController {
         
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
-        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        bankodemiaLogo.image = UIImage(named: "bigLogo")
         NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
                 view.topAnchor, constant: Constants.height / 14),
         bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        bankodemiaLogo.widthAnchor.constraint(equalToConstant: 70),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
+        
+        self.view.addSubview(helpIcon)
+        helpIcon.translatesAutoresizingMaskIntoConstraints = false
+        helpIcon.image = UIImage(named: "helpIcon")
+        NSLayoutConstraint.activate([helpIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height/11), helpIcon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        ])
+        helpIcon.translatesAutoresizingMaskIntoConstraints = false
+        helpIcon.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        helpIcon.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        
+        self.view.addSubview(profileIcon)
+        profileIcon.translatesAutoresizingMaskIntoConstraints = false
+        profileIcon.image = UIImage(named: "profileIcon")
+        NSLayoutConstraint.activate([profileIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.height/11), profileIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
+        ])
+        profileIcon.translatesAutoresizingMaskIntoConstraints = false
+        profileIcon.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        profileIcon.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
         // MARK: Tarjeta Label
         view.addSubview(tarjetaLabel)
