@@ -14,7 +14,7 @@ class EnviarViewController: UIViewController {
     lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var addAccountButton: UIView.addAccountButton = UIView.addAccountButton()
     lazy var tableView = UITableView()
-    public var dataSource: [Account]? = [Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA"),Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA"),Account(clientName: "Daniel De San Pedro", accountNumber: "1234567", bankEntity: "BANKODEMIA")]
+    public var dataSource: [Account]? = [Account(clientName: "Daniel De San Pedro", accountNumber: "62495950856dbc3e115fd854", bankEntity: "BANKODEMIA"),Account(clientName: "Adri", accountNumber: "624a8eb2856dbc3e115ff61d", bankEntity: "BANKADIGITAL"),Account(clientName: "Itzel", accountNumber: "624956e3856dbc3e115fd7ff", bankEntity: "BANKOLIBRE")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,8 +94,9 @@ extension EnviarViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let enviarViewModel: EnviarViewModel = EnviarViewModel()
         let vc = DetailAccountViewController()
+        vc.enviarViewModel = enviarViewModel
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         
