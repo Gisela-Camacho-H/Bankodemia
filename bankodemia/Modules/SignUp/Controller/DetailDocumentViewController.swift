@@ -13,7 +13,7 @@ class DetailDocumentViewController: UIViewController, UIImagePickerControllerDel
     
     // labels
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
-    lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     
     // buttons
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -37,25 +37,25 @@ class DetailDocumentViewController: UIViewController, UIImagePickerControllerDel
         
         self.view.addSubview(bankodemiaLogo)
         bankodemiaLogo.translatesAutoresizingMaskIntoConstraints = false
-        bankodemiaLogo.image = UIImage(named: "smallLogo")
+        bankodemiaLogo.image = UIImage(named: "bigLogo")
         NSLayoutConstraint.activate([bankodemiaLogo.topAnchor.constraint(equalTo:
                 view.topAnchor, constant: Constants.height / 14),
         bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        bankodemiaLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
-        bankodemiaLogo.heightAnchor.constraint(equalToConstant: Constants.height / 20),
+        bankodemiaLogo.widthAnchor.constraint(equalToConstant: 70),
+        bankodemiaLogo.heightAnchor.constraint(equalToConstant: 42.5),
         ])
         
         self.view.addSubview(backButton)
         backButton.addTarget(self, action: #selector(tapToGoBack), for: .touchUpInside)
         NSLayoutConstraint.activate([
-        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/15),
+        backButton.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         ])
         
-        self.view.addSubview(titleLable)
-        titleLable.text = ""
-        NSLayoutConstraint.activate([titleLable.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
-        titleLable.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
+        self.view.addSubview(titleLabel)
+        titleLabel.text = "CARGA DEL DOCUMENTO"
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: bankodemiaLogo.topAnchor, constant: Constants.height/10),
+        titleLabel.leftAnchor.constraint(equalTo: backButton.leftAnchor, constant: Constants.padding)
         ])
         
         

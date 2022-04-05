@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailAccountViewController: UIViewController, UITextFieldDelegate {
-    
+
     var cuenta: Account?
     
     lazy var bankodemiaLogo: UIImageView = UIImageView()
@@ -25,16 +25,20 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     lazy var accountName: UILabel = UILabel()
     lazy var accountNumber: UILabel = UILabel()
     
+    lazy var amt: Int = 0
+    
     let name = "Dany De San Pedro"
     let account = "12345678"
     let bank = "BAKODEMIA"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         
+        initializeHideKeyboard()
         quantityTextField.delegate = self
-        paymentConceptTextField.delegate = self
+        quantityTextField.placeholder = updateAmount()
         
         initUI()
     }
@@ -107,14 +111,15 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         ])
         
         self.view.addSubview(quantityTextField)
-        quantityTextField.backgroundColor = .yellow
+        quantityTextField.backgroundColor = .clear
         quantityTextField.keyboardType = .numberPad
+        quantityTextField.textAlignment = .center
         quantityTextField.font = UIFont(name: "Poppins-SemiBold", size: 20)
         NSLayoutConstraint.activate([quantityTextField.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 10),
         quantityTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         quantityTextField.translatesAutoresizingMaskIntoConstraints = false
-        quantityTextField.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        quantityTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
         quantityTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         self.view.addSubview(speiLabel)
@@ -138,7 +143,9 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         ])
         
         self.view.addSubview(paymentConceptTextField)
-        paymentConceptTextField.backgroundColor = .yellow
+        paymentConceptTextField.backgroundColor = .clear
+        paymentConceptTextField.placeholder = "Ingrese aquí el concepto del pago."
+        paymentConceptTextField.textContentType = .name
         paymentConceptTextField.font = UIFont(name: "Poppins-Medium", size: 14)
         NSLayoutConstraint.activate([paymentConceptTextField.topAnchor.constraint(equalTo: paymentConcept.bottomAnchor, constant: 0),
         paymentConceptTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
@@ -162,17 +169,6 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
     
     }
     
-    //MARK - UITextField Delegates
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //Para la validación del número de teléfono
-        if textField == quantityTextField {
-            let allowedCharacters = CharacterSet(charactersIn:"+0123456789 ")//Aquí cambia estos caracteres basándote en tus requerimientos
-            let characterSet = CharacterSet(charactersIn: string)
-            return allowedCharacters.isSuperset(of: characterSet)
-        }
-        return true
-    }
-    
     //MARK: Funcionalidad Botones
     
     @objc func tapToGoBack(){
@@ -188,5 +184,69 @@ class DetailAccountViewController: UIViewController, UITextFieldDelegate {
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: false, completion: nil)
     }
+    
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
 
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+
+        view.endEditing(true)
+    }
+    
+    
+    //MARK - UITextField Delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let digit = Int(string){
+            
+            amt = amt * 10 + digit
+            
+            if amt > 1_000_000_000_00 {
+                
+                let alert = UIAlertController(title: "Por favor, ingrese un monto menor a un billón", message: nil, preferredStyle: UIAlertController.Style.alert)
+                
+                alert.addAction(UIAlertAction(title: "Entendido", style: UIAlertAction.Style.default, handler: nil))
+                
+                present(alert, animated: true, completion: nil)
+                
+                quantityTextField.text = ""
+                
+                amt = 0
+                
+            } else {
+            
+            quantityTextField.text = updateAmount()
+                
+            }
+        }
+        
+        if string == "" {
+            amt = amt/10
+            quantityTextField.text = amt == 0 ? "" : updateAmount()
+        }
+        
+        return false
+    }
+    
+    func updateAmount() -> String? {
+    
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        let amount = Double(amt/100) + Double(amt%100)/100
+        
+        return formatter.string(from: NSNumber(value: amount))
+        
+    }
 }
+
+/* extension DetailAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+} */

@@ -29,6 +29,11 @@ class AgregarTarjetaViewController: UIViewController {
         view.backgroundColor = .clear
         
         initUI()
+        initializeHideKeyboard()
+        cardDigitsTextField.delegate = self
+        bankInstitutionTextField.delegate = self
+        nameTextField.delegate = self
+        emailTextField.delegate = self
     }
     
     func initUI(){
@@ -103,6 +108,8 @@ class AgregarTarjetaViewController: UIViewController {
         
         self.view.addSubview(cardDigitsTextField)
         cardDigitsTextField.layer.borderColor = UIColor.labelGray.cgColor
+        cardDigitsTextField.placeholder = "1254314588189999"
+        cardDigitsTextField.keyboardType = UIKeyboardType.numberPad
         NSLayoutConstraint.activate([cardDigitsTextField.topAnchor.constraint(equalTo: cardDigitsLabel.bottomAnchor, constant: 0.2),
         cardDigitsTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         cardDigitsTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -125,6 +132,8 @@ class AgregarTarjetaViewController: UIViewController {
         
         self.view.addSubview(bankInstitutionTextField)
         bankInstitutionTextField.layer.borderColor = UIColor.labelGray.cgColor
+        bankInstitutionTextField.placeholder = "Bankodemia"
+        bankInstitutionTextField.autocapitalizationType = .words
         NSLayoutConstraint.activate([bankInstitutionTextField.topAnchor.constraint(equalTo: bankInstitutionLabel.bottomAnchor, constant: 0.0),
         bankInstitutionTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         bankInstitutionTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -147,6 +156,8 @@ class AgregarTarjetaViewController: UIViewController {
         
         self.view.addSubview(nameTextField)
         nameTextField.layer.borderColor = UIColor.labelGray.cgColor
+        nameTextField.placeholder = "Olga Melisa"
+        nameTextField.autocapitalizationType = .words
         NSLayoutConstraint.activate([nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0.0),
         nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         nameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -169,6 +180,9 @@ class AgregarTarjetaViewController: UIViewController {
         
         self.view.addSubview(emailTextField)
         emailTextField.layer.borderColor = UIColor.labelGray.cgColor
+        emailTextField.placeholder = "mels@gmail.com"
+        emailTextField.keyboardType = UIKeyboardType.emailAddress
+        emailTextField.autocapitalizationType = .none
         NSLayoutConstraint.activate([emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 0.0),
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
@@ -212,6 +226,7 @@ class AgregarTarjetaViewController: UIViewController {
         cardButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
         clabeButton.setTitleColor(UIColor.bankodemiaCyan, for: .normal)
         cardDigitsLabel.attributedText = NSMutableAttributedString(string: "18 dígitos", attributes: [NSAttributedString.Key.kern: 0.7])
+        cardDigitsTextField.placeholder = "125431458818999918"
     }
     
     @objc func tapToGoToCard(){
@@ -222,5 +237,27 @@ class AgregarTarjetaViewController: UIViewController {
         cardButton.setTitleColor(UIColor.bankodemiaCyan, for: .normal)
         clabeButton.setTitleColor(UIColor.bankodemiaBlack, for: .normal)
         cardDigitsLabel.attributedText = NSMutableAttributedString(string: "No. de tarjeta", attributes: [NSAttributedString.Key.kern: 0.7])
+        cardDigitsTextField.placeholder = "1254314588189999"
+    }
+    
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+
+        view.endEditing(true)
+    }
+    
+}
+
+extension AgregarTarjetaViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
     }
 }

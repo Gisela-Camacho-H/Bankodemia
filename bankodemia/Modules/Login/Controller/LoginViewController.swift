@@ -33,9 +33,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        
-        
+        initializeHideKeyboard()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
+    
     func initUI(){
         
         view.applyWhiteBackgroundColor()
@@ -195,6 +197,19 @@ class LoginViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+
+        view.endEditing(true)
+    }
+    
 }
 
 extension LoginViewController : LoginViewControllerProtocol {
@@ -210,4 +225,11 @@ extension LoginViewController : LoginViewControllerProtocol {
 
     }
     
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }
