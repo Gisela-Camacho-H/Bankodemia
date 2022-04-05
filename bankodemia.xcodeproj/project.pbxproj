@@ -187,16 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				1987C3F527F9517100A982DD /* Controller */,
-				1987C3F427F9516300A982DD /* Model  */,
 			);
 			path = "Recibir ";
-			sourceTree = "<group>";
-		};
-		1987C3F427F9516300A982DD /* Model  */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model ";
 			sourceTree = "<group>";
 		};
 		1987C3F527F9517100A982DD /* Controller */ = {
@@ -212,16 +204,8 @@
 			children = (
 				BDE94FA227EE77D2006E27E0 /* Model */,
 				19BCFA8427E429B8007FD12D /* Controller */,
-				19BCFA8327E429AA007FD12D /* ViewModel */,
 			);
 			path = Enviar;
-			sourceTree = "<group>";
-		};
-		19BCFA8327E429AA007FD12D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		19BCFA8427E429B8007FD12D /* Controller */ = {
@@ -441,7 +425,6 @@
 		56910DE027CB289100F27013 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				56910DE227CB2A9700F27013 /* ViewModel */,
 				56910DE127CB2A9000F27013 /* Controller */,
 			);
 			path = TabBar;
@@ -453,13 +436,6 @@
 				56FD96EE27CB303600C708ED /* TabBarViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		56910DE227CB2A9700F27013 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		56910DE327CB2B1900F27013 /* Controller */ = {
@@ -494,7 +470,6 @@
 		56FD96F027CB311400C708ED /* Tarjeta */ = {
 			isa = PBXGroup;
 			children = (
-				56FD96F227CB312100C708ED /* ViewModel */,
 				56FD96F127CB311A00C708ED /* Controller */,
 			);
 			path = Tarjeta;
@@ -508,17 +483,9 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		56FD96F227CB312100C708ED /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		56FD96F527CB316D00C708ED /* Servicios */ = {
 			isa = PBXGroup;
 			children = (
-				56FD96F727CB317A00C708ED /* ViewModel */,
 				56FD96F627CB317400C708ED /* Controller */,
 			);
 			path = Servicios;
@@ -530,13 +497,6 @@
 				56FD96F827CB318A00C708ED /* ServiciosViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		56FD96F727CB317A00C708ED /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		56FE2E3027F6998F008E8EE0 /* Delegates */ = {

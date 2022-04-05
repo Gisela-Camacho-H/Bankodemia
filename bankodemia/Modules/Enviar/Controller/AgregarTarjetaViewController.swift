@@ -23,6 +23,7 @@ class AgregarTarjetaViewController: UIViewController {
     lazy var emailTextField: UIView.mainTextField = UIView.mainTextField()
     lazy var cardButton: UIButton = UIButton()
     lazy var clabeButton: UIButton = UIButton()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,6 +189,13 @@ class AgregarTarjetaViewController: UIViewController {
         emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
         view.addSubview(addContactButton)
         addContactButton.addTarget(self, action: #selector(tapToAddAccount), for: .touchUpInside)
         addContactButton.setTitle("Agregar Contacto", for: .normal)
@@ -212,9 +220,14 @@ class AgregarTarjetaViewController: UIViewController {
     }
     
     func toAddAccount() {
+        if cardDigitsTextField.text == "" || emailTextField.text == "" ||  nameTextField.text == "" || bankInstitutionTextField.text == "" {
+            validacionTextFieldLabel.text = "Ingresa todos campos"
+        } else {
         let confirmarAgregadoViewController = ConfirmarAgregadoViewController()
         confirmarAgregadoViewController.modalPresentationStyle = .fullScreen
         self.present(confirmarAgregadoViewController, animated: true, completion: nil)
+            
+        }
     }
     
     @objc func tapToGoToClabe(){
