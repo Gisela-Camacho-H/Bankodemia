@@ -79,7 +79,6 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         cantidadLabel.backgroundColor = .clear
         cantidadLabel.textColor = UIColor(red: 0.087, green: 0.087, blue: 0.087, alpha: 1)
         cantidadLabel.font = UIFont(name: "Poppins-SemiBold", size: 20)
-        cantidadLabel.text = "$160.00"
         cantidadLabel.textAlignment = .center
         cantidadLabel.translatesAutoresizingMaskIntoConstraints = false
         cantidadLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
@@ -156,8 +155,9 @@ class InicioViewController: UIViewController ,  UserDetailViewControllerProtocol
         self.viewModel = viewModel
     }
     
-    func updateUIWithInfo(balance: Double, email: String, id: String) {
+    func updateUIWithInfo(balance: Double) {
         cantidadLabel.text = String(balance)
+        print(balance)
     }
     
     func dismissToLogin() {

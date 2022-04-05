@@ -9,6 +9,9 @@ import Foundation
 
 class UserDetailViewModel: UserDetailViewModelProtocol {
     
+    var tabBarViewController: TabBarViewController?
+    var inicioViewController: InicioViewController?
+    
     var apiDataManager: UserDetailAPIDataManagerProtocol? = UserDetailAPIDataManager()
     var localDataManager: UserDetailLocalDataManagerProtocol? = UserDetailLocalDataManager()
     weak var viewController: UserDetailViewControllerProtocol?
@@ -24,22 +27,11 @@ class UserDetailViewModel: UserDetailViewModelProtocol {
         apiDataManager?.viewModel = self
         apiDataManager?.fetchUserData(with: token)
     }
-    
-    func onLogOutTap() {
-        guard let token: String = localDataManager?.obtainStoredToken() else {
-            return
-        }
-        apiDataManager?.viewModel = self
-        apiDataManager?.performLogOut(with: token)
-    }
 }
 
 extension UserDetailViewModel: UserDetailAPIDataManagerOutputProtocol {
     func didObtainedUserData(user: UserRO) {
-        viewController?.updateUIWithInfo(balance: user.data.balance, email: user.data.user.email, id: user.data.transactions[0]._id)
-    }
-    
-    func didLogOutUser() {
-        viewController?.dismissToLogin()
+        viewController?.updateUIWithInfo(balance: user.data.balance)
+        
     }
 }

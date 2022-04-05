@@ -16,7 +16,7 @@ class DatosViewModel {
             
             guard name != "", lastName != "", birthDate != "", ocupation != ""
             else {
-             print("Ingrese todos los datos")
+                DatosViewController?.validacionTextFieldLabel.text = "Ingresa todos los datos"
                 return
             }
             registerData?.name = name

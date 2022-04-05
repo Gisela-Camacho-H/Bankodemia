@@ -16,6 +16,7 @@ class TelefonoViewController: UIViewController {
     lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     // buttons
     private lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -112,6 +113,12 @@ class TelefonoViewController: UIViewController {
                                      numberTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
         ])
         
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: numberTextField.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
         
         telefonoTextField.inputView = pickerView
         

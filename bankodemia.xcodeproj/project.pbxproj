@@ -42,6 +42,13 @@
 		565E78A627BDB81700FE708D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A427BDB81700FE708D /* Main.storyboard */; };
 		565E78A827BDB81900FE708D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A727BDB81900FE708D /* Assets.xcassets */; };
 		565E78AB27BDB81900FE708D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E78A927BDB81900FE708D /* LaunchScreen.storyboard */; };
+		567479F027FB9D4D0079E198 /* ContactsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567479EF27FB9D4D0079E198 /* ContactsDTO.swift */; };
+		567479F227FBA5B80079E198 /* ContactsRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567479F127FBA5B80079E198 /* ContactsRO.swift */; };
+		56CECD0E27FBD8BB00F364A7 /* EnviarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CECD0D27FBD8BB00F364A7 /* EnviarViewModel.swift */; };
+		56CECD1027FBD8D600F364A7 /* EnviarModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CECD0F27FBD8D600F364A7 /* EnviarModuleProtocols.swift */; };
+		56CECD1227FBD8EF00F364A7 /* EnviarModulesAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CECD1127FBD8EF00F364A7 /* EnviarModulesAPIDataManager.swift */; };
+		56CECD1427FBD90100F364A7 /* EnviarModuleLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CECD1327FBD90100F364A7 /* EnviarModuleLocalDataManager.swift */; };
+		56CECD1627FBDD4500F364A7 /* TransactionRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CECD1527FBDD4500F364A7 /* TransactionRO.swift */; };
 		56D935C127FA39B200E002ED /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE2E3D27F69C19008E8EE0 /* ResponseParser.swift */; };
 		56D935C427FA544F00E002ED /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C327FA544F00E002ED /* RegisterData.swift */; };
 		56D935C627FA5B1400E002ED /* DatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D935C527FA5B1400E002ED /* DatosViewModel.swift */; };
@@ -118,6 +125,13 @@
 		565E78A727BDB81900FE708D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565E78AA27BDB81900FE708D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565E78AC27BDB81900FE708D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		567479EF27FB9D4D0079E198 /* ContactsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDTO.swift; sourceTree = "<group>"; };
+		567479F127FBA5B80079E198 /* ContactsRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRO.swift; sourceTree = "<group>"; };
+		56CECD0D27FBD8BB00F364A7 /* EnviarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarViewModel.swift; sourceTree = "<group>"; };
+		56CECD0F27FBD8D600F364A7 /* EnviarModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarModuleProtocols.swift; sourceTree = "<group>"; };
+		56CECD1127FBD8EF00F364A7 /* EnviarModulesAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarModulesAPIDataManager.swift; sourceTree = "<group>"; };
+		56CECD1327FBD90100F364A7 /* EnviarModuleLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarModuleLocalDataManager.swift; sourceTree = "<group>"; };
+		56CECD1527FBDD4500F364A7 /* TransactionRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRO.swift; sourceTree = "<group>"; };
 		56D935C327FA544F00E002ED /* RegisterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
 		56D935C527FA5B1400E002ED /* DatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewModel.swift; sourceTree = "<group>"; };
 		56D935C727FA6C5000E002ED /* TelefonoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoViewModel.swift; sourceTree = "<group>"; };
@@ -564,6 +578,8 @@
 				56FE2E3927F69AEB008E8EE0 /* Response.swift */,
 				560C438327F998B200CC6FAE /* UserRO.swift */,
 				560C438527F999B700CC6FAE /* RegisterRO.swift */,
+				567479F127FBA5B80079E198 /* ContactsRO.swift */,
+				56CECD1527FBDD4500F364A7 /* TransactionRO.swift */,
 			);
 			path = ReponseObjects;
 			sourceTree = "<group>";
@@ -574,6 +590,7 @@
 				56FE2E3B27F69B25008E8EE0 /* LoginDTO.swift */,
 				560C437F27F97FD100CC6FAE /* RegisterDTO.swift */,
 				560C438127F9852600CC6FAE /* TransactionDTO.swift */,
+				567479EF27FB9D4D0079E198 /* ContactsDTO.swift */,
 			);
 			path = DataTransferObjects;
 			sourceTree = "<group>";
@@ -590,6 +607,10 @@
 			isa = PBXGroup;
 			children = (
 				BDE94FA027EE71E5006E27E0 /* AccountObject.swift */,
+				56CECD0D27FBD8BB00F364A7 /* EnviarViewModel.swift */,
+				56CECD0F27FBD8D600F364A7 /* EnviarModuleProtocols.swift */,
+				56CECD1127FBD8EF00F364A7 /* EnviarModulesAPIDataManager.swift */,
+				56CECD1327FBD90100F364A7 /* EnviarModuleLocalDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +689,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CECD1427FBD90100F364A7 /* EnviarModuleLocalDataManager.swift in Sources */,
+				567479F027FB9D4D0079E198 /* ContactsDTO.swift in Sources */,
 				564B8BA127FA2726008869D7 /* LoginModuleAPIDataManager.swift in Sources */,
 				56D935D227FA94EB00E002ED /* EnviandoDatosViewModel.swift in Sources */,
 				56D935CA27FA760900E002ED /* VerificarViewModel.swift in Sources */,
@@ -676,6 +699,7 @@
 				56FE2E3827F69AB9008E8EE0 /* LoginRO.swift in Sources */,
 				BDE94F9F27ED650F006E27E0 /* ConfirmarAgregadoViewController.swift in Sources */,
 				56D935D027FA8CD500E002ED /* ContrasenaViewModel.swift in Sources */,
+				56CECD1627FBDD4500F364A7 /* TransactionRO.swift in Sources */,
 				56412CB527E2A7CB0027BBA7 /* ContrasenaViewController.swift in Sources */,
 				BD0D82CA27F942B7009ABC83 /* AccountTableViewCell.swift in Sources */,
 				56412CAD27E271290027BBA7 /* VerificarViewController.swift in Sources */,
@@ -686,14 +710,16 @@
 				56FE2E3A27F69AEB008E8EE0 /* Response.swift in Sources */,
 				56D935DE27FAEB9800E002ED /* UserDetailAPIDataManager.swift in Sources */,
 				56ED679C27E3E527000B6146 /* EnviandoDatosViewController.swift in Sources */,
+				567479F227FBA5B80079E198 /* ContactsRO.swift in Sources */,
 				225B4D8427C3DFCC003E6180 /* WelcomeViewController.swift in Sources */,
 				56412CB127E28B770027BBA7 /* DocumentsTableViewCell.swift in Sources */,
 				56D935E027FAEBBC00E002ED /* UserDetailLocalDataManager.swift in Sources */,
 				56341CD827E012C300123524 /* TelefonoViewController.swift in Sources */,
 				BD0D82D927FAE929009ABC83 /* TransactionTableViewCell.swift in Sources */,
 				564B8B9F27FA2709008869D7 /* LoginModuleProtocols.swift in Sources */,
-				225B4D8A27C3E041003E6180 /* SingUpViewController.swift in Sources */,
 				BD0D82D727FADD7D009ABC83 /* TransactionObject.swift in Sources */,
+				56CECD0E27FBD8BB00F364A7 /* EnviarViewModel.swift in Sources */,
+				225B4D8A27C3E041003E6180 /* SignUpViewController.swift in Sources */,
 				225B4D9427C3E441003E6180 /* UIColor++.swift in Sources */,
 				19BCFA8627E42A0B007FD12D /* EnviarViewController.swift in Sources */,
 				BD0D82D227FA83CA009ABC83 /* EsperaViewController.swift in Sources */,
@@ -708,6 +734,7 @@
 				560C438027F97FD100CC6FAE /* RegisterDTO.swift in Sources */,
 				56D935C427FA544F00E002ED /* RegisterData.swift in Sources */,
 				560C438227F9852600CC6FAE /* TransactionDTO.swift in Sources */,
+				56CECD1227FBD8EF00F364A7 /* EnviarModulesAPIDataManager.swift in Sources */,
 				56D935D527FA9DAC00E002ED /* SignupModuleAPIDataManager.swift in Sources */,
 				56412CAF27E2727A0027BBA7 /* VerificarTableViewController.swift in Sources */,
 				225B4D9627C3EDBB003E6180 /* UILabel++.swift in Sources */,
@@ -722,6 +749,7 @@
 				BDE94F9B27ED5BC8006E27E0 /* AgregarTarjetaViewController.swift in Sources */,
 				565E789F27BDB81700FE708D /* AppDelegate.swift in Sources */,
 				56D935DA27FAEB4500E002ED /* UserDetailProtocols.swift in Sources */,
+				56CECD1027FBD8D600F364A7 /* EnviarModuleProtocols.swift in Sources */,
 				56FE2E4227F69D19008E8EE0 /* Endpoints.swift in Sources */,
 				56D935DC27FAEB6A00E002ED /* UserDetailViewModel.swift in Sources */,
 				563FD5CB27DA9F12000A7420 /* DatosViewController.swift in Sources */,

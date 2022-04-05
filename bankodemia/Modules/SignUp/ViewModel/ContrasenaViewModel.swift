@@ -12,6 +12,11 @@ var contrasenaViewController: ContrasenaViewController?
 var registerData: RegisterData?
     
     func validateAndProcessInputData(countersign: String) {
+        
+        if countersign == "" {
+            contrasenaViewController?.validacionTextFieldLabel.text = "Debes ingresar una contraseña"
+            return
+        }
             
         registerData?.countersign = countersign
             guard let registerData = registerData else {

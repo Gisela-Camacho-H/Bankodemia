@@ -10,6 +10,7 @@ class SignUpViewController: UIViewController {
     lazy var mainLabel: UIView.mainTextLabel = UIView.mainTextLabel()
     lazy var titleLable: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var subtitlelabel: UIView.textFieldLabel = UIView.textFieldLabel()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     // buttons
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -74,6 +75,13 @@ class SignUpViewController: UIViewController {
         NSLayoutConstraint.activate([correoTextField.topAnchor.constraint(equalTo: subtitlelabel.bottomAnchor, constant: 5),
             correoTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             correoTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: correoTextField.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
         ])
         
         

@@ -18,6 +18,7 @@ class ContrasenaViewController: UIViewController {
     lazy var titleLabel: UIView.titleButtonLabel = UIView.titleButtonLabel()
     lazy var subtitleLabel: UIView.textFieldLabel = UIView.textFieldLabel()
     lazy var subtitle2Label: UIView.textFieldLabel = UIView.textFieldLabel()
+    lazy var validacionTextFieldLabel: UIView.validacionLabel = UIView.validacionLabel()
     
     // buttons
     lazy var backButton: UIView.backArrowButton = UIView.backArrowButton()
@@ -150,6 +151,13 @@ class ContrasenaViewController: UIViewController {
             
         }
         
+        self.view.addSubview(validacionTextFieldLabel)
+        validacionTextFieldLabel.text = ""
+        NSLayoutConstraint.activate([validacionTextFieldLabel.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: Constants.padding),
+        validacionTextFieldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        validacionTextFieldLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: Constants.widthProportion)
+        ])
+        
         view.addSubview(continuarButton)
         continuarButton.setTitle("Crear contraseña", for: .normal)
         continuarButton.addTarget(self, action: #selector(onSignUpButtonTap), for: .touchUpInside)
@@ -216,13 +224,19 @@ class ContrasenaViewController: UIViewController {
 
     
     func continueToNextView(withData registerData: RegisterData) {
+        if contrasenaTextField.text == confirmarTextField.text {
         let nextViewModel: EnviandoDatosViewModel = EnviandoDatosViewModel()
         nextViewModel.registerData = registerData
         let nextViewController: EnviandoDatosViewController = EnviandoDatosViewController()
         nextViewController.enviandoDatosViewModel = nextViewModel
         nextViewModel.enviandoDatosViewController = nextViewController
         nextViewController.modalPresentationStyle = .fullScreen
-        present(nextViewController, animated: true, completion: nil)
+            present(nextViewController, animated: true, completion: nil)
+            
+        }else {
+            validacionTextFieldLabel.text = "Las contraseñas deben coincidir"
+        }
+        
     }
     
 }
