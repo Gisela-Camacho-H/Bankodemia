@@ -22,7 +22,6 @@ protocol UserDetailViewControllerProtocol: UIViewController {
     
     func setViewModelConnection(_ viewModel: UserDetailViewModelProtocol)
     func updateUIWithInfo(balance: Double)
-    func dismissToLogin()
 }
 
 protocol UserDetailAPIDataManagerProtocol {

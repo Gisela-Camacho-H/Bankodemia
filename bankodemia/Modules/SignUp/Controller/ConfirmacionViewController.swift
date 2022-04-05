@@ -84,7 +84,7 @@ class ConfirmacionViewController: UIViewController {
     }
     
     func goToSignUp() {
-        let loginViewController = LoginViewController()
+        let loginViewController = WelcomeViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         self.present(loginViewController, animated: true, completion: nil)
     }

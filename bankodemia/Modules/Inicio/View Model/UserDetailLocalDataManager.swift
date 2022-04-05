@@ -11,8 +11,8 @@ class UserDetailLocalDataManager: UserDetailLocalDataManagerProtocol {
     private let userDefaults: UserDefaults = UserDefaults.standard
     
     func obtainStoredToken() -> String? {
-        guard let tokens = userDefaults.value(forKey: "token") as? String else { return nil }
-        return tokens
+        guard let token = userDefaults.value(forKey: "token") as? String else { return nil }
+        return token
     }
     
 }

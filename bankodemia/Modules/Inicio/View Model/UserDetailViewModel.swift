@@ -9,9 +9,7 @@ import Foundation
 
 class UserDetailViewModel: UserDetailViewModelProtocol {
     
-    var tabBarViewController: TabBarViewController?
-    var inicioViewController: InicioViewController?
-    
+    var userDetailViewController: InicioViewController?
     var apiDataManager: UserDetailAPIDataManagerProtocol? = UserDetailAPIDataManager()
     var localDataManager: UserDetailLocalDataManagerProtocol? = UserDetailLocalDataManager()
     weak var viewController: UserDetailViewControllerProtocol?
@@ -32,6 +30,5 @@ class UserDetailViewModel: UserDetailViewModelProtocol {
 extension UserDetailViewModel: UserDetailAPIDataManagerOutputProtocol {
     func didObtainedUserData(user: UserRO) {
         viewController?.updateUIWithInfo(balance: user.data.balance)
-        
     }
 }
